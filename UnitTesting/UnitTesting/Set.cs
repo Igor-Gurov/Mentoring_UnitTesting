@@ -15,18 +15,10 @@ namespace UnitTesting
  			this.list=new List<T>();
 		}
 
-		public SetClass(List<T> list)
-		{
-			this.list = list;
-		}
-
 		public void Add(T entity)
 		{
-			foreach (T item in list)
-			{
-				if (item.Equals(entity))
-					throw new Exception("Object Equals");			
-			}
+			if (Exist(entity))
+				new Exception("Equals entity");
 			list.Add(entity);
 		}
 
@@ -40,7 +32,7 @@ namespace UnitTesting
 			return list;
 		}
 
-		public bool CheckCollectionOnEmpty()
+		public bool IsEmpty()
 		{
 			if (list.Count == 0)
 				return true;
@@ -48,9 +40,27 @@ namespace UnitTesting
 				return false;
 		}
 
-		public int GetCount()
+
+		public int GetCount
 		{
-			return list.Count;
+			get { return list.Count; }
+		}
+
+
+		public T GetItem(int index)
+		{
+			return list[index];
+		}
+
+
+		public bool Exist(T entity)
+		{
+			foreach (T item in list)
+			{
+				if (item.Equals(entity))
+					return true;
+			}
+			return false;
 		}
 	}
 }

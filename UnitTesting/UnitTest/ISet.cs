@@ -21,7 +21,9 @@ namespace UnitTest
 
 		public ISets<object> CreateSetClassWithCollection()
 		{
-			ISets<object> setClass = new SetClass<object>(list);
+			ISets<object> setClass = new SetClass<object>();
+			setClass.Add(new object());
+			setClass.Add(new object());
 			return setClass;
 		}
 
@@ -47,7 +49,7 @@ namespace UnitTest
 			Initialize ini = new Initialize();
 			ISets<object> setClass = ini.CreateSetClassWithCollection();
 
-			Assert.AreEqual(ini.GetListCollection().Count, setClass.GetCount());
+			Assert.AreEqual(ini.GetListCollection().Count, setClass.GetCount);
 		}
 
 		[TestMethod]
@@ -56,7 +58,7 @@ namespace UnitTest
 			Initialize ini = new Initialize();
 			ISets<object> setClass = ini.CreateSetClassWithCollection();
 
-			Assert.IsFalse(setClass.CheckCollectionOnEmpty());
+			Assert.IsFalse(setClass.IsEmpty());
 		}
 
 		[TestMethod]
@@ -65,7 +67,7 @@ namespace UnitTest
 			Initialize ini = new Initialize();
 			ISets<object> setClass = ini.CreateSetClass();
 
-			Assert.IsTrue(setClass.CheckCollectionOnEmpty());
+			Assert.IsTrue(setClass.IsEmpty());
 		}
 
 		[TestMethod]
@@ -75,7 +77,7 @@ namespace UnitTest
 			ISets<object> setClass = ini.CreateSetClassWithCollection();
 			setClass.Add(new object());
 
-			Assert.AreEqual(3, setClass.GetCount());
+			Assert.AreEqual(3, setClass.GetCount);
 		}
 
 		[TestMethod]
@@ -96,15 +98,7 @@ namespace UnitTest
 			}
 		}
 
-		[TestMethod]
-		public void GetList()
-		{
-			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
-
-			Assert.AreEqual(ini.GetListCollection(), setClass.GetCollection());
-		}
-
+		
 		[TestMethod]
 		public void DeleteObjectFromCollection()
 		{
@@ -115,7 +109,7 @@ namespace UnitTest
 			setClass.Add(obj);
 			setClass.Delete(obj);
 
-			Assert.AreEqual(ini.GetListCollection().Count, setClass.GetCount());
+			Assert.AreEqual(ini.GetListCollection().Count, setClass.GetCount);
 		}
 
 		[TestMethod]
@@ -127,7 +121,51 @@ namespace UnitTest
 
 			setClass.Delete(obj);
 
-			Assert.AreEqual(0, setClass.GetCount());
+			Assert.AreEqual(0, setClass.GetCount);
+		}
+
+		[TestMethod]
+		public void GetItem()
+		{
+			Initialize ini = new Initialize();
+			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			object obj = new object();
+			setClass.Add(obj);
+			
+			Assert.AreEqual(obj, setClass.GetItem(2));
+		}
+
+		[TestMethod]
+		public void EqualsItemTrue()
+		{
+			Initialize ini = new Initialize();
+			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			object obj = new object();
+			setClass.Add(obj);
+
+			Assert.IsTrue(setClass.Exist(obj));
+		}
+
+		[TestMethod]
+		public void EqualsItemFalse()
+		{
+			Initialize ini = new Initialize();
+			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			object obj = new object();
+
+			Assert.IsFalse(setClass.Exist(obj));
+		}
+
+		[TestMethod]
+		public void DelegateEqualsItemTrue()
+		{
+			Initialize ini = new Initialize();
+			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			object obj = new object();
+			setClass.Add(obj);
+			DelegateIsEqual<object> delEqual = setClass.Exist;
+
+			Assert.IsTrue(delEqual(obj));
 		}
 	}
 }

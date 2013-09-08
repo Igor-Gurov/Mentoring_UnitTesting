@@ -12,10 +12,12 @@ namespace UnitTesting
 
 		void Delete(T entity);
 
-		List<T> GetCollection();
+		T GetItem(int index);
 
-		bool CheckCollectionOnEmpty();
+		bool IsEmpty();
 
-		int GetCount();
+		bool Exist(T entity);
+
+		int GetCount { get; }
     }
 }
