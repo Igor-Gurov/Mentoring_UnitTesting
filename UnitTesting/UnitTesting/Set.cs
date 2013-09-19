@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace UnitTesting
 {
-	public class SetClass<T>: ISets<T>
+	public class Setz<T>: ISets<T>
 	{
 		private List<T> list;
 
-		public SetClass()
+		public Setz()
 		{
  			this.list=new List<T>();
 		}
@@ -18,7 +18,7 @@ namespace UnitTesting
 		public void Add(T entity)
 		{
 			if (Exist(entity))
-				new Exception("Equals entity");
+				throw new ExistException("Equals entity");
 			list.Add(entity);
 		}
 
@@ -27,17 +27,9 @@ namespace UnitTesting
 			list.Remove(entity);
 		}
 
-		public List<T> GetCollection()
-		{
-			return list;
-		}
-
 		public bool IsEmpty()
 		{
-			if (list.Count == 0)
-				return true;
-			else
-				return false;
+			return list.Count == 0;
 		}
 
 
@@ -55,12 +47,12 @@ namespace UnitTesting
 
 		public bool Exist(T entity)
 		{
-			foreach (T item in list)
-			{
-				if (item.Equals(entity))
-					return true;
-			}
-			return false;
+			return list.Exists(e => e.Equals(entity));
+		}
+
+		public bool Exist(Predicate<T> pred)
+		{
+			return list.Exists(pred);
 		}
 	}
 }

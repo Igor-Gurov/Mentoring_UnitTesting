@@ -18,6 +18,8 @@ namespace UnitTesting
 
 		bool Exist(T entity);
 
+		bool Exist(Predicate<T> pred);
+
 		int GetCount { get; }
     }
 }

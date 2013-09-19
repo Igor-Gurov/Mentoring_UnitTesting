@@ -21,7 +21,7 @@ namespace UnitTest
 
 		public ISets<object> CreateSetClassWithCollection()
 		{
-			ISets<object> setClass = new SetClass<object>();
+			ISets<object> setClass = new Setz<object>();
 			setClass.Add(new object());
 			setClass.Add(new object());
 			return setClass;
@@ -29,8 +29,8 @@ namespace UnitTest
 
 		public ISets<object> CreateSetClass()
 		{
-			ISets<object> setClass = new SetClass<object>();
-			return setClass;
+			ISets<object> setz = new Setz<object>();
+			return setz;
 		}
 
 		public List<object> GetListCollection()
@@ -47,54 +47,54 @@ namespace UnitTest
 		public void CheckCount()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 
-			Assert.AreEqual(ini.GetListCollection().Count, setClass.GetCount);
+			Assert.AreEqual(ini.GetListCollection().Count, setz.GetCount);
 		}
 
 		[TestMethod]
 		public void CheckCollectionOnEmpty()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 
-			Assert.IsFalse(setClass.IsEmpty());
+			Assert.IsFalse(setz.IsEmpty());
 		}
 
 		[TestMethod]
 		public void CheckEmptyCollectionOnEmpty()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClass();
+			ISets<object> setz = ini.CreateSetClass();
 
-			Assert.IsTrue(setClass.IsEmpty());
+			Assert.IsTrue(setz.IsEmpty());
 		}
 
 		[TestMethod]
 		public void AddedObject()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
-			setClass.Add(new object());
+			ISets<object> setz = ini.CreateSetClassWithCollection();
+			setz.Add(new object());
 
-			Assert.AreEqual(3, setClass.GetCount);
+			Assert.AreEqual(3, setz.GetCount);
 		}
 
 		[TestMethod]
 		public void CheckEqualObject()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 			object obj = new object();
 			try
 			{
-				setClass.Add(obj);
-				setClass.Add(obj);
+				setz.Add(obj);
+				setz.Add(obj);
 			}
-			catch (Exception e)
+			catch (ExistException e)
 			{
 
-				Assert.AreEqual("Object Equals", e.Message);
+				Assert.AreEqual("Equals entity", e.Message);
 			}
 		}
 
@@ -103,69 +103,68 @@ namespace UnitTest
 		public void DeleteObjectFromCollection()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 			object obj = new object();
 
-			setClass.Add(obj);
-			setClass.Delete(obj);
+			setz.Add(obj);
+			setz.Delete(obj);
 
-			Assert.AreEqual(ini.GetListCollection().Count, setClass.GetCount);
+			Assert.AreEqual(ini.GetListCollection().Count, setz.GetCount);
 		}
 
 		[TestMethod]
 		public void DeleteObjectFromEmptyCollection()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClass();
+			ISets<object> setz = ini.CreateSetClass();
 			object obj = new object();
 
-			setClass.Delete(obj);
+			setz.Delete(obj);
 
-			Assert.AreEqual(0, setClass.GetCount);
+			Assert.AreEqual(0, setz.GetCount);
 		}
 
 		[TestMethod]
 		public void GetItem()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 			object obj = new object();
-			setClass.Add(obj);
+			setz.Add(obj);
 			
-			Assert.AreEqual(obj, setClass.GetItem(2));
+			Assert.AreEqual(obj, setz.GetItem(2));
 		}
 
 		[TestMethod]
 		public void EqualsItemTrue()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 			object obj = new object();
-			setClass.Add(obj);
+			setz.Add(obj);
 
-			Assert.IsTrue(setClass.Exist(obj));
+			Assert.IsTrue(setz.Exist(obj));
 		}
 
 		[TestMethod]
 		public void EqualsItemFalse()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 			object obj = new object();
 
-			Assert.IsFalse(setClass.Exist(obj));
+			Assert.IsFalse(setz.Exist(obj));
 		}
 
 		[TestMethod]
-		public void DelegateEqualsItemTrue()
+		public void EqualsPredicateItemTrue()
 		{
 			Initialize ini = new Initialize();
-			ISets<object> setClass = ini.CreateSetClassWithCollection();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
 			object obj = new object();
-			setClass.Add(obj);
-			DelegateIsEqual<object> delEqual = setClass.Exist;
+			setz.Add(obj);
 
-			Assert.IsTrue(delEqual(obj));
+			Assert.IsTrue(setz.Exist(e=>e.Equals(obj)));
 		}
 	}
 }
