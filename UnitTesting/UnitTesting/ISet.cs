@@ -10,6 +10,8 @@ namespace UnitTesting
     {
 		void Add(T entity);
 
+		void Add(T entity, Predicate<T> pred);
+
 		void Delete(T entity);
 
 		T GetItem(int index);

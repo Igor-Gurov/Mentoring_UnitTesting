@@ -22,6 +22,13 @@ namespace UnitTesting
 			list.Add(entity);
 		}
 
+		public void Add(T entity,Predicate<T> pred)
+		{
+			if (Exist(pred))
+				throw new ExistException("Equals entity");
+			list.Add(entity);
+		}
+
 		public void Delete(T entity)
 		{
 			list.Remove(entity);

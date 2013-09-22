@@ -9,14 +9,10 @@ namespace UnitTest
 
 	public class Initialize
 	{
-		private List<object> list;
-
+		
 		public Initialize()
 		{
-			list = new List<object>(){
-				new object(),
-				new object(),
-			};
+			
 		}
 
 		public ISets<object> CreateSetClassWithCollection()
@@ -33,9 +29,12 @@ namespace UnitTest
 			return setz;
 		}
 
-		public List<object> GetListCollection()
+		public int GetCount
 		{
-			return list;
+			get
+			{
+				return 2;
+			}
 		}
 	}
 	#endregion
@@ -49,7 +48,7 @@ namespace UnitTest
 			Initialize ini = new Initialize();
 			ISets<object> setz = ini.CreateSetClassWithCollection();
 
-			Assert.AreEqual(ini.GetListCollection().Count, setz.GetCount);
+			Assert.AreEqual(ini.GetCount, setz.GetCount);
 		}
 
 		[TestMethod]
@@ -109,7 +108,7 @@ namespace UnitTest
 			setz.Add(obj);
 			setz.Delete(obj);
 
-			Assert.AreEqual(ini.GetListCollection().Count, setz.GetCount);
+			Assert.AreEqual(ini.GetCount, setz.GetCount);
 		}
 
 		[TestMethod]
@@ -165,6 +164,24 @@ namespace UnitTest
 			setz.Add(obj);
 
 			Assert.IsTrue(setz.Exist(e=>e.Equals(obj)));
+		}
+
+		[TestMethod]
+		public void CheckPredicateEqualObject()
+		{
+			Initialize ini = new Initialize();
+			ISets<object> setz = ini.CreateSetClassWithCollection();
+			object obj = new object();
+			try
+			{
+				setz.Add(obj, e => e.Equals(obj));
+				setz.Add(obj, e => e.Equals(obj));
+			}
+			catch (ExistException e)
+			{
+
+				Assert.AreEqual("Equals entity", e.Message);
+			}
 		}
 	}
 }
