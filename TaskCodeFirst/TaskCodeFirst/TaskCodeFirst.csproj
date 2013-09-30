@@ -60,13 +60,13 @@
     <Compile Include="Migrations\201309251835339_Initial.Designer.cs">
       <DependentUpon>201309251835339_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201309251924074_AddedClient.cs" />
-    <Compile Include="Migrations\201309251924074_AddedClient.Designer.cs">
-      <DependentUpon>201309251924074_AddedClient.cs</DependentUpon>
+    <Compile Include="Migrations\201309301732060_AddClient.cs" />
+    <Compile Include="Migrations\201309301732060_AddClient.Designer.cs">
+      <DependentUpon>201309301732060_AddClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201309260815319_AddCashOperationType.cs" />
-    <Compile Include="Migrations\201309260815319_AddCashOperationType.Designer.cs">
-      <DependentUpon>201309260815319_AddCashOperationType.cs</DependentUpon>
+    <Compile Include="Migrations\201309301813532_AddCashOperationType.cs" />
+    <Compile Include="Migrations\201309301813532_AddCashOperationType.Designer.cs">
+      <DependentUpon>201309301813532_AddCashOperationType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -81,11 +81,11 @@
     <EmbeddedResource Include="Migrations\201309251835339_Initial.resx">
       <DependentUpon>201309251835339_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309251924074_AddedClient.resx">
-      <DependentUpon>201309251924074_AddedClient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201309301732060_AddClient.resx">
+      <DependentUpon>201309301732060_AddClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309260815319_AddCashOperationType.resx">
-      <DependentUpon>201309260815319_AddCashOperationType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201309301813532_AddCashOperationType.resx">
+      <DependentUpon>201309301813532_AddCashOperationType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

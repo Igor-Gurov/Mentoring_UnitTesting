@@ -28,10 +28,10 @@ namespace TaskCodeFirst
 			modelBuilder.Entity<WebMoney>().ToTable("WebMoney");
 			modelBuilder.Entity<PayPal>().ToTable("PayPal");
 
-			modelBuilder.Entity<Client>()
-				.HasRequired(c => c.Payment)
+			modelBuilder.Entity<Payment>()
+				.HasRequired(c => c.Client)
 				.WithMany()
-				.HasForeignKey(c => c.PaymentId);
+				.HasForeignKey(c => c.ClientId);
 		
 			modelBuilder.Entity<Good>()
 				.HasMany(g => g.Categories)

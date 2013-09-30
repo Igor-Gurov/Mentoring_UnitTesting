@@ -11,7 +11,7 @@ namespace TaskCodeFirst.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201309260815319_AddCashOperationType"; }
+            get { return "201309301813532_AddCashOperationType"; }
         }
         
         string IMigrationMetadata.Source

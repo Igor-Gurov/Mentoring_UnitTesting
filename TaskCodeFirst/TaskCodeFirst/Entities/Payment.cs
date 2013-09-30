@@ -17,6 +17,10 @@ namespace TaskCodeFirst.Entities
 
 		public Guid Good { get; set; }
 
+		public int ClientId { get; set; }
+
+		public Client Client { get; set; }
+
 		public int CashOperationTypeId { get; set; }
 
 		public CashOperationType CashOperationType { get; set; }

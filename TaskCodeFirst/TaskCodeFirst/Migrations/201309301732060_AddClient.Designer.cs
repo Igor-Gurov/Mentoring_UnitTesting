@@ -5,13 +5,13 @@ namespace TaskCodeFirst.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class AddedClient : IMigrationMetadata
+    public sealed partial class AddClient : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedClient));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddClient));
         
         string IMigrationMetadata.Id
         {
-            get { return "201309251924074_AddedClient"; }
+            get { return "201309301732060_AddClient"; }
         }
         
         string IMigrationMetadata.Source

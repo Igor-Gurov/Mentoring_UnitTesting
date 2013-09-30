@@ -15,8 +15,8 @@ namespace TaskCodeFirst.Entities
 
 		public string FIO { get; set; }
 
-		public Guid PaymentId { get; set; }
+		//public Guid PaymentId { get; set; }
 
-		public virtual Payment Payment { get; set; }
+		//public virtual Payment Payment { get; set; }
 	}
 }

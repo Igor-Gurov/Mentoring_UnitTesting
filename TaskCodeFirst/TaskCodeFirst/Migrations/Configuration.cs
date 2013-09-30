@@ -4,6 +4,7 @@ namespace TaskCodeFirst.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+	using TaskCodeFirst.Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TaskCodeFirst.TaskContext>
     {
@@ -26,6 +27,9 @@ namespace TaskCodeFirst.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+			context.Clients.Add(new Client { FIO = "anonymous",
+													 Login = "anonymous"
+			});
         }
     }
 }
