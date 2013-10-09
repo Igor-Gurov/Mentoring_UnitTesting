@@ -1,0 +1,60 @@
+﻿/*Header*/
+.header
+{
+	position:inherit;
+	background: #43678e;
+	background:linear-gradient(to top,#6896c8,#43678e);
+	border-bottom-left-radius:8px;
+	border-bottom-right-radius:8px;
+}
+
+.header div
+{
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+.menu
+{
+	margin-left:30%;
+	position:inherit;
+}
+
+	.menu table
+	{
+		color:white;
+		position:inherit;
+		width:100%;
+	}
+
+		.menu table tr td
+		{
+			padding:4px;
+			width:16.67%;
+		}
+
+.search
+{
+	margin-top:3px;
+	position:inherit;
+	width:16%;
+	margin-left:14%;
+	float:left;
+	text-align:center;
+}
+
+.menu
+{
+
+}
+
+/*Main*/
+.mainContainer
+{
+	background-color:green;
+	margin-top:1%;
+	margin-left:2.5%;
+	position:inherit;
+	width:94%;
+	height:6%;
+}
