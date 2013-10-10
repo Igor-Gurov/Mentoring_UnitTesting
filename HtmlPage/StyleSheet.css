@@ -1,6 +1,7 @@
 ﻿/*Header*/
 .header
 {
+	display:block;
 	position:inherit;
 	background: #43678e;
 	background:linear-gradient(to top,#6896c8,#43678e);
@@ -8,29 +9,48 @@
 	border-bottom-right-radius:8px;
 }
 
-.header div
+	.header div.menu, .header div.search
+	{
+		padding-top:0.5%;
+		padding-bottom:0.5%;
+	}
+
+
+.logo
 {
-	padding-top:2px;
-	padding-bottom:2px;
+	margin-left:1%;
+	display:inline;
+	float:left;
+	width:13%;
 }
+
+	.logo img
+	{
+		width:100%;
+	}
+
 
 .menu
 {
-	margin-left:30%;
+	display:inline-block;
+	width:70%;
 	position:inherit;
 }
 
-	.menu table
+	.menu ul
 	{
+		display:inline;
 		color:white;
 		position:inherit;
 		width:100%;
 	}
 
-		.menu table tr td
+		.menu ul li
 		{
+			display:inline-block;
 			padding:4px;
-			width:16.67%;
+			width:14%;
+			font-size:large;
 		}
 
 .search
@@ -38,21 +58,20 @@
 	margin-top:3px;
 	position:inherit;
 	width:16%;
-	margin-left:14%;
 	float:left;
 	text-align:center;
 }
 
-.menu
-{
-
-}
+	.search input
+	{
+		padding-left:1%;
+		width:70%;
+	}
 
 /*Main*/
 .mainContainer
 {
-	background-color:green;
-	margin-top:1%;
+	margin-top:0.5%;
 	margin-left:2.5%;
 	position:inherit;
 	width:94%;
