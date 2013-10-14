@@ -4,6 +4,13 @@
 	<head>
 		<title>Html page for task</title>
 		<link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+		<script>
+			function()
+			{
+				var item=document.getElementsByClassName(".share ul li a::first-child");
+				document.activeElement(item);
+			}
+		</script>
 	</head>
 	<body>
 		<div class="header">
@@ -39,7 +46,118 @@
 		</div>
 			
 		<div class="mainContainer">
+			<div class="leftFrame">
+				<div class="frameMenu">
+					<ul>
+						<li>
+							<a>My Page</a>
+							<div>
+								edit
+							</div>
+						</li>
+						<li>
+							<a>My Friend</a>
+						</li>
+						<li>
+							<a>
+								My Photos
+							</a>
+						</li>
+						<li>
+							<a>
+								My Videos
+							</a>
+						</li>
+						<li>
+							<a>
+								My Musics
+							</a>
+						</li>
+						<li>
+							<a>
+								My Messages
+							</a>
+						</li>
+						<li>
+							<a>
+								My Notes
+							</a>
+						</li>
+						<li>
+							<a>
+								My Groups
+							</a>
+						</li>
+						<li>
+							<a>
+								My News
+							</a>
+						</li>
+						<li>
+							<a>
+								My Share
+							</a>
+						</li>
+						<li>
+							<a>
+								My Options
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="advertising">
+					<a class="headerAd" href="#">Новая коллекция!
+						<p class="siteAd">larnoda.ru</p>
+					</a>
+					
+					<div class="imgAd">
+						<img src="shoes.png"/>
+					</div>
+				</div>
+				<div class="advertising">
+					<a class="headerAd" href="#">Дадим займы сегодня!
+						<p class="siteAd">migcredit.ru</p>
+					</a>
+					
+					<div class="imgAd">
+						<img src="money.png"/>
+					</div>
+					<div class="footerAd">
+						Оформите заяаку на скидку до 30 000 р. Официально и безопасно
+					</div>
+				</div>
+				<footer>Все объявления</footer>
+			</div>
+			<div class="rightFrame">
+				<div class="share">
+					<ul>
+						<li>
+							<a href="#">Общее</a>
+						</li>
 
+						<li>
+							<a href="#">Приватность</a>
+						</li>
+					
+						<li>
+							<a href="#">Оповещение</a>
+						</li>
+					
+						<li>
+							<a href="#">Черный список</a>
+						</li>
+				
+						<li>
+							<a href="#">Мобильные сервисы</a>
+						</li>
+					
+						<li>
+							<a href="#">Баланс</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
 		</div>
 	</body>
 </html>
