@@ -4,13 +4,6 @@
 	<head>
 		<title>Html page for task</title>
 		<link rel="stylesheet" type="text/css" href="StyleSheet.css" />
-		<script>
-			function()
-			{
-				var item=document.getElementsByClassName(".share ul li a::first-child");
-				document.activeElement(item);
-			}
-		</script>
 	</head>
 	<body>
 		<div class="header">
@@ -132,7 +125,7 @@
 				<div class="share">
 					<ul>
 						<li>
-							<a href="#">Общее</a>
+							<a href="#" class="active">Общее</a>
 						</li>
 
 						<li>
@@ -155,6 +148,54 @@
 							<a href="#">Баланс</a>
 						</li>
 					</ul>
+				</div>
+
+				<div class="options">
+					<div class="headOp">Настройка стены</div>
+					<div class="bodyOp">
+						<p><input type="checkbox" checked />Показывать только мои записи</p>
+						<p><input type="checkbox" />Отключить комментарование стены</p>
+						<div class="footerOp"><a href="#">Посмотреть заблокированные приложения</a></div>
+					</div>
+				</div>
+
+				<div class="options">
+					<div class="headOp">Изменить пароль</div>
+					<div class="labelOp">
+						<p>Старый пароль:<br /></p>
+						<p>Новый пароль:<br /></p>
+						<p>Повторить пароль:</p>
+					</div>
+					<div class="bodyOp">
+						<p><input /></p>
+						<p><input /></p>
+						<p><input /></p>
+						<div class="footerOp"><a href="#" class="btn">Изменить пароль</a></div>
+					</div>
+				</div>
+
+				<div class="options">
+					<div class="headOp">Адрес Вашей электорнной почты</div>
+					<div class="labelOp">
+						<p>Текущий адрес:<br /></p>
+						<p>Новый адрес:<br /></p>
+					</div>
+					<div class="bodyOp">
+						<p>a***@gmail.com<br /></p>
+						<p><input /></p>
+						<div class="footerOp"><a href="#" class="btn">Сохранить адрес</a></div>
+					</div>
+				</div>
+
+				<div class="options">
+					<div class="headOp">Номер Вашей телефона</div>
+					<div class="labelOp">
+						<p>Текущий номер:<br /></p>
+					</div>
+					<div class="bodyOp">
+						<p>+7 *** *** ** 75<br /></p>
+						<div class="footerOp"><a href="#" class="btn">Изменить номер телефона</a></div>
+					</div>
 				</div>
 
 			</div>
