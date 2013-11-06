@@ -1,4 +1,12 @@
-﻿/*Header*/
+﻿.Container
+{
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+/*Header*/
 .header
 {
 	display:block;
@@ -299,4 +307,9 @@
 a
 {
 	text-decoration:none;
+}
+
+body
+{
+	font-family:Calibri;
 }
