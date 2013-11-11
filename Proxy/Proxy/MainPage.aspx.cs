@@ -17,7 +17,17 @@ namespace Proxy
 
 		protected void btnConfirm_Click(object sender, EventArgs e)
 		{
-			Server.TransferRequest("~/PrxReq.prx?" + inpAddress.Value);
+			Uri customUri;
+			try
+			{
+				customUri = new Uri(inpAddress.Value);
+			}
+			catch (UriFormatException)
+			{
+				customUri = new Uri("http://" + inpAddress.Value);
+			}
+			Server.TransferRequest("~/Request.prx?" + customUri.AbsoluteUri);
+			//Server.TransferRequest("~/PrxReq.prx?" + inpAddress.Value);
 		}
 	}
 }
