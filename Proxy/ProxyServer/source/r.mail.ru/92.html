@@ -1,0 +1,3236 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+ <link rel="canonical" href="http://auto.mail.ru/" />
+ <meta charset="utf-8">
+ <title>Авто@Mail.Ru: тест-драйвы, новости авторынка, купля-продажа автомобилей, авто-обзоры</title>
+ <link rel="shortcut icon" href="http://auto.mail.ru/favicon.ico">
+ <link rel="alternate" media="handheld" href="http://tel.auto.mail.ru/">
+ <meta http-equiv="x-ua-compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="keywords" content="авто, автомобили, автомобильные новости, автоновости, новости авто, тест-драйв, купля-продажа, авто с пробегом, автомобили с пробегом, купить авто, каталог авто, каталог автомобилей">
+ <meta name="description" content="Авто@Mail.Ru. Все автомобильные новости, обзоры, тест-драйвы последних моделей. Купля-продажа автомобилей, каталог и отзывы владельцев, форумы.">
+ <link rel="image_src" href="http://auto.mail.ru/img/v2/logo/auto_at_mailru-shares.png">
+ <meta property="og:image" content="http://auto.mail.ru/img/v2/logo/auto_at_mailru-shares.png">
+ <meta name="wmail-verification" content="4c5c65a98a4fe2ba" />
+ <meta name="yandex-verification" content="41f9eee6c387f4ef" />
+<link rel="stylesheet" href="http://auto.mail.ru/css/v2/style.css?20131025">
+<link rel="stylesheet" href="http://img.imgsmail.ru/p/0.13.3/css/auto/auto.portal-menu.all.css">
+<script type="text/javascript" src="http://img.imgsmail.ru/p/0.13.2/js/ajs.min.js"></script>
+<script type="text/javascript" src="/js/auto/v2/jquery.js?1375133608"></script>
+<script type="text/javascript">(function (){
+ function Radar(project, name){
+ this._dt = {};
+ this._project = project;
+ this._name = name;
+ }
+ Radar.prototype = {
+ start: function (name){
+ this._dt[name] = (new Date).getTime();
+ return this;
+ },
+ stop: function (name){
+ this._dt[name] = (new Date).getTime() - this._dt[name];
+ return this;
+ },
+ save: function (){
+ var all = 0, dt = [], key;
+ for( key in this._dt ) if( key != 'all' ){
+ all += this._dt[key];
+ dt.push(key+':'+this._dt[key]);
+ }
+ (new Image).src = '//news.radar.imgsmail.ru/update?p='+ this._project +'&t='+ this._name +'&v='+ (this._dt.all || all) +'&i='+ dt.join(',') +'&rnd='+ Math.random() + (document.referrer ? '&r='+ escape(document.referrer) : '');
+ this._dt = {};
+ return this;
+ }
+ };
+ window.mailruRadar = Radar;
+})();</script>
+<script type="text/javascript" src="/js/auto/v2/lib/basic.js?1377259499"></script>
+<script type="text/javascript" src="/js/auto/v2/tools/jquery/jquery.mrcookie.js?1375133608"></script>
+<script type="text/javascript">/**
+ * @require 'lib/basic.js'
+ */
+(function ($, window, oNS) {
+ var jWindow = $(window);
+ var jDoc = $(window.document);
+ oNS.Basic.Extend(window.getNameSpace('Comp.jQuery', oNS), (function () {
+ var oResult = {
+ Elems: {
+ jBody: null,
+ jDoc: jDoc,
+ jWindow: jWindow
+ }
+ };
+ $(function () {
+ oResult.Elems.jBody = $('body');
+ });
+ return oResult;
+ })());
+})(jQuery, window, getNameSpace('ru.mail.cpf'));</script>
+<script type="text/javascript" src="/js/auto/v2/tools/jquery/jquery.compTools.js?1375133608"></script>
+<script type="text/javascript" src="/js/auto/v2/tools/tools.Callbacks.js?1375133608"></script>
+<script type="text/javascript" src="/js/auto/v2/jquery.menudrop.js?1375133608"></script>
+<script type="text/javascript" src="/js/auto/v2/jquery.Tabs.js?1375133608"></script>
+<script type="text/javascript" src="/js/auto/v2/jquery.Slider.js?1375133608"></script>
+<script src="http://auto.mail.ru/js/auto/ajax.js"></script>
+ 
+ <!-- radar -->
+ <script>
+ var radar = new mailruRadar('auto', 'main_v2');
+ radar.start('all');
+ </script>
+</head>
+<body>
+ 
+ 
+ <div style="display:none;"></div>
+ <!-- BEGIN: PAGE COUNTER - TOP -->
+ <div class="p-counters">
+ <!-- main counter -->
+ <img src="http://rs.mail.ru/d1864940.gif" style="width:0;height:0;position:absolute;" alt="" />
+ <!-- /main counter -->
+ <!-- rb: 194 (allpages counters) -->
+ <!-- tns-counter.ru --> 
+<script language="JavaScript" type="text/javascript"> 
+	var img = new Image();
+	img.src = 'http://www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\*/g,'%2a') + '*mail_ru/ru/UTF-8/tmsec=mail_auto/' + Math.round(Math.random() * 1000000000);
+</script> 
+<noscript> 
+	<img src="http://www.tns-counter.ru/V13a****mail_ru/ru/UTF-8/tmsec=mail_auto/" width="1" height="1" alt="">
+</noscript> 
+
+ <!-- /rb: 194 (allpages counters) -->
+ </div>
+ <!-- END: PAGE COUNTER - TOP -->
+ <!-- BEGIN: PAGE FULLSCREEN -->
+
+ 
+
+
+ <!-- rb: 3839 (fullscreen) -->
+ 
+ <!-- /rb: 3839 (fullscreen) -->
+
+<!-- END: PAGE FULLSCREEN -->
+ 
+<!-- BEGIN: PAGE HEADER -->
+<div class="p-head">
+ <!-- common mail.ru portal-headline -->
+ 
+
+<!--noindex-->
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+		
+	
+		
+	<style>.x-ph{position:relative;z-index:1003;margin:0;padding:0;font:12px/16px Arial,sans-serif;white-space:nowrap;text-align:left;background:#fff;height:28px;*zoom:1}.w-x-ph{width:100%;margin:0;padding:0;border:0;border-spacing:0;border-collapse:collapse;font:12px/16px Arial,sans-serif;background:#fff}.w-x-ph__col{height:28px;padding:0;margin:0;border:0;border-spacing:0;vertical-align:top;white-space:nowrap;font:12px/16px Arial,sans-serif}.w-x-ph__col_left{width:1%;padding-right:20px;text-align:left}.w-x-ph__col_right{text-align:right}.x-ph__menu{position:relative;z-index:1004;display:inline-block;padding-right:2px;font:12px/16px Arial,sans-serif;vertical-align:top}.w-x-ph__menu__placeholder{position:absolute;top:100%;left:50%;width:0;height:0;font:0/0 a}.x-ph__menu__button,.x-ph__menu__button:link,.x-ph__menu__button:visited,.x-ph__menu__button:hover,.x-ph__menu__button:active,.x-ph__menu__button:focus{position:relative;z-index:1005;display:inline-block;width:100%;padding:6px 0 5px 0;border-right:1px solid #fff;border-left:1px solid #fff;font:12px/16px Arial,sans-serif;text-decoration:none;cursor:pointer;outline:none}.x-ph-ff.x-ph-win .x-ph__menu__button,.x-ph-ff.x-ph-win .x-ph__menu__button:link,.x-ph-ff.x-ph-win .x-ph__menu__button:visited,.x-ph-ff.x-ph-win .x-ph__menu__button:hover,.x-ph-ff.x-ph-win .x-ph__menu__button:active,.x-ph-ff.x-ph-win .x-ph__menu__button:focus{padding-top:5px;padding-bottom:7px}.x-ph__menu__button__text,.x-ph__menu_open .x-ph__menu__button:hover .x-ph__menu__button__text{display:inline-block;width:100%;padding:0 14px 0 6px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:#0857a6;font-style:normal;text-decoration:none;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;text-align:left;vertical-align:top}.x-ph__menu__button:hover .x-ph__menu__button__text,.x-ph__menu__button:focus .x-ph__menu__button__text,.x-ph__menu__button:active .x-ph__menu__button__text,.x-ph__menu_open .x-ph__menu__button:focus .x-ph__menu__button__text,.x-ph__menu_open .x-ph__menu__button:active .x-ph__menu__button__text{color:#f26d00}.x-ph__menu__button__icon,.x-ph__menu_open .x-ph__menu__button:hover .x-ph__menu__button__icon{position:absolute;right:5px;top:13px;width:0;height:0;border-width:4px;border-style:solid;border-color:#0857a6 #fff #fff;font:0/0 a}.x-ph__menu__button:hover .x-ph__menu__button__icon,.x-ph__menu__button:focus .x-ph__menu__button__icon,.x-ph__menu__button:active .x-ph__menu__button__icon,.x-ph__menu_open .x-ph__menu__button:focus .x-ph__menu__button__icon,.x-ph__menu_open .x-ph__menu__button:active .x-ph__menu__button__icon{border-color:#f26d00 #fff #fff}.w-x-ph__menu__button__shadow{position:absolute;z-index:1007;top:0;opacity:0;width:50px;height:0;-webkit-box-shadow:0 4px 9px rgba(0,0,0,0.3);-moz-box-shadow:0 4px 9px rgba(0,0,0,0.3);box-shadow:0 4px 9px rgba(0,0,0,0.3)}.x-ph__link,.x-ph__link:link,.x-ph__link:visited,.x-ph__link:hover,.x-ph__link:active,.x-ph__link:focus{display:inline-block;margin-right:6px;color:#0857a6;text-decoration:none;white-space:nowrap;*zoom:1;outline:none;padding:6px 6px 6px;*padding:5px 6px 7px;font:12px/16px Arial,sans-serif}.x-ph-ff.x-ph-win .x-ph__link,.x-ph-ff.x-ph-win .x-ph__link:link,.x-ph-ff.x-ph-win .x-ph__link:visited,.x-ph-ff.x-ph-win .x-ph__link:hover,.x-ph-ff.x-ph-win .x-ph__link:active,.x-ph-ff.x-ph-win .x-ph__link:focus{padding:5px 6px 7px}.x-ph__auth__link_icon,.x-ph__auth__link_icon:link,.x-ph__auth__link_icon:visited,.x-ph__auth__link_icon:hover,.x-ph__auth__link_icon:active,.x-ph__auth__link_icon:focus{width:16px;height:16px;margin:5px 6px 0;padding:0 !important;overflow:hidden;background:url("//img.imgsmail.ru/p/h/d/0.25.1/blocks/link/icons.png") no-repeat 0 0;background-size:16px auto;text-indent:30px}@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5){.x-ph__auth__link_icon,.x-ph__auth__link_icon:link,.x-ph__auth__link_icon:visited,.x-ph__auth__link_icon:hover,.x-ph__auth__link_icon:active,.x-ph__auth__link_icon:focus{background-image:url("//img.imgsmail.ru/p/h/d/0.25.1/blocks/link/icons.x2.png")}}.x-ph__link:hover,.x-ph__link:focus,.x-ph__link:active{color:#f26d00}.x-ph__link_first,.x-ph__link_first:link,.x-ph__link_first:visited,.x-ph__link_first:hover,.x-ph__link_first:active,.x-ph__link_first:focus{margin-left:12px}.x-ph__link_last,.x-ph__link_last:link,.x-ph__link_last:visited,.x-ph__link_last:hover,.x-ph__link_last:active,.x-ph__link_last:focus{margin-right:12px}.x-ph__link_ext,.x-ph__link_ext:link,.x-ph__link_ext:visited,.x-ph__link_ext:hover,.x-ph__link_ext:active,.x-ph__link_ext:focus{padding-right:1px;text-decoration:none}.x-ph__link_selected,.x-ph__link_selected:link,.x-ph__link_selected:visited,.x-ph__link_selected:hover,.x-ph__link_selected:active,.x-ph__link_selected:focus{font-weight:bold}.x-ph__link__text{font-style:normal;text-decoration:none;cursor:pointer}.x-ph__link:hover .x-ph__link__text{color:#f26d00;text-decoration:none}.x-ph__link__balloon{display:none;min-width:9px;margin-left:3px;padding-right:4px;padding-left:4px;color:#fff;font-weight:normal;font-style:normal;font-size:11px;line-height:12px;text-align:center;background-color:#fa0;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;cursor:pointer}.x-ph-ff.x-ph-mac .x-ph__link__balloon{line-height:13px}.x-ph__link_ext .x-ph__link__balloon{display:inline-block;*display:inline;*zoom:1}.x-ph__auth{width:100%;border:0;margin:0;padding:0;border:0;border-spacing:0;font:12px/16px Arial,sans-serif}.w-x-ph__auth__col{border:0;margin:0;padding:0;border:0;border-spacing:0;vertical-align:top;text-align:right;white-space:nowrap;font:12px/16px Arial,sans-serif}.w-x-ph__auth__col_left{width:99%}.w-x-ph__auth__col_right{padding-right:2px}.x-ph__auth__user{position:relative;display:block;width:100%;min-width:100px;height:28px;overflow:hidden}.w-x-ph__auth__user_inner{position:absolute;right:0;text-align:left;max-width:100%}.x-ph__auth__user__text{color:#000;display:inline-block;padding:6px 10px 6px 0;_padding:5px 10px 7px 0;font:12px/16px Arial,sans-serif}.x-ph__auth__user__fade{position:absolute;top:0;right:-6px;width:16px;height:28px;overflow:hidden;background:url("//img.imgsmail.ru/p/h/d/0.25.1/blocks/auth/fade2.png") repeat-y 0 0;_display:none}.x-ph__auth__link,.x-ph__auth__link:link,.x-ph__auth__link:visited,.x-ph__auth__link:hover,.x-ph__auth__link:active,.x-ph__auth__link:focus{font:12px/16px Arial,sans-serif}.w-x-ph__auth__dropdown{position:relative;display:block;min-width:100px;width:100%;height:1px;text-align:right}.w-x-ph__auth__dropdown__inner{position:absolute;right:6px;width:100%;min-width:100px;text-align:right}.x-ph__menu_auth{max-width:100%}.x-ph__menu__button_auth,.x-ph__menu__button_auth:link,.x-ph__menu__button_auth:visited,.x-ph__menu__button_auth:hover,.x-ph__menu__button_auth:active,.x-ph__menu__button_auth:focus{max-width:100%}.x-ph__menu__button__text_auth{position:relative}.x-ph__menu__button__text_auth,.x-ph__menu_open .x-ph__menu__button:hover .x-ph__menu__button__text_auth{max-width:560px}.x-ph__menu_auth_unread .x-ph__menu__button__text_auth,.x-ph__menu_auth_unread.x-ph__menu_open .x-ph__menu__button:hover .x-ph__menu__button__text_auth{padding-left:14px}.x-ph__menu__button_auth__unread{display:none;position:absolute;left:3px;top:11px;width:8px;height:8px;background:url("//img.imgsmail.ru/p/h/d/0.25.1/blocks/auth/icons.gif") no-repeat 0 -92px}.x-ph__menu_auth_unread .x-ph__menu__button_auth__unread{display:block}
+</style><div class="x-ph portal-headline" id="portal-headline"><table class="w-x-ph" cellspacing="0"><tr><td class="w-x-ph__col w-x-ph__col_left"><a rel="nofollow" class="x-ph__link x-ph__link_first" href="http://r.mail.ru/n102504374?sz=11">Mail.Ru</a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n112250642?sz=11"><span class="x-ph__link__text">Почта</span><i class="x-ph__link__balloon" id="g_mail_events"></i></a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n91554661?sz=11"><span class="x-ph__link__text">Мой Мир</span><i class="x-ph__link__balloon" id="g_my_events"></i></a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n101756185?sz=11"><span class="x-ph__link__text">Одноклассники</span><i class="x-ph__link__balloon" id="g_ok_events"></i></a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n107086325?sz=11"><span class="x-ph__link__text">Игры</span><i class="x-ph__link__balloon" id="g_games_events"></i></a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n77995274?sz=11">Знакомства</a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n77995275?sz=11">Новости</a><a rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n77995276?sz=11">Поиск</a><a id="PH_allProjects" rel="nofollow" class="x-ph__link" href="http://r.mail.ru/n101756186?sz=11">Все проекты</a><span class="x-ph__menu" id="PH_projectsMenu" style="display:none;"><i class="w-x-ph__menu__button__shadow w-x-ph__menu__button__shadow_left"></i><i class="w-x-ph__menu__button__shadow w-x-ph__menu__button__shadow_right"></i><a rel="nofollow" class="x-ph__menu__button" id="PH_projectsMenu_button" href="#"><i class="x-ph__menu__button__icon"></i><i class="x-ph__menu__button__text">Все проекты</i></a></span></td><td class="w-x-ph__col w-x-ph__col_right"><div id="PH_authView" style="display:none;"><table class="x-ph__auth" cellspacing="0"><tr><td class="w-x-ph__auth__col w-x-ph__auth__col_left"><span id="PH_singleuser" class="x-ph__auth__user"><span class="w-x-ph__auth__user_inner"><span id="PH_user-email_disabled" class="x-ph__auth__user__text"></span><span class="x-ph__auth__user__fade"></span></span></span><div id="PH_miltiuser" style="display:none;" class="w-x-ph__auth__dropdown"><div class="w-x-ph__auth__dropdown__inner"><div class="x-ph__menu x-ph__menu_auth" id="PH_authMenu"><i id="PH_bub_place" class="w-x-ph__menu__placeholder"></i><i class="w-x-ph__menu__button__shadow w-x-ph__menu__button__shadow_left"></i><i class="w-x-ph__menu__button__shadow w-x-ph__menu__button__shadow_right"></i><a rel="nofollow" class="x-ph__menu__button x-ph__menu__button_auth" id="PH_authMenu_button" href="#"><i class="x-ph__menu__button_auth__unread" title=""></i><i class="x-ph__menu__button__icon x-ph__menu__button__icon_auth"></i><i class="x-ph__menu__button__text x-ph__menu__button__text_auth" id="PH_user-email"></i></a></div></div></div></td><td class="w-x-ph__auth__col w-x-ph__auth__col_right"><a id="PH_logoutLink" rel="nofollow" class="x-ph__link x-ph__link_last x-ph__auth__link" href="https://r.mail.ru/cls1074201/auth.mail.ru/cgi-bin/logout?lang=ru_RU&Page=http%3A%2F%2Fauto.mail.ru%2F" xname="clb1074201" title="выход">выход</a></td></tr></table></div><div id="PH_noAuthView"><table class="x-ph__auth" cellspacing="0"><tr><td class="w-x-ph__auth__col w-x-ph__auth__col_right"><a id="PH_regLink" rel="nofollow" class="x-ph__link x-ph__auth__link" href="http://r.mail.ru/clb535071/e.mail.ru/signup?from=navi&lang=ru_RU">Регистрация</a><a id="PH_loginLink" rel="nofollow" class="x-ph__link x-ph__link_last x-ph__auth__link" href="http://auto.mail.ru/login.html?page=http%3A%2F%2Fauto.mail.ru%2F" xname="clb951827">Вход</a></td></tr></table></div></td></tr></table></div><div id="PH_innerHTML" style="display:none;"></div><div id="PH_links" style="display:none;"><a id="PH_link_repair" href="http://r.mail.ru/n117018266?sz=11"></a><a id="PH_link_dobro" href="http://r.mail.ru/n115576076?sz=11"></a><a id="PH_link_biz" href="http://r.mail.ru/n115576077?sz=11"></a><a id="PH_link_finance" href="http://r.mail.ru/n118799001?sz=11"></a><a id="PH_link_moto" href="http://r.mail.ru/n110094300?sz=11"></a><a id="PH_link_avia" href="http://r.mail.ru/n112250645?sz=11"></a><a id="PH_link_auto" href="http://r.mail.ru/n77995277?sz=11"></a><a id="PH_link_afisha" href="http://r.mail.ru/n77995292?sz=11"></a><a id="PH_link_video" href="http://r.mail.ru/n77995293?sz=11"></a><a id="PH_link_horo" href="http://r.mail.ru/n77995290?sz=11"></a><a id="PH_link_money" href="http://r.mail.ru/n112250647?sz=11"></a><a id="PH_link_deti" href="http://r.mail.ru/n77995286?sz=11"></a><a id="PH_link_health" href="http://r.mail.ru/n77995287?sz=11"></a><a id="PH_link_calendar" href="http://r.mail.ru/n104998676?sz=11"></a><a id="PH_link_maps" href="http://r.mail.ru/n77995296?sz=11"></a><a id="PH_link_lady" href="http://r.mail.ru/n77995285?sz=11"></a><a id="PH_link_realty" href="http://r.mail.ru/n115576078?sz=11"></a><a id="PH_link_answer" href="http://r.mail.ru/n77995278?sz=11"></a><a id="PH_link_cards" href="http://r.mail.ru/n77995289?sz=11"></a><a id="PH_link_pogoda" href="http://r.mail.ru/n77995291?sz=11"></a><a id="PH_link_travel" href="http://r.mail.ru/n112250650?sz=11"></a><a id="PH_link_work" href="http://r.mail.ru/n115198921?sz=11"></a><a id="PH_link_raiting" href="http://r.mail.ru/n107086326?sz=11"></a><a id="PH_link_sport" href="http://r.mail.ru/n102504375?sz=11"></a><a id="PH_link_tv" href="http://r.mail.ru/n104998677?sz=11"></a><a id="PH_link_torg" href="http://r.mail.ru/n112250651?sz=11"></a><a id="PH_link_files" href="http://r.mail.ru/n77995284?sz=11"></a><a id="PH_link_hitech" href="http://r.mail.ru/n77995282?sz=11"></a><a id="PH_link_agent" href="http://r.mail.ru/n94823784?sz=11"></a><a id="PH_link_browser" href="http://r.mail.ru/n94587782?sz=11"></a><a id="PH_link_sputnik" href="http://r.mail.ru/n96156691?sz=11"></a><a id="PH_link_icq" href="http://r.mail.ru/n94823785?sz=11"></a></div><!--[if IE 6]><script>
+	var ____________ie6 = true;
+</script><![endif]--><!--[if IE 7]><script>
+	var ____________ie7 = true;
+</script><![endif]--><script>
+if (!window.__PHS){
+	var __PHS = {};
+}
+(function(s){
+	
+	s.authFormEnabled = false;
+	s.authFormExtDomainsEnabled = false;
+	s.authFormExtDomainsEnabledForNoAuth = false;
+	s.portalAuthEnabled = true;
+	s.disableGamesCounter = false;
+	s.staticDir = '//img.imgsmail.ru/p/h/d/0.25.1/';
+	s.loginLink = 'http://auto.mail.ru/login.html?page=http%3A%2F%2Fauto.mail.ru%2F';
+	s.loginLinkXName = 'clb1126067';
+	s.externalJS = '//img.imgsmail.ru/p/h/d/0.25.1/external.min.js';
+	s.pv = '2';
+	s.enableUpdateRadars = false;
+
+	if (!s.lang){
+		s.lang = "ru_RU";
+	}
+})(window['__PHS']);
+(function(){function C(a){for(var a=a||{},d=1,b=arguments.length;d<b;d++){var e=arguments[d],g;for(g in e)e.hasOwnProperty(g)&&(a[g]=e[g])}return a}function R(a,d){for(var b in d)Object.prototype.hasOwnProperty.call(d,b)&&!Object.prototype.hasOwnProperty.call(a,b)&&(a[b]=d[b]);return a}function D(a){return document.getElementById(a)}function S(a,d){var b=[],e=0;if("string"===typeof a)b.push([a,d]),e+=d;else for(var g in a)a.hasOwnProperty(g)&&(b.push([g,a[g]]),e+=a[g]);g=0;for(var c=b.length;g<c;g++)b[g]=
+b[g].join(":");(new Image).src="//headline.radar.imgsmail.ru/update?p=headline&t="+E+"&v="+e+"&i="+b.join(",")+"&rnd="+Math.random()+(document.referrer?"&r="+escape(document.referrer):"")}function T(a,d){return a.bind.apply(a,y.call(arguments,1))}function U(a,d,b){function e(){a();c||(g=z(e,d))}var g,c;b&&a();g=z(e,d);return function(){c=!0;F(g)}}function V(a){a.stopPropagation?a.stopPropagation():a.cancelBubble=!0;a.preventDefault?a.preventDefault():a.returnValue=!1}function W(a){a.preventDefault?
+a.preventDefault():a.returnValue=!1}function G(a,d,b,e){if(d)if(d.addEventListener)d[a?"addEventListener":"removeEventListener"](b,e,!1);else d[a?"attachEvent":"detachEvent"]("on"+b,e)}function s(a){return a&&1==a.nodeType}function H(a){(function(){for(var a,b=arguments,e=b.length;e--;){a=b[e].split(",");for(var g=a.length;g--;){var c=a[g],f=void 0,h=parseInt(1E9*Math.random()),j=void 0;if(f=c.match(/^(?:cl([bn])|([adgin]))(\d+)(?:sz(\d+))?/))f[1]?j="s"+f[1]:"n"==f[2]?j="nc":("i"==f[2]&&(h=null),
+j=f[2]),j+=f[3]+".gif?",f[4]&&(j+="sz="+f[4]),h&&(j+="&rnd="+h),(new Image).src="//rs.mail.ru/"+j}}})(a)}function X(a){G(1,a,"mousedown",function(a){a||(a=window.event);for(a=a.target||a.srcElement;a;)a.getAttribute&&a.getAttribute("xname")&&H(a.getAttribute("xname")),a=a.parentNode})}function Y(a,d){var b;b=s(d)?function(a,d){return a==d}:function(a,d){return v(a,d)};for(var e=a.parentNode;e;){if(b(e,d))return e;e=e.parentNode}return!1}function Z(a){for(;a.firstChild;)a.removeChild(a.firstChild)}
+function v(a,d){return s(a)&&w?a.classList.contains(d):!!~(" "+a.className+" ").indexOf(" "+d+" ")}function I(a,d){s(a)&&(w?a.classList.add(d):!v(a,d)&&(a.className+=" "+d))}function J(a,d){s(a)&&(w?a.classList.remove(d):a.className=a.className.replace(RegExp("(^|\\s)"+d+"(\\s|$)","g"),"$1"))}function $(a,d){if(s(a))return w?a.classList.toggle(d):v(a,d)?(J(a,d),!1):(I(a,d),!0)}function x(a,d,b){if(void 0!==d){var e,b=b||{};null===d&&(d="",b.expires=-1);d+="";document.cookie=a+"="+d+(b.expires&&(e=
+"number"==typeof b.expires&&(e=new Date),e.setTime(e.getTime()+864E5*b.expires),e||"toUTCString"in b.expires&&b.expires)&&"; expires="+e.toUTCString()||"")+(b.path?"; path="+b.path:"")+(b.domain?"; domain="+b.domain:"")+(b.secure?"; secure":"");return d}if(""!==(document.cookie||""))return d=(document.cookie.match(RegExp("(?:^| )"+a+"\\=(\\S*)(?:; |$)"))||[])[1],void 0===d?void 0:d}function K(){this._invocations=[];this._context=this._fn=null}function r(){}function A(a){this._node=b.byId(a);this._container=
+this._node.parentNode}function aa(a){this._counters=a;for(var b in this._counters)this._counters.hasOwnProperty(b)&&(this._counters[b]=new A(this._counters[b]));this.update=function(a,b){if("string"==typeof a){var d={};d[a]=b;this.update(d)}else for(d in a)a.hasOwnProperty(d)&&this._counters[d].update(a[d])}}function m(a){m.__all.push(this);this._opts=a;this._baseClass=a.baseClass;this._rootNode=a.rootNode;this._dropdown=a.dropdown;this._button=a.button;this._openCounter=a.openCounter||null;this._hideTimeout=
+null;this._openClass=this._baseClass+"_open";this._rightClass=this._openClass+"_right";this._leftClass=this._openClass+"_left";this._inited=!!this._dropdown;this._triggerHideOnInit=this._triggerShowOnInit=!1;b.event(1,this._button,"click",b.bind(this.show,this))}function p(a,b){b=b||{};this._url=a;this._encoding=b.encoding;this._JSONPCallbackParam=b.JSONPCallbackParam||"callback";this._processing=!1;this._requestSource=b.requestSource;this._handler=this._getScript;this._cancelHandler=this._cancelScript}
+function ba(a){function d(){e!==(e=location.hash.replace(/^#/,"")||null)&&i()}this._userEmail=a.userEmail;this.____user=this._userEmail.innerHTML||void 0;this._user=null;this._updateByTimeout=a.updateByTimeout;this.updateLastRequest=0;this._noAuthView=a.noAuthView;this._authView=a.authView;this.updateAccountInfo();var i=b.bind(this.updateAccountInfo,this);if(!this._updateByTimeout)if("onhashchange"in window)b.event(1,window,"hashchange",i);else{var e=location.hash.replace(/^#/,"")||null;b.setIntervalByTimeout(d,
+50)}}function L(a){function d(){e--;e||b.counters.update(i)}var i={};a.data=a.data||{};a.data.ok_cnt=a.data.ok_cnt||0;i.ok=a.data.ok_cnt;a.data.time&&(B=a.data.time);var e=2;c.emit("OKUpdate",a,d);M.emit("update",a,d)}if(!window.__PH){var c=window.__PH={},b={};c.settings=window.__PHS;c.settings.swaDomain="//portal.mail.ru";c.settings.authDomain="https://auth.mail.ru";/^https?:\/\/(\S+?\.)*?dev\.mail.ru($|\/\S*)/i.test(location.href)&&!/^https?:\/\/(\S+?\.)*?cal[^.]*?\.dev\.mail.ru($|\/\S*)/i.test(location.href)&&
+(c.settings.swaDomain="//portal.dev.mail.ru",c.settings.authDomain="https://auth.dev.mail.ru");c.settings.swaTest&&(c.settings.swaDomain="//portal.test.mail.ru",c.settings.authDomain="https://test.auth.mail.ru");c._=b;try{top.location.toString()}catch(ka){top.location=location}var E="auto",z=window.setTimeout,F=window.clearTimeout,q=D("portal-headline"),u=navigator.userAgent,n=[];-1!=u.indexOf("Firefox")&&n.push("x-ph-ff");-1!=u.indexOf("Mac OS")?n.push("x-ph-mac"):-1!=u.indexOf("Windows")&&
+n.push("x-ph-win");q.className+=" "+n.join(" ");var y=Array.prototype.slice;void 0===Function.prototype.bind&&(Function.prototype.bind=function(a){var b=y.call(arguments,1),i=this;return function(){return i.apply(a,b.concat(y.call(arguments,0)))}});var w="classList"in document.documentElement,u=Array.prototype.indexOf?function(a,b){return Array.prototype.indexOf.call(a,b)}:function(a,b){for(var i=0,e=a.length;i<e;i++)if(a[i]==b)return i;return-1},n=window.devicePixelRatio,ca=void 0!=document.createElement("div").style.backgroundSize&&
+1<n,da=b,ea=E,fa=/\s*(\S+)\s*/g,ga=!/\[native\s+code\]/i.test(document.getElementsByClass+""),ha=/\./g;C(da,{extend:C,append:R,dpr:n,retina:ca,project:ea,setTimeout:function(a,b){return z(a,b)},clearTimeout:function(a){return F(a)},rootNode:q,byId:D,byClassName:function(a,b,i){var e,c;"string"===typeof a&&(i=b,b=a,a=document);i=i||"";if(!a||null==b)return[];b=b.replace(/\s+/ig,".");"."!=b[0]&&(b="."+b);if("querySelectorAll"in a){i=a.querySelectorAll(i+b);if(ga){e=-1;for(a=[];c=i[++e];)a.push(c);return a}return i}i=
+a.getElementsByTagName(i||"*");b&&(b=b.replace(ha," "),b=RegExp(b.replace(fa,"(?=(^|.*\\s)$1(\\s|$))")));e=-1;for(a=[];c=i[++e];)1===c.nodeType&&(!b||b.test(c.className))&&a.push(c);return a},radar:S,bind:T,setIntervalByTimeout:U,eventCancel:V,eventPreventDefault:W,event:G,isNode:s,emptyNode:Z,count:H,countEl:X,hasParent:Y,hasClass:v,removeClass:J,addClass:I,toggleClass:$,ArrayIndexOf:u});var f={_S_cookie_set_get_remove:function(a,b,c,e){var g,f=RegExp("(^|\\|)("+c+"=)(.*?)(\\||$)"),l={domain:b,expires:365,
+path:"/"};if(c){b=x(a)||"";g=(b.match(f)||[])[3];var h=null;void 0!==e?(x(a,g||null===e?h=b.replace(f,null===e?function(a,b,d,e,c,i,g){return 0===g.indexOf(a)?"":c}:"$1$2"+e+"$4"):(b?b+"|":"")+c+"="+e,l),""===h&&x(a,null,l)):e=g;return e}},_throw_noValue_Error:function(){throw Error("need value");},__prefix:null,__domain:null,setProject:function(a,b){if(!a||!b)throw Error("project is not valid");"."!==b.substr(0,1)&&(b="."+b);f.__prefix=a;f.__domain=b},_getPrefix:function(){if(!f.__prefix||!f.__domain)throw Error("run setProject before");
+},getGlobal:function(a){return f._S_cookie_set_get_remove("s",".mail.ru",a)},setGlobal:function(a,b){void 0===b&&f._throw_noValue_Error();f._S_cookie_set_get_remove("s",".mail.ru",a,b);return f.getGlobal(a)},removeGlobal:function(a){var b=f.getGlobal(a);f._S_cookie_set_get_remove("s",".mail.ru",a,null);return b},getLocal:function(a){f._getPrefix();return f._S_cookie_set_get_remove("s_"+f.__prefix,f.__domain,a)},setLocal:function(a,b){f._getPrefix();void 0===b&&f._throw_noValue_Error();f._S_cookie_set_get_remove("s_"+
+f.__prefix,f.__domain,a,b);return f.getLocal(a)},removeLocal:function(a){f._getPrefix();var b=f.getLocal(a);f._S_cookie_set_get_remove("s_"+f.__prefix,f.__domain,a,null);return b}};b.SCookie=f;K.prototype={getQuery:function(){var a=b.bind(this.invoke,this);a.replace=b.bind(this.replace,this);return a},invoke:function(){this._fn?this._fn.apply(this._context,arguments):this._invocations.push(arguments)},replace:function(a,b){if(!this._fn){for(var b=b||window,c=0,e=this._invocations.length;c<e;c++)a.apply(b,
+this._invocations[c]);delete this._invocations;this._fn=a;this._context=b}}};b.extend(b,{DeferredQuery:K});r.prototype={emit:function(a,b,c){function e(){--f||c&&c()}void 0==b&&(b={});var g=this.listeners(a);if(g)for(var g=g.slice(),a=new r.Event(a,b),f=g.length,b=0,l=f;b<l;b++){var h=g[b];if("function"===typeof h)try{h.call(this,a,e)}catch(j){e()}}else c&&c()},listeners:function(a){return this._events&&this._events[a]&&this._events[a].length&&this._events[a]},addListener:function(a,b){if("function"!==
+typeof b)throw Error("invalid argument");this._events||(this._events={});this._events[a]||(this._events[a]=[]);this._events[a].push(b);this.emit("newlistener",{type:a});return this},once:function(a,b){function c(){this.removeListener(a,c);b.apply(this,arguments)}if("function"!==typeof b)throw Error("invalid argument");this.on(a,c);return this},removeListener:function(a,d){if("function"!==typeof d)throw Error("invalid argument");if(!this._events[a])return this;var c=this._events[a],e=b.ArrayIndexOf(c,
+d);if(0>e)return this;c.splice(e,1);0===c.length&&delete this._events[a];return this}};r.prototype.on=r.prototype.addListener;r.Event=function(a,b){this.type=a;this.data=b};r.relay=function(a,b,c){for(var e=0,g=a.length;e<g;e++){var f=a[e];b.on(f,function(a){return function(){c.emit(a)}}(f))}};b.EventEmitter=r;(function(){function a(){var a=d();a.id++;id=a.id;4095<id&&(id=0);i(id);a=d();return a.id}function d(){var a=f.getGlobal(r),b;if(!a)return i(0,0,{id:0,current:0}),{id:0,current:0};b=parseInt(a.substr(0,
+3),16);a=parseInt(a.substr(3,6),16);return{id:b,current:a}}function i(a,b,c){(c=c||d())||(c={});void 0!==a&&(c.id=a);c.id=void 0!=c.id&&c.id.toString(16);switch(c.id.length){case 1:c.id="00"+c.id;break;case 2:c.id="0"+c.id}void 0!==b&&(c.current=b);c.current=void 0!=c.current&&c.current.toString(16);switch(c.current.length){case 1:c.current="00"+c.current;break;case 2:c.current="0"+c.current}f.setGlobal(r,c.id+c.current)}function e(a,e){function f(a){l!==a&&(l=a,c.emit("visibilitychange",{hidden:a,
+visible:!a}))}var h;e?(h=e.hidden,f(h)):(h="focus"==a.type||"focusin"==a.type?!1:"blur"==a.type||"focusout"==a.type?!0:!!document[g],"focusout"==a.type?k=b.setTimeout(function(){k=void 0;f(h)},0):"focusin"==a.type?(void 0!==k?b.clearTimeout(k):f(h),k=void 0):p||q?h?k=b.setTimeout(function(){k=void 0;d().current===n||f(h)},200):(d().current!==n&&(i(void 0,n),f(h)),b.clearTimeout(k),k=void 0):f(h))}var g,k,l=!1,h,j={hidden:"visibilitychange",mozHidden:"mozvisibilitychange",webkitHidden:"webkitvisibilitychange",
+msHidden:"msvisibilitychange",oHidden:"ovisibilitychange"};for(g in j)if(j.hasOwnProperty(g)&&g in document){h=j[g];break}var j=navigator.userAgent,m=-1<j.indexOf("iPad")||-1<j.indexOf("iPhone")||-1<j.indexOf("iPod"),p=!h&&-1<j.indexOf("Opera"),q=0<j.indexOf("Safari")&&-1===j.indexOf("Chrome"),r="t";if(p||m||q){var n=a();i(void 0,n)}if(h)b.event(1,document,h,e);else if(window.eval&&eval("/*@cc_on!@*/false"))b.event(1,document,"focusin",e),b.event(1,document,"focusout",e);else if(m){var s=new Date,
+t=function(){b.clearTimeout(50);b.setTimeout(t,50);var a=new Date;100<a.getTime()-s.getTime()&&d().current!==n&&(i(void 0,n),l=!1,e({},{hidden:!0}),l=!0,e({},{hidden:!1}));s=a};b.setTimeout(t,50)}else b.event(1,window,"focus",e),b.event(1,window,"blur",e)})();A.prototype={visibleClass:"x-ph__link_ext",show:function(){b.addClass(this._container,this.visibleClass)},hide:function(){b.removeClass(this._container,this.visibleClass)},value:function(a){void 0!==a&&(this._node.innerHTML=this.prepare(a));
+return parseInt(this._node.innerHTML,10)||0},prepare:function(a){a=parseInt(a);return 0<a?a:0},update:function(a){this[this.value(a)?"show":"hide"]()}};b.Couners=aa;b.Couner=A;m.__all=[];m.resetShowOnInit=function(a){for(var b=0,c=m.__all.length;b<c;b++){var e=m.__all[b];if(!a||e!==a)e._triggerShowOnInit=!1,e._triggerHideOnInit=!1}};m.hideAll=function(){for(var a=0,b=m.__all.length;a<b;a++){var c=m.__all[a];c._triggerShowOnInit=!1;c._triggerHideOnInit=!1;c.hide()}};b.extend(m.prototype,b.EventEmitter.prototype,
+{init:function(a){!this._dropdown&&a&&(this._dropdown=a,this._rootNode.appendChild(a),this._inited=!0,this._triggerShowOnInit&&this.show(),this._triggerHideOnInit&&this.hide(),this._triggerHideOnInit=this._triggerShowOnInit=!1)},_mouseIn:function(){b.clearTimeout(this._hideTimeout)},_mouseOut:function(){b.clearTimeout(this._hideTimeout);this._hideTimeout=b.setTimeout(b.bind(this.hide,this),4E3)},isVisible:function(){return b.hasClass(this._rootNode,this._openClass)},show:function(a){b.clearTimeout(this._hideTimeout);
+a&&b.eventPreventDefault(a);this._inited?this.isVisible()||this.emit("show",{},b.bind(function(){this.__toggle(!0)},this)):(this._triggerShowOnInit=!0,m.resetShowOnInit(this))},hide:function(){this._inited?this.isVisible()&&this.emit("hide",{},b.bind(function(){this.__toggle(!1)},this)):this._triggerShowOnInit?this._triggerShowOnInit=!1:this._triggerHideOnInit=!0},_hideOther:function(){for(var a=0,b=m.__all.length;a<b;a++){var c=m.__all[a];c!=this&&c.isVisible()&&c.hide();c._triggerShowOnInit=!1}},
+_click:function(a){var d=a.target||a.srcElement;d==this._dropdown||b.hasParent(d,this._dropdown)?this.emit("click",{clickEvent:a},b.bind(this.hide,this)):"click"==a.type&&(b.hasParent(d,this._rootNode)&&b.eventPreventDefault(a),this.hide())},__toggle:function(a){b.clearTimeout(this.__eventsTimeout);this.__eventsTimeout=b.setTimeout(b.bind(function(){b.event(a,document,"click",this.__click||(this.__click=b.bind(this._click,this)));b.event(a,this._rootNode,"mouseout",this.__mouseOut||(this.__mouseOut=
+b.bind(this._mouseOut,this)));b.event(a,this._rootNode,"mouseover",this.__mouseIn||(this.__mouseIn=b.bind(this._mouseIn,this)))},this),10);if(a){this._openCounter&&b.count(this._openCounter);"block"!==this._dropdown.style.display&&(this._dropdown.style.display="block");var d=this._dropdown.clientWidth+(this._rootNode.offsetParent==b.rootNode?this._rootNode.offsetLeft:1E4);documentWidth=document.body.offsetWidth;var c=b.bind(function(){b.addClass(this._rootNode,this._openClass);b.addClass(this._rootNode,
+d>documentWidth?this._rightClass:this._leftClass);var a=b.bind(function(){window.webkitURL&&(this._dropdown.style.width=this._dropdown.clientWidth+1+"px",this._dropdown.style.width=null)},this);a();b.setTimeout(a,0)},this);b.setTimeout(c,0)}else b.removeClass(this._rootNode,this._openClass),b.removeClass(this._rootNode,this._leftClass),b.removeClass(this._rootNode,this._rightClass)}});b.Menu=m;var N=document.getElementsByTagName("head")[0];p.prototype={get:function(a){a=b.extend({encoding:this._encoding,
+params:{},complete:function(){}},a);return this._handler(this._url,a)},_getUrl:function(a,b){var c=!!~a.indexOf("?");b.rnd=(new Date).getTime();for(var e in b)if(b.hasOwnProperty(e)){var g=b[e];"function"==typeof g&&(g=g(b));void 0!==g&&(a+=(c?"&":"?")+e+"="+encodeURIComponent(g),c=!0)}return a},_getScript:function(a,c){function f(){N.appendChild(g);b.setTimeout(function(){N.removeChild(g)},6E4)}this.cancel();var e=this._cbName="__PHJSONPCallback_"+p.getUuid(),g=document.createElement("script"),k,
+l=c.timeout;c.params[this._JSONPCallbackParam]=e;a=this._getUrl(a,c.params);window[e]=b.bind(function(a){b.clearTimeout(k);window[e]=p.__PHEmptyCallback;this._cbName=null;this._processing=!1;this._requestSource&&(a.requestSource=this._requestSource);"cancel"!=a.status&&c.complete(a)},this);g.defer="defer";g.async="async";g.type="text/javascript";c.encoding&&(g.charset=c.encoding);g.src=a;!("opera"in window)||"complete"===document.readyState?(this._processing=!0,f()):window.addEventListener("DOMContentLoaded",
+b.bind(function(){this._processing=!0;f()},this),!1);l&&(k=b.setTimeout(b.bind(function(){window[this._cbName]({status:"error",errorType:"timeout"})},this),l))},isProcessing:function(){return this._processing},cancel:function(){this._cancelHandler()},_cancelScript:function(){this._cbName&&window[this._cbName]&&window[this._cbName]({status:"cancel"})}};p.__uuid=0;p.getUuid=function(){return p.__uuid++};p.__PHEmptyCallback=function(){};b.extend(b,{Transport:p});b.AccountManager=ba;b.extend(b.AccountManager.prototype,
+b.EventEmitter.prototype,{activeUser:function(){return this._user},updateLogin:function(a){this._user=a;(this._userEmail.innerHTML=a)?(this._noAuthView.style.display="none",this._authView.style.display=""):(this._authView.style.display="none",this._noAuthView.style.display="")},isCorpCookie:"s_c",isCorp:function(){return!!b.SCookie.getGlobal(this.isCorpCookie)},setCorp:function(a){for(var c=0,f=a.length;c<f;c++)if("corp.mail.ru"===a[c].split("@")[1])return b.SCookie.setGlobal(this.isCorpCookie,(new Date).getTime()),
+!0;if((a=b.SCookie.getGlobal(this.isCorpCookie))&&(new Date).getTime()>a+1728E5)return b.SCookie.removeGlobal(this.isCorpCookie),!1}});b.extend(b.AccountManager.prototype,{updateCounters:function(a){var d={},a=a||{};"mail"!=b.project&&(d.mail=a.mail_cnt||0);d.my=a.my_cnt||0;c.settings.disableGamesCounter||(d.games=a.games_cnt||0);this.updateNotifier(a);b.counters.update(d)},updateNotifier:function(a){var c=b.byId("PH_authMenu"),a=a.mail_notifier?parseInt(a.mail_notifier,10):0;b[(0==a?"remove":"add")+
+"Class"](c,"x-ph__menu_auth_unread")},_sendError:function(a){var c={updateError:1};a.errorType&&(c["updateError_"+a.errorType]=1);a.requestSource&&(c["updateError_"+a.requestSource]=1,a.errorType&&(c["updateError_"+a.errorType+"_"+a.requestSource]=1));b.radar(c);this.emit("updateError")},_PHUpdater:function(a,d,f){function e(a){"ok"!=b.project&&c.settings.portalAuthEnabled&&this.updateLogin(h);this.updateCounters(k);"function"===typeof a&&a()}var d=d||function(){},g=a.status;if("error"==g)this._sendError(a),
+d();else{var k=a.data,l=k.action,h=k.email,j=b.bind(e,this);this.setCorp(k.list||[]);c.settings.portalAuthEnabled?"switch"==l?"ok"==g&&h!=this.activeUser()?(this.emit("authChange"),c.listeners("authChange")?(b.radar("authChange",1),!h||void 0!==k.mail_cnt?c.emit("authChange",a.data,function(){j(d)}):this.loadAccountInfo(b.bind(function(a){"error"==a.status?(this._sendError(a),d()):(k=b.extend(a.data,k),c.emit("authChange",k,function(){j(d)}))},this),h)):f?(b.radar("authChangeReloadDis",1),!h||void 0!==
+k.mail_cnt?j(d):this.loadAccountInfo(b.bind(function(a){"error"==a.status?(this._sendError(a),d()):(k=b.extend(a.data,k),j(d))},this),h)):(b.radar("authChangeReload",1),b.setTimeout(function(){location.reload()},10))):"noauth"==g&&h!=this.activeUser()?("home"===b.project&&(g=[],g.push("headlineAuthLost"),g.push("mpop="+(c.cookie("Mpop")?"1":"0")),g.push("activeEmail="+this.activeUser()),g.push("newEmail="+h),(new Image).src="//gstat.imgsmail.ru/gstat?ua=1&logme="+encodeURIComponent(g.join(";"))+"&rnd="+
+(new Date).getTime()+Math.random()),b.radar("authLost",1),this.emit("authLost"),c.emit("authLost",a.data,b.bind(function(){a.status="ok";a.data.action="switch";this._PHUpdater(a,d,f)},this))):(b.radar("authRestore",1),"function"===typeof d&&d()):"list"==l&&("____user"in this&&(this.____user!==h&&"mail"===b.project&&((new Image).src="//gstat.imgsmail.ru/gstat?logme="+encodeURIComponent("headlineFail;headlineEmail="+h+";projectEmail="+this.____user)+"&rnd="+(new Date).getTime()+Math.random()),delete this.____user),
+null===this.activeUser()?(c.settings.enableUpdateRadars&&b.radar("update",1),this.emit("update"),c.emit("update",a.data,function(){j(d)})):h==this.activeUser()?((l=c.cookie("Mpop"))&&("ok"==g&&this.activeUser()&&-1==l.indexOf(this.activeUser()))&&b.count("d1409289"),c.settings.enableUpdateRadars&&b.radar("update",1),this.emit("update"),c.emit("update",a.data,function(){j(d)})):(a.data.action="switch",this._PHUpdater(a,d,!0))):(c.settings.enableUpdateRadars&&b.radar("update",1),this.emit("update"),
+c.emit("update",a.data,function(){j(d)}))}}});b.extend(b.AccountManager.prototype,{_authTransport:new b.Transport(c.settings.authDomain+"/cgi-bin/auth?mac=1",{JSONPCallbackParam:"JSONP_call",requestSource:"auth"}),switchAccount:function(a,c,f){var e={};if(a){e.Login=a;var g=this.updateResume(c||function(){});this._authTransport.get({params:e,complete:b.bind(function(a){this._PHUpdater(a,g,f)},this),timeout:3E4})}},_logoutTransport:new b.Transport(c.settings.authDomain+"/cgi-bin/logout?mac=1",{JSONPCallbackParam:"JSONP_call",
+requestSource:"logout"}),logoutAccount:function(a,b){var c={};if(a&&a!==this.activeUser())c.Login=a;else throw Error("Can not logout. Not active account expected.");this._logoutTransport.get({params:c,complete:b})}});b.extend(b.AccountManager.prototype,{_accountInfoTransport:new b.Transport(c.settings.swaDomain+"/NaviData?mac=1&gamescnt=1",{JSONPCallbackParam:"JSONP_call",requestSource:"accountInfo"}),loadAccountInfo:function(a,b){var f={};if(b=!c.settings.multiAuthEnabled?void 0:b||this.activeUser())f.Login=
+b;this._accountInfoTransport.get({params:f,complete:function(b){"function"===typeof a&&a(b)},timeout:3E4})},updateAccountInfo:function(a,c){var f=+new Date;if(this._updateByTimeout||!this._updateByTimeout&&this.updateLastRequest<f-this.updateRequestTimeout||c)!this._updateByTimeout&&this.updateLastRequest&&((new Image).src="//rs.mail.ru/d"+"535071".replace("%","")+".gif?"+f),this.updateLastRequest=f,f=this.updateResume(b.bind(function(b){this._PHUpdater(b,a)},this)),this.loadAccountInfo(f)},updateRequestTimeout:6E4,
+updateReset:function(a){this._updateByTimeout&&(a?(a=this.updateRequestTimeout-(new Date).getTime()+this.updateLastRequest,0>a&&(a=0)):a=this.updateRequestTimeout,b.clearTimeout(this._listAccountTimeout),this._listAccountTimeout=b.setTimeout(b.bind(this.updateAccountInfo,this),a))},updateResume:function(a){if(this._updateByTimeout){var c=this._accountInfoTransport.isProcessing();this._accountInfoTransport.cancel();this.updateReset();var f=!1;this.once("authChange",function(a,b){f=!0;"function"===
+typeof b&&b()})}return b.bind(function(b){this._updateByTimeout&&(c?f?this.updateReset():this.updateAccountInfo():f?this.updateReset():this.updateReset(!0));"function"==typeof a&&a(b)},this)}});b.SCookie.removeGlobal("s_mu");b.SCookie[(b.retina?"set":"remove")+"Global"]("rt",1);b.SCookie[(b.retina?"set":"remove")+"Global"]("dpr",b.dpr);c.settings.multiAuthEnabled=c.settings.portalAuthEnabled;q=!1;if(~navigator.userAgent.indexOf("Opera")&&(!~navigator.userAgent.indexOf("Opera/9.8")||~navigator.userAgent.indexOf("Version/10"))||
+window.____________ie7||window.____________ie6)c.settings.multiAuthEnabled=!1,c.settings.authFormEnabled=!1,q=!0;b.byId("PH_singleuser").style.display=c.settings.multiAuthEnabled?"none":"block";b.byId("PH_miltiuser").style.display=c.settings.multiAuthEnabled?"block":"none";c.settings.projectsMenuEnabled=!1;q||(c.settings.projectsMenuEnabled=!0,b.byId("PH_projectsMenu").style.display="inline-block",b.byId("PH_allProjects").style.display="none");b.countEl(b.byId("PH_loginLink")||b.byId("PH_authLink"));
+b.countEl(b.byId("PH_logoutLink"));b.extend(c,b.EventEmitter.prototype,{cookie:x});c.cookie.s={};b.extend(c.cookie.s,{getLocal:f.getLocal,setLocal:f.setLocal,removeLocal:f.removeLocal,getGlobal:f.getGlobal,setGlobal:f.setGlobal,removeGlobal:f.removeGlobal,setProject:f.setProject});var O="mail"!==b.project;b.accountManager=new b.AccountManager({noAuthView:b.byId("PH_noAuthView"),authView:b.byId("PH_authView"),userEmail:b.byId(c.settings.multiAuthEnabled?"PH_user-email":"PH_user-email_disabled"),updateByTimeout:O});
+b.counters=new b.Couners({mail:"g_mail_events",my:"g_my_events",ok:"g_ok_events",games:"g_games_events"});c.updateCounter=function(a){b.counters._counters[b.project]&&b.counters.update(b.project,a);O||b.accountManager.updateAccountInfo()};"mail"==b.project&&window.jQuery&&window.jQuery(window).bind("updatemessagescount",function(a,b){c.updateCounter(b)});c.isMultiAuth=function(){return c.settings.multiAuthEnabled};c.settings.portalAuthEnabled&&(c.activeUser=function(){var a=b.accountManager.activeUser();
+return null===a?b.accountManager.____user:a},c.isCorp=function(){var a=c.activeUser();return"corp.mail.ru"==(a&&a.split("@")[1])},c.switchAccount=function(a,c){b.accountManager.switchAccount(a,c)},c.logoutAccount=function(a,c){b.accountManager.logoutAccount(a,function(){b.accountManager.loadAccountsList(c)})});c.settings.multiAuthEnabled&&(c.loadAccountsList=(new b.DeferredQuery).getQuery(),c.on("visibilitychange",function(a){!a.data.hidden&&null!==b.accountManager.activeUser()&&(b.accountManager.activeUser()?
+b.accountManager.switchAccount(b.accountManager.activeUser(),null,!0):b.accountManager.updateAccountInfo(function(){},!0))}));q=new b.Menu({baseClass:"x-ph__menu",rootNode:b.byId("PH_authMenu"),button:b.byId("PH_authMenu_button"),openCounter:"home"==b.project?"d1126003":"mail"==b.project?"d1126002":"my"==b.project?"d1270901":"d1126005"});b.authMenu=q;c.authMenu=new b.EventEmitter;c.settings.multiAuthEnabled&&(c.authMenu.show=b.bind(b.authMenu.show,b.authMenu),c.authMenu.hide=b.bind(b.authMenu.hide,
+b.authMenu));c.authForm=new b.EventEmitter;c.settings.authFormEnabled?(c.authForm.show=(new b.DeferredQuery).getQuery(),c.authForm.hide=(new b.DeferredQuery).getQuery()):(c.authForm.show=function(a){var c=[];a||(a={});a.login&&a.domain&&c.push("email="+a.login+"@"+a.domain);c.push("page="+encodeURIComponent(a.successPage?a.successPage:"mail"==b.project||"home"==b.project?"https://e.mail.ru/messages/inbox":window.location.href));window.location="https://e.mail.ru/login?"+c.join("&")},c.authForm.hide=
+function(){});c.authForm.isVisible=function(){return b.authForm?b.authForm.isVisible():!1};b.authLinkClickHandler=function(a){c.listeners("loginRequest")?(b.eventPreventDefault(a),c.emit("loginRequest")):c.settings.authFormEnabled&&(b.eventPreventDefault(a),c.authForm.show())};b.event(1,b.byId("PH_authLink"),"click",b.authLinkClickHandler);b.registerLinkClickHandler=function(a){c.listeners("registerRequest")&&(b.eventPreventDefault(a),c.authForm.hide(),c.emit("registerRequest"))};b.event(1,b.byId("PH_regLink"),
+"click",b.registerLinkClickHandler);c.isAuthFormEnabled=function(){return c.settings.authFormEnabled};b.projectsMenu=new b.Menu({baseClass:"x-ph__menu",rootNode:b.byId("PH_projectsMenu"),button:b.byId("PH_projectsMenu_button"),openCounter:"d535046"});if(c.settings.projectsMenuEnabled||c.settings.multiAuthEnabled||c.settings.authFormEnabled){var t=document.createElement("script"),P=document.getElementsByTagName("head")[0];t.defer="defer";t.async="async";t.type="text/javascript";t.src=c.settings.externalJS;
+!("opera"in window)||"complete"===document.readyState?P.appendChild(t):window.addEventListener("DOMContentLoaded",function(){P.appendChild(t)},!1)}var M=c.OK=new b.EventEmitter,B,ia=function(a){var b=['{"cmd":"getCounters"'];a.jsonPrefix&&(b.push(',"jsonPrefix":"'+a.jsonPrefix+'"'),delete a.jsonPrefix);B&&(b.push(',"time":"'),b.push(B.replace(/"/g,'\\"')),b.push('"'));b.push("}");return b.join("")},ja=function(a){var b=['{"cmd":"logout"'];a.jsonPrefix&&(b.push(',"jsonPrefix":"'+a.jsonPrefix+'"'),
+delete a.jsonPrefix);b.push("}");return b.join("")},Q=new p("//www.odnoklassniki.ru/mapi",{JSONPCallbackParam:"jsonPrefix"});M.logout=function(){Q.get({params:{query:ja},complete:function(a){a.status="no auth";L(a)}})};"ok"!=b.project&&b.setIntervalByTimeout(function(){Q.get({params:{query:ia},complete:L})},3E5,!0)}})();
+</script><!--/noindex-->
+ <!-- /common mail.ru portal-headline -->
+ <!-- common mail.ru portal-menu -->
+ <div class="portal-menu portal-menu_auto">
+ <div class="portal-menu__width">
+ <!--logo-->
+ <div class="portal-menu__logo">
+ <a class="portal-menu__logo__link" href="http://auto.mail.ru/" title="Авто@mail.ru">
+ <img class="portal-menu__logo__link__img" src="//img.imgsmail.ru/p/0.12.5/i/auto/logo/auto_at_mailru.png" width="143" height="21" title="Авто@Mail.Ru" alt="Авто@Mail.Ru"/>
+ </a>
+ </div>
+ <!--/ logo-->
+ <!--banner-->
+ <!--noindex-->
+ <div class="w-portal-menu__banner">
+ <div class="portal-menu__banner portal-menu__banner_left">
+ <span class="portal-menu__banner__width">
+ <span class="portal-menu__banner__content">
+ <!-- rb: 3722 (commerce link) -->
+ 
+ <!-- /rb: 3722 (commerce link) -->
+ </span>
+ </span>
+ </div>
+ <div class="portal-menu__banner">
+ <span class="portal-menu__banner__width">
+ <span class="portal-menu__banner__content">
+ <!-- rb: 490 (commerce link) -->
+ 
+ <!-- /rb: 490 (commerce link) -->
+ </span>
+ </span>
+ </div>
+ </div>
+ <!--/noindex-->
+ <!--/ banner-->
+ <!--search-->
+ <div id="portal-menu__search" class="portal-menu__search">
+ <form class="js-form portal-menu__search__form" action="http://auto.mail.ru/search.html" id="portal-menu__search__form" accept-charset="utf-8">
+ <!--search suggest-->
+ <div class="js-suggest portal-menu__search__dropdown" style="display:none;">
+ <div class="portal-menu__search__suggest portal-menu__search__suggest_grouped">
+ <div class="js-suggest-list portal-menu__search__suggest__inner"></div>
+ <div class="w-portal-menu__search__suggest__item_internet"><a class="js-suggest-internet-cont portal-menu__search__suggest__item portal-menu__search__suggest__item_internet" target="_blank">Найти&nbsp;<span class="js-suggest-internet portal-menu__search__suggest__item_internet-link"></span>&nbsp;в&nbsp;интернете</a>
+ </div>
+ </div>
+ </div>
+ <!--/ search suggest-->
+ <!--search find button-->
+ <input type="submit" class="portal-menu__search__button" value="Найти" />
+ <!--/ search find button-->
+ <label class="portal-menu__search__label" for="portal-menu__search__label__input">
+ <span class="portal-menu__search__label__wrapper">
+ <span class="portal-menu__search__label__wrapper__inner-wrapper">
+ <!--search input-->
+ <span class="portal-menu__search__label__wrapper__input-wrapper">
+ <!--search placeholder-->
+ <span class="portal-menu__search__label__text">
+ 
+ Поиск по сайту
+ 
+ </span>
+ <!--/ search placeholder-->
+ <input type="text" class="js-input portal-menu__search__label__input" value="" autocomplete="off" id="portal-menu__search__label__input" name="q" />
+ </span>
+ <!--/ search input-->
+ </span>
+ </span>
+ </label>
+ 
+ </form>
+ </div>
+ <!--/ search-->
+ </div>
+</div>
+<script type="text/javascript" src="http://auto.mail.ru/js/auto/v2/ajs.headInit.js?03062013"></script>
+ <!-- /common mail.ru portal-menu -->
+ <div class="p-head__branding">
+ <!-- rb: 3547 (branding head) -->
+ 
+ <!-- /rb: 3547 (branding head) -->
+ </div>
+</div><!-- /div class="p-head" -->
+ <!-- BEGIN: PAGE SPRING -->
+<div class="p-spring">
+ <!-- rb: 179 double format init -->
+ 
+ <!-- /rb: 179 double format init -->
+ 
+ <!-- rb: 1500 index -->
+ 
+ <!-- /rb: 1500 index -->
+ 
+</div>
+<!-- END: PAGE SPRING -->
+ <!-- BEGIN: PAGE MENU -->
+<div class="p-menu">
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://auto.mail.ru/articles.html" name="clb1489396" class="p-menu__rubric__link">Новости</a>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/articles.html?rubric_id=15" name="clb1489396" class="p-menu__subrubrics__list__item">В мире</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=16" name="clb1489396" class="p-menu__subrubrics__list__item">Россия</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=14" name="clb1489396" class="p-menu__subrubrics__list__item">Украина</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=13" name="clb1489396" class="p-menu__subrubrics__list__item">Беларусь</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=12" name="clb1489396" class="p-menu__subrubrics__list__item">Казахстан</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=17" name="clb1489396" class="p-menu__subrubrics__list__item">Спорт</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://auto.mail.ru/articles.html?type=2" name="clb1489397" class="p-menu__rubric__link">Статьи</a>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/articles.html?rubric_id=20" name="clb1489397" class="p-menu__subrubrics__list__item">Российские</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=21" name="clb1489397" class="p-menu__subrubrics__list__item">Иномарки</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=22" name="clb1489397" class="p-menu__subrubrics__list__item">Рынок</a>					
+ <a href="http://auto.mail.ru/testdrives.html" name="clb1489397" class="p-menu__subrubrics__list__item">Тест-драйвы</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=26" name="clb1489397" class="p-menu__subrubrics__list__item">Законодательство</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=66" name="clb1489397" class="p-menu__subrubrics__list__item">История</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=67" name="clb1489397" class="p-menu__subrubrics__list__item">Путешествия</a>					
+ <a href="http://auto.mail.ru/articles.html?rubric_id=27" name="clb1489397" class="p-menu__subrubrics__list__item">Спорт</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_safety">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://auto.mail.ru/safety/" name="clb1489398" class="p-menu__rubric__link">Безопасность</a>
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://auto.mail.ru/autobusiness.html" name="clb1489399" class="p-menu__rubric__link">Автобизнес</a>
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://auto.mail.ru/market/ryazan/" name="clb1489400" class="p-menu__rubric__link">Купля-продажа</a>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/market/ryazan/" name="clb1489400" class="p-menu__subrubrics__list__item">Купить авто</a>					
+ <a href="http://auto.mail.ru/market/add_offer/" name="clb1489400" class="p-menu__subrubrics__list__item">Продать авто</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <span class="p-menu__rubric__link">Автомобили</span>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/catalogue/" name="clb1489401" class="p-menu__subrubrics__list__item">Каталог</a>					
+ <a href="http://auto.mail.ru/opinions/" name="clb1489401" class="p-menu__subrubrics__list__item">Отзывы</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <span class="p-menu__rubric__link">Фото-видео</span>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/photogalleries/" name="clb1489402" class="p-menu__subrubrics__list__item">Фотогалереи</a>					
+ <a href="http://auto.mail.ru/videogalleries/" name="clb1489402" class="p-menu__subrubrics__list__item">Видеогалереи</a>					
+ <a href="http://auto.mail.ru/panoramas/" name="clb1489402" class="p-menu__subrubrics__list__item">3D-панорамы</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <span class="p-menu__rubric__link">Водителям</span>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/consultation/" name="clb1489403" class="p-menu__subrubrics__list__item">Консультации</a>					
+ <a href="http://auto.mail.ru/info/" name="clb1489403" class="p-menu__subrubrics__list__item">Полезная информация</a>					
+ <a href="http://auto.mail.ru/info/insurance/" name="clb1489403" class="p-menu__subrubrics__list__item">Страхование</a>					
+ <a href="http://auto.mail.ru/info/osago/" name="clb1489403" class="p-menu__subrubrics__list__item">Калькулятор ОСАГО</a>					
+ <a href="http://auto.mail.ru/info/pdd/" name="clb1489403" class="p-menu__subrubrics__list__item">ПДД</a>					
+ <a href="http://auto.mail.ru/pddexam/" name="clb1489403" class="p-menu__subrubrics__list__item">Экзамен по ПДД</a>					
+ <a href="http://auto.mail.ru/info/penalty/" name="clb1489403" class="p-menu__subrubrics__list__item">Таблица штрафов</a>					
+ <a href="http://auto.mail.ru/info/tyre-service/" name="clb2157853" class="p-menu__subrubrics__list__item">Найти шиномонтаж</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric p-menu__rubric_withsub">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <span class="p-menu__rubric__link">Автошоу</span>
+ </div>
+ </div>
+ <div class="p-menu__subrubrics">
+ <div class="p-menu__subrubrics__list">
+ <a href="http://auto.mail.ru/frankfurt-2013/" name="clb1489404" class="p-menu__subrubrics__list__item">Франкфурт 2013</a>					
+ <a href="http://auto.mail.ru/shanghai-2013/" name="clb1489404" class="p-menu__subrubrics__list__item">Шанхай 2013</a>					
+ <a href="http://auto.mail.ru/new-york-2013/" name="clb1489404" class="p-menu__subrubrics__list__item">Нью-Йорк 2013</a>					
+ <a href="http://auto.mail.ru/geneva-2013/" name="clb1489404" class="p-menu__subrubrics__list__item">Женева 2013</a>					
+ <a href="http://auto.mail.ru/losangeles-2012/" name="clb1489404" class="p-menu__subrubrics__list__item">Лос-Анджелес 2012</a>					
+ <a href="http://auto.mail.ru/paris-2012/" name="clb1489404" class="p-menu__subrubrics__list__item">Париж 2012</a>					
+ <a href="http://auto.mail.ru/moscow-2012/" name="clb1489404" class="p-menu__subrubrics__list__item">Москва 2012</a>					
+ <a href="http://auto.mail.ru/geneva-2012/" name="clb1489404" class="p-menu__subrubrics__list__item">Женева 2012</a>					
+ <a href="http://auto.mail.ru/frankfurt-2011/" name="clb1489404" class="p-menu__subrubrics__list__item">Франкфурт 2011</a>					
+ <a href="http://auto.mail.ru/geneva-2011/" name="clb1489404" class="p-menu__subrubrics__list__item">Женева 2011</a>					
+ <a href="http://auto.mail.ru/detroit-2011/" name="clb1489404" class="p-menu__subrubrics__list__item">Детройт 2011</a>					
+ <a href="http://auto.mail.ru/paris-2010/" name="clb1489404" class="p-menu__subrubrics__list__item">Париж 2010</a>					
+ <a href="http://auto.mail.ru/moscow-2010/" name="clb1489404" class="p-menu__subrubrics__list__item">Москва 2010</a>					
+ <a href="http://auto.mail.ru/geneva-2010/" name="clb1489404" class="p-menu__subrubrics__list__item">Женева 2010</a>					
+ <a href="http://auto.mail.ru/frankfurt-2009/" name="clb1489404" class="p-menu__subrubrics__list__item">Франкфурт 2009</a>					
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://auto.mail.ru/forum/" name="clb1489405" class="p-menu__rubric__link">Форум</a>
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric">
+ <div class="p-menu__rubric__inner1">
+ <div class="p-menu__rubric__inner2">
+ <a href="http://r.mail.ru/cln9790/moto.mail.ru/" name="clb1489406" class="p-menu__rubric__link p-menu__rubric__link_moto"><span class="p-menu__rubric__link__ico_moto"><i class="c-ico c-ico_moto"><i></i></i></span>Мото</a>
+ </div>
+ </div>
+ </div>
+ <div class="p-menu__rubric">
+ <a href="http://m.auto.mail.ru/" class="p-menu__rubric__link p-menu__rubric__link_mobile" title="Мобильная версия">Мобильная версия</a>
+ </div>
+ <div class="p-menu__rubric">
+ <a href="http://auto.mail.ru/rss/" class="p-menu__rubric__link p-menu__rubric__link_rss" title="RSS">RSS</a>
+ </div>
+</div><!-- div class="p-menu" -->
+<script>
+ (function($) {
+ $(function() {
+ new $.menudrop({
+ containers: '.p-menu .p-menu__rubric_withsub',
+ layer: '.p-menu__subrubrics',
+ link: '.p-menu__rubric__link',
+ onBeforeDrop : function(elem) {
+ elem.parents('.p-menu__rubric').addClass('p-menu__rubric_hover');
+ },
+ onAfterDrop : function(elem) {
+ if ( elem.parent().width() > elem.width() )
+ elem.width( elem.parent().width() );
+ /* elem.find('a').width( elem.width() ); */
+ },
+ onHide : function(elem) {
+ elem.parents('.p-menu__rubric').removeClass('p-menu__rubric_hover');
+ }
+ });
+ });
+ })(jQuery);
+</script>
+<!-- END: PAGE MENU -->
+<!-- BEGIN: PAGE BODY -->
+<div class="p-body p-body_right_no p-body_left_narrow ">
+ <div class="p-body__inner1">
+ <div class="p-body__inner2">
+ <div class="p-body__inner3">
+ <div class="p-body__inner4 c-clearin">
+ <div class="p-body__inner5">
+ <div class="p-body__inner6">
+ <!-- BEGIN: PAGE BODY - TOP -->
+ <div class="p-body__top">
+ <!-- rb: 3925 (spec slot) -->
+ 
+ <!-- /rb: 3925 (spec slot) -->
+ <div class="p-body__top__head">
+ <a href="/articles.html?type=1" class="p-body__top__head__link">Автоновости</a>
+ </div>
+ <ul class="p-body__top__tabs">
+ <li class="p-body__top__tabs__item p-body__top__tabs__item_current">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html" class="p-body__top__tabs__item__link" name="clb1489680">
+ Темы дня
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=15" class="p-body__top__tabs__item__link" name="clb1489681">
+ В мире
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=16" class="p-body__top__tabs__item__link" name="clb1489682">
+ Россия
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=14" class="p-body__top__tabs__item__link" name="clb1489683">
+ Украина
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=13" class="p-body__top__tabs__item__link" name="clb1489684">
+ Беларусь
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=12" class="p-body__top__tabs__item__link" name="clb1489685">
+ Казахстан
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=17" class="p-body__top__tabs__item__link" name="clb1489686">
+ Спорт
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="http://moto.mail.ru" class="p-body__top__tabs__item__link" name="clb1489687">
+ Мото
+ </a>
+ </span>
+ </li>
+ 
+ <li class="p-body__top__tabs__spec">
+ <!-- rb: 4890 (spec tab) -->
+ 
+ <!-- /rb: 4890 (spec tab) -->
+ </li>
+ 
+ </ul>
+ </div><!-- /div class="p-body__top" -->
+ <!-- END: PAGE BODY - TOP -->
+ <script>
+ radar.start('midcol');
+ </script>
+ <div class="p-body__inner7">
+ <div class="p-body__content">
+ <div class="s-index">
+ <div class="p-body__content__inner p-body__content__inner_nobg p-body__content__inner_nopadding">
+ <!-- BEGIN: PAGE BODY - CONTENT -->
+ <div class="s-index__news c-clearin">
+ <div class="s-index__news__content">
+ <div class="s-index__news__content__inner">
+ <div class="s-index__news__top">
+ <div class="s-index__news__top__wrapper">
+ <div class="s-index__news__top__container">
+ <div class="s-index__news__top__item">
+ <div class="c-newslink">
+ <a href="/testdrive.html?id=44266" class="c-newslink__linkpic" name="clb1489679">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/3/a/3a490fc372ffc67e4b832c4d2e1d6ff0_big.jpg" alt="" class="c-newslink__pic c-pre-news-big js-load">
+ </a>
+ <table class="c-newslink__params"><tr>
+ <td class="c-newslink__params__left">
+ <a href="/testdrive.html?id=44266" class="c-newslink__title" name="clb1489679">
+ Skoda Yeti — смех здесь больше не живет
+ </a>
+ </td>
+ <td class="c-newslink__params__right">
+ <a href="/testdrives.html" class="c-newslink__rubric"  name="clb1489679">
+ Тест-драйвы
+ </a>
+ </td>
+ </tr></table>
+ </div>
+ <div class="s-index__news__top__item__details">
+ <div class="s-index__news__top__item__notice">
+ Из-за передних фар Skoda Yeti часто называют «смешным» автомобилем. Но обновленный Yeti стал другим. До нас он доберется только в феврале, но «Авто Mail.Ru» уже испытал эту машину
+ </div>
+ <div class="s-index__news__top__item__coms">
+ Комментариев:
+ <a href="/comments.html?nid=44266" title="комментариев: 404" class="c-coms" name="clb1489679">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">404</u>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__news__also">
+ <div class="c-head-4 c-head-4_long">
+ Также в новостях
+ </div>
+ <div class="s-index__news__also__wrapper">
+ <div class="s-index__news__also__container">
+ <div class="s-index__news__also__item">
+ <div class="s-index__news__also__item__inner">
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44284" class="c-newsnotice-2__title" name="clb1489451">Ситуация на авторынке: улучшений ждать не стоит  </a>
+ <a href="/comments.html?nid=44284" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">68</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 16:17
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=20" class="c-tag" name="clb1489451">рынок</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44282" class="c-newsnotice-2__title" name="clb1489451">Платную эвакуацию требуют отменить</a>
+ <a href="/comments.html?nid=44282" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">70</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 15:22
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44281" class="c-newsnotice-2__title" name="clb1489451">Паркоматы оснастят солнечными батареями</a>
+ <a href="/comments.html?nid=44281" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">10</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 14:45
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=3" class="c-tag" name="clb1489451">дороги</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44275" class="c-newsnotice-2__title" name="clb1489451">Lada Granta и Lada Kalina: скоро и казахстанской сборки</a>
+ <a href="/comments.html?nid=44275" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">225</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 12:15
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=29" class="c-tag" name="clb1489451">российский автопром</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44271" class="c-newsnotice-2__title" name="clb1489451">Уникальный Ferrari проделал дорогу в сеть</a>
+ <a href="/comments.html?nid=44271" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">28</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 11:13
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=12" class="c-tag" name="clb1489451">суперкары</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44270" class="c-newsnotice-2__title" name="clb1489451">Парковки в Москве: предложено неожиданное решение</a>
+ <a href="/comments.html?nid=44270" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">178</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 10:14
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=3" class="c-tag" name="clb1489451">дороги</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44269" class="c-newsnotice-2__title" name="clb1489451">Регистрация автомобиля по-новому. Ответы на спорные вопросы </a>
+ <a href="/comments.html?nid=44269" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">110</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 10:10
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="/article.html?id=44268" class="c-newsnotice-2__title" name="clb1489451">UAZ отзывает Patriot</a>
+ <a href="/comments.html?nid=44268" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">60</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 09:52
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__news__also__item">
+ <div class="s-index__news__also__item__inner">
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44267" class="c-newsnotice-2__title" name="clb1489451">Генпрокуратура отказалась от люксовых авто с «мигалками»</a>
+ <a href="/comments.html?nid=44267" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">109</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 09:39
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44257" class="c-newsnotice-2__title" name="clb1489451">Цены на бензин: депутаты предлагают госрегулирование</a>
+ <a href="/comments.html?nid=44257" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">507</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=24" class="c-tag" name="clb1489451">топливо</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44254" class="c-newsnotice-2__title" name="clb1489451">Заряженный Cadillac ATS будет мощнее BMW M3</a>
+ <a href="/comments.html?nid=44254" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">282</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44253" class="c-newsnotice-2__title" name="clb1489451">Дети в машине оказались опаснее разговоров по телефону</a>
+ <a href="/comments.html?nid=44253" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">200</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=19" class="c-tag" name="clb1489451">безопасность</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44252" class="c-newsnotice-2__title" name="clb1489451">Самый мощный Mercedes S-класса: официальные фото</a>
+ <a href="/comments.html?nid=44252" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">216</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=44" class="c-tag" name="clb1489451">новинки</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44251" class="c-newsnotice-2__title" name="clb1489451">Автомобили Lada станут качественными через три года</a>
+ <a href="/comments.html?nid=44251" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">732</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44250" class="c-newsnotice-2__title" name="clb1489451">Фотошпионы засняли обновлённый Hyundai Solaris</a>
+ <a href="/comments.html?nid=44250" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">561</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=15" class="c-tag" name="clb1489451">шпионские фото</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44248" class="c-newsnotice-2__title" name="clb1489451">Россияне стали чаще нарушать скоростной режим</a>
+ <a href="/comments.html?nid=44248" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">652</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=19" class="c-tag" name="clb1489451">безопасность</a>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__news__also__item">
+ <div class="s-index__news__also__item__inner">
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44247" class="c-newsnotice-2__title" name="clb1489451">Nissan откроет в России дизайн-студию</a>
+ <a href="/comments.html?nid=44247" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">57</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44246" class="c-newsnotice-2__title" name="clb1489451">Москва стала абсолютным чемпионом Европы по пробкам</a>
+ <a href="/comments.html?nid=44246" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">516</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=2" class="c-tag" name="clb1489451">пробки</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44242" class="c-newsnotice-2__title" name="clb1489451">Детям расскажут о безопасности в специальном центре</a>
+ <a href="/comments.html?nid=44242" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">5</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 08.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=19" class="c-tag" name="clb1489451">безопасность</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44245" class="c-newsnotice-2__title" name="clb1489451">Новый Nissan Qashqai: в России следующим летом</a>
+ <a href="/comments.html?nid=44245" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">484</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 07.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44241" class="c-newsnotice-2__title" name="clb1489451">Автомобили Lada отправят в Никарагуа</a>
+ <a href="/comments.html?nid=44241" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">311</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 07.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44240" class="c-newsnotice-2__title" name="clb1489451">Дизельная Toyota RAV4 неожиданно стала доступнее</a>
+ <a href="/comments.html?nid=44240" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">403</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 07.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44236" class="c-newsnotice-2__title" name="clb1489451">Лучший автомобиль в мире: названы претенденты</a>
+ <a href="/comments.html?nid=44236" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">317</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 07.11.2013
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44235" class="c-newsnotice-2__title" name="clb1489451">Nissan GT-R станет гибридом</a>
+ <a href="/comments.html?nid=44235" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">129</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 07.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=25" class="c-tag" name="clb1489451">будущее</a>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__news__also__item">
+ <div class="s-index__news__also__item__inner">
+ <div class="c-newsnotice-2 c-newsnotice-2_wbull">
+ <a href="http://r.mail.ru/cln5360/auto.mail.ru/article.html?id=44234" class="c-newsnotice-2__title" name="clb1489451">Hyundai Solaris: скоро рестайлинг</a>
+ <a href="/comments.html?nid=44234" class="c-coms" name="clb1489451">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">325</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 07.11.2013
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=25" class="c-tag" name="clb1489451">будущее</a>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__news__also__controls">
+ <span class="s-index__news__also__control s-index__news__also__control_prv s-index__news__also__control_off">
+ <i class="c-ico c-ico_toleft"></i>
+ </span>
+ <span class="s-index__news__also__control s-index__news__also__control_nxt s-index__news__also__control_off">
+ <i class="c-ico c-ico_toright"></i>
+ </span>
+ <div class="c-toall c-toall_blue c-toall_nogap">
+ <span class="c-toall__inner">
+ <a href="/articles.html" class="c-toall__link c-linkwico" name="clb1489451"><i class="c-ico c-ico_toall_blue"></i><u>Все новости</u></a>
+ </span>
+ </div>
+ </div>
+ </div>
+ <script>
+ (function($) {
+ var oSlider = $('.s-index__news__also').goSlider({
+ cssSelectors : {
+ Wrapper : '.s-index__news__also__wrapper',
+ Container : '.s-index__news__also__container',
+ Prev : '.s-index__news__also__control_prv',
+ Next : '.s-index__news__also__control_nxt',
+ Frames: '.s-index__news__also__item'
+ },
+ cssClasses : {
+ disabledLink : 's-index__news__also__control_off'
+ },
+ Step: 1,
+ setContSize: false
+ }).data('sliderObj');
+ $(function () {
+ oSlider.onResize();
+ });
+ })(jQuery);
+ </script>
+ </div>
+ </div>
+ <div class="s-index__news__left">
+ 
+ <noindex>
+ <div class="b-spring" style="position:relative;z-index:10;">
+ <!-- rb: 3211?_SITEZONE=1 -->
+ <img src="http://rs.mail.ru/d2322839.gif?sz=1&amp;rnd=173013269&ts=1384179760&sz=1" style="width:0;height:0;position:absolute;" alt=""/>
+<div id="rb_flash_div_2322839_173013269" class="rb_div"></div>
+
+<script type="text/javascript">
+(function() {
+  var rb_link1 = "http://r.mail.ru/n118289024?sz=1";
+
+  var rb_swf = "http://rs.mail.ru/b22398860.swf";
+  var rb_fver = "8";
+  var rb_width = "234";
+  var rb_height = "200";
+  var rb_allowscriptaccess = 0;
+  var rb_wmode = "opaque";
+  var rb_flash = 0;
+
+  var rb_innerhtml = (typeof(window['rb_innerhtml']) != 'undefined' && window['rb_innerhtml']);
+  if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] ) {
+    var plugin = navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin;
+    if (plugin && parseInt(plugin.description.match(/\d+/)[0]) >= rb_fver)
+      rb_flash = 1;
+  } else if (typeof window.ActiveXObject != "undefined") {
+    try {
+      var object = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+      if (object && object.GetVariable("$version") && parseInt(object.GetVariable("$version").match(/\d+/)[0]) >= rb_fver)
+        rb_flash = 1;
+    } catch (e) {}
+  }
+  if (rb_flash) {
+    var rb_rnd = Math.round(Math.random() * 1000000000);
+    var rb_vars_arr = Array();
+    rb_vars_arr.push('link1='+escape(rb_link1).replace(/\+/g,'%2B'));
+    var rb_vars = rb_vars_arr.join('&');
+    var rb_html = '<div class="rb_banner"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="'+(document.location.protocol=='https:'?'https':'http')+'://active.macromedia.com/flash2/cabs/swflash.cab#version='+rb_fver+',0,0,0" id="getmov'+rb_rnd+'" width="'+rb_width+'" height="'+rb_height+'">'+(rb_allowscriptaccess?'<param name="allowscriptaccess" value="always" />':'')+'<param name="movie" value="'+rb_swf+'" /><param name="quality" value="high" /><param name="wmode" value="'+rb_wmode+'" /><param name="FlashVars" value="'+rb_vars+'" /><embed name="embed_getmov'+rb_rnd+'" flashvars="'+rb_vars+'" '+(rb_allowscriptaccess?'allowscriptaccess="always" ':'')+'src="'+rb_swf+'" quality="high" wmode="'+rb_wmode+'" width="'+rb_width+'" height="'+rb_height+'" type="application/x-shockwave-flash" pluginspage="'+(document.location.protocol=='https:'?'https':'http')+'://www.macromedia.com/shockwave/download/index.cgiP1_Prod_Version=ShockwaveFlash" /></object></div>';
+    if (rb_innerhtml) {
+      var rb_flash_div = document.getElementById("rb_flash_div_2322839_173013269");
+      rb_flash_div.innerHTML = rb_html;
+    }
+    else document.write(rb_html);
+  }
+  else {
+    var rb_img_html = '<div class="rb_banner"><a href="http://r.mail.ru/n118289024?sz=1" target="_blank"><img src="http://rs.mail.ru/b22375474.jpg" width="234" height="200" border="0" alt="" title="" /></a></div>';
+    if (rb_innerhtml) {
+      var rb_flash_div = document.getElementById("rb_flash_div_2322839_173013269");
+      rb_flash_div.innerHTML = rb_img_html;
+    }
+    else document.write(rb_img_html);
+  };
+})();
+</script>
+<noscript><div class="rb_banner"><a href="http://r.mail.ru/n118289024?sz=1" target="_blank"><img src="http://rs.mail.ru/b22375474.jpg" width="234" height="200" border="0" alt="" title="" /></a></div></noscript>
+
+ <!-- /rb: 3211?_SITEZONE=1 -->
+ </div>
+ </noindex>
+
+ <div class="s-index__news__main">
+ <div class="c-head-4">
+ Главные новости
+ </div>
+ <div class="s-index__news__main__inner">
+ <div class="c-newsnotice-2 c-newsnotice-2_wpic c-clearin">
+ <a href="/article.html?id=44283" class="c-newsnotice-2__pic" name="clb1489450"><img src="http://pic.auto.mail.ru/content/documents/announce_images/6/9/6983cd4d6cb6043826e4c9cba71f9876_thumbnail.jpg" alt="" class="c-pre-news-small"></a>
+ <a href="/article.html?id=44283" class="c-newsnotice-2__title" name="clb1489450">Россияне продолжают скупать кроссоверы</a>
+ <a href="/comments.html?nid=44283" class="c-coms" name="clb1489450">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">93</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 16:10
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wpic c-clearin">
+ <a href="/article.html?id=44279" class="c-newsnotice-2__pic" name="clb1489450"><img src="http://pic.auto.mail.ru/content/documents/announce_images/c/c/ccf00a06c1a97d39368a2c8421ed2548_thumbnail.jpg" alt="" class="c-pre-news-small"></a>
+ <a href="/article.html?id=44279" class="c-newsnotice-2__title" name="clb1489450">Ford за 10,5 тысяч долларов: первые фото</a>
+ <a href="/comments.html?nid=44279" class="c-coms" name="clb1489450">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">134</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 13:22
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=15" class="c-tag" name="clb1489450">шпионские фото</a>
+ </span>
+ </div>
+ </div>
+ <div class="c-newsnotice-2 c-newsnotice-2_wpic c-clearin">
+ <a href="/article.html?id=44273" class="c-newsnotice-2__pic" name="clb1489450"><img src="http://pic.auto.mail.ru/content/documents/announce_images/3/c/3c3c1e806c2b8102675a65804cd73338_thumbnail.jpg" alt="" class="c-pre-news-small"></a>
+ <a href="/article.html?id=44273" class="c-newsnotice-2__title" name="clb1489450">Новый Nissan Juke: он будет еще причудливее</a>
+ <a href="/comments.html?nid=44273" class="c-coms" name="clb1489450">
+ <span class="c-coms__ico">
+ <i class="c-ico c-ico_coms"></i>
+ </span>
+ <u class="c-coms__amount">132</u>
+ </a>
+ <div class="c-newsnotice-2__details">
+ <span class="c-newsnotice-2__date">
+ 12:03
+ </span>
+ <span class="c-tags c-tags_dashed c-tags_small">
+ <a href="/articles.html?tag_id=25" class="c-tag" name="clb1489450">будущее</a>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__news__left__bottom">
+ <div class="s-index__news__left__bottom__inner">
+ <div class="b-spring">
+ <noindex>
+ <!-- rb: 3311?_SITEZONE=1 -->
+ <div id="rb_flash_div_539751_125219880" class="rb_div"></div>
+
+<script type="text/javascript">
+(function() {
+  var rb_link1 = "http://r.mail.ru/n78579526?sz=1";
+
+  var rb_swf = "http://rs.mail.ru/b10171245.swf";
+  var rb_fver = "9";
+  var rb_width = "234";
+  var rb_height = "200";
+  var rb_allowscriptaccess = 0;
+  var rb_wmode = "opaque";
+  var rb_flash = 0;
+
+  var rb_innerhtml = (typeof(window['rb_innerhtml']) != 'undefined' && window['rb_innerhtml']);
+  if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] ) {
+    var plugin = navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin;
+    if (plugin && parseInt(plugin.description.match(/\d+/)[0]) >= rb_fver)
+      rb_flash = 1;
+  } else if (typeof window.ActiveXObject != "undefined") {
+    try {
+      var object = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+      if (object && object.GetVariable("$version") && parseInt(object.GetVariable("$version").match(/\d+/)[0]) >= rb_fver)
+        rb_flash = 1;
+    } catch (e) {}
+  }
+  if (rb_flash) {
+    var rb_rnd = Math.round(Math.random() * 1000000000);
+    var rb_vars_arr = Array();
+    rb_vars_arr.push('link1='+escape(rb_link1).replace(/\+/g,'%2B'));
+    var rb_vars = rb_vars_arr.join('&');
+    var rb_html = '<div class="rb_banner"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="'+(document.location.protocol=='https:'?'https':'http')+'://active.macromedia.com/flash2/cabs/swflash.cab#version='+rb_fver+',0,0,0" id="getmov'+rb_rnd+'" width="'+rb_width+'" height="'+rb_height+'">'+(rb_allowscriptaccess?'<param name="allowscriptaccess" value="always" />':'')+'<param name="movie" value="'+rb_swf+'" /><param name="quality" value="high" /><param name="wmode" value="'+rb_wmode+'" /><param name="FlashVars" value="'+rb_vars+'" /><embed name="embed_getmov'+rb_rnd+'" flashvars="'+rb_vars+'" '+(rb_allowscriptaccess?'allowscriptaccess="always" ':'')+'src="'+rb_swf+'" quality="high" wmode="'+rb_wmode+'" width="'+rb_width+'" height="'+rb_height+'" type="application/x-shockwave-flash" pluginspage="'+(document.location.protocol=='https:'?'https':'http')+'://www.macromedia.com/shockwave/download/index.cgiP1_Prod_Version=ShockwaveFlash" /></object></div>';
+    if (rb_innerhtml) {
+      var rb_flash_div = document.getElementById("rb_flash_div_539751_125219880");
+      rb_flash_div.innerHTML = rb_html;
+    }
+    else document.write(rb_html);
+  }
+  else {
+    var rb_img_html = '<div class="rb_banner"><a href="http://r.mail.ru/n78579526?sz=1" target="_blank"><img src="http://rs.mail.ru/b10171246.jpg" width="234" height="200" border="0" alt="" title="" /></a></div>';
+    if (rb_innerhtml) {
+      var rb_flash_div = document.getElementById("rb_flash_div_539751_125219880");
+      rb_flash_div.innerHTML = rb_img_html;
+    }
+    else document.write(rb_img_html);
+  };
+})();
+</script>
+<noscript><div class="rb_banner"><a href="http://r.mail.ru/n78579526?sz=1" target="_blank"><img src="http://rs.mail.ru/b10171246.jpg" width="234" height="200" border="0" alt="" title="" /></a></div></noscript>
+<script>self.rb_check_px||(rb_check_px=function(){for(var i=0,_=arguments.callee,s=(_.B||(_.B=document.body,_.E=_.B.parentNode),'scrollTop'),R=self.trg_scroll_container,S=R?R[s]:_.B[s]||_.E[s],H=(R||_.E).clientHeight,b;b=rb_real_banners[i++];)S<b.h&&b.h<S+H&&(!b.i)&&(b.i=1,rb_get_px(b.pxs))}),self.rb_get_px||(rb_get_px=function(pxs){for(var v=0;v<pxs.length;v++){new Image().src=pxs[v]}}),+function(e,R,C,D){e=e[e.length-1].parentNode,C=R||self,D=~~(R&&R.getBoundingClientRect().top)||0,self.rb_real_banners||(rb_real_banners=[],C.attachEvent?C.attachEvent('onscroll',rb_check_px):C.addEventListener('scroll',rb_check_px,!1)),rb_real_banners.push({h:e.getBoundingClientRect().top-D,pxs:["http://rs.mail.ru/d539751.gif?sz=1&amp;rnd=125219880&ts=1384179760&sz=1"]}),rb_check_px()}(document.getElementsByTagName('script'),self.trg_scroll_container)</script>
+ <!-- /rb: 3311?_SITEZONE=1 -->
+ </noindex>
+ </div>
+ </div>
+ </div>
+ 
+ 
+ </div>
+ <div class="s-index__news__right">
+ <div class="b-spring">
+ <noindex>
+ <!-- rb: 3210?_SITEZONE=1 -->
+ <img src="http://rs.mail.ru/d605574.gif?sz=1&amp;rnd=859435650&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+<div class="rb_banner"><a href="http://r.mail.ru/n95046258?sz=1" target="_blank"><img src="http://rs.mail.ru/b15412908.jpg" width="234" height="200" border="0" alt="" title="" /></a></div>
+ <!-- /rb: 3210?_SITEZONE=1 -->
+ </noindex>
+ </div>
+ <div class="s-index__news__ads">
+ <div class="c-textads">
+ <noindex>
+ <!-- rb: 4687 -->
+ <img src="http://rs.mail.ru/d1899069.gif?rnd=988686263&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+
+<div title="реклама" class="adNote">&nbsp;</div>
+<img src="http://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&bt=55&ad=427834&pid=1349382&bid=2917054&bn=2917054&rnd=506656804" style="width:0;height:0;position:absolute;" alt=""/>
+<img src="http://rs.mail.ru/d2463751.gif?rnd=506656804&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+
+
+
+
+<div class="c-textad">
+	<a href="http://r.mail.ru/n118764996?&amp;rnd=506656804" target="_blank"><img src="http://rs.mail.ru/b23573676.jpg" alt="" class="c-textad__pic"></a>
+	<a href="http://r.mail.ru/n118764996?&amp;rnd=506656804" class="c-textad__text" target="_blank">
+	Honda CR-V 4х4 Специальное предложение на покупку автомобиля! Каско в подарок!
+Только до 30 ноября.
+	</a>
+</div>
+	
+    <img src="http://rs.mail.ru/d2492373.gif?rnd=176348054&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+
+
+
+
+<div class="c-textad">
+	<a href="http://r.mail.ru/n118809115?" target="_blank"><img src="http://rs.mail.ru/b23960574.jpg" alt="" class="c-textad__pic"></a>
+	<a href="http://r.mail.ru/n118809115?" class="c-textad__text" target="_blank">
+	Программа продаж с выгодой до 20%
+В Ауди Центре Таганка. Уже в ноябре Вас ждут особые условия практически на весь модельный ряд Audi.
+	</a>
+</div>
+	 
+ 
+
+ <!-- /rb: 4687 -->
+ </noindex>
+ </div>
+ <!-- rb: 1986 (купи авто) -->
+ <!-- # include virtual="/rb/1986" -->
+ <!-- /rb: 1986 (купи авто) -->
+ </div>
+ <div class="s-index__news__right__bottom">
+ <div class="s-index__news__right__bottom__inner">
+ <div class="b-spring">
+ <noindex>
+ <!-- rb: 2874?_SITEZONE=1 -->
+ <div id="rb_flash_div_2365417_51874057" class="rb_div"></div>
+
+<script type="text/javascript">
+(function() {
+  var rb_link1 = "http://r.mail.ru/n118420948?sz=1&rnd=51874057";
+
+  var rb_swf = "http://rs.mail.ru/b23573668.swf";
+  var rb_fver = "8";
+  var rb_width = "234";
+  var rb_height = "200";
+  var rb_allowscriptaccess = 0;
+  var rb_wmode = "opaque";
+  var rb_flash = 0;
+
+  var rb_innerhtml = (typeof(window['rb_innerhtml']) != 'undefined' && window['rb_innerhtml']);
+  if (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"] ) {
+    var plugin = navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin;
+    if (plugin && parseInt(plugin.description.match(/\d+/)[0]) >= rb_fver)
+      rb_flash = 1;
+  } else if (typeof window.ActiveXObject != "undefined") {
+    try {
+      var object = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+      if (object && object.GetVariable("$version") && parseInt(object.GetVariable("$version").match(/\d+/)[0]) >= rb_fver)
+        rb_flash = 1;
+    } catch (e) {}
+  }
+  if (rb_flash) {
+    var rb_rnd = Math.round(Math.random() * 1000000000);
+    var rb_vars_arr = Array();
+    rb_vars_arr.push('link1='+escape(rb_link1).replace(/\+/g,'%2B'));
+    var rb_vars = rb_vars_arr.join('&');
+    var rb_html = '<div class="rb_banner"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="'+(document.location.protocol=='https:'?'https':'http')+'://active.macromedia.com/flash2/cabs/swflash.cab#version='+rb_fver+',0,0,0" id="getmov'+rb_rnd+'" width="'+rb_width+'" height="'+rb_height+'">'+(rb_allowscriptaccess?'<param name="allowscriptaccess" value="always" />':'')+'<param name="movie" value="'+rb_swf+'" /><param name="quality" value="high" /><param name="wmode" value="'+rb_wmode+'" /><param name="FlashVars" value="'+rb_vars+'" /><embed name="embed_getmov'+rb_rnd+'" flashvars="'+rb_vars+'" '+(rb_allowscriptaccess?'allowscriptaccess="always" ':'')+'src="'+rb_swf+'" quality="high" wmode="'+rb_wmode+'" width="'+rb_width+'" height="'+rb_height+'" type="application/x-shockwave-flash" pluginspage="'+(document.location.protocol=='https:'?'https':'http')+'://www.macromedia.com/shockwave/download/index.cgiP1_Prod_Version=ShockwaveFlash" /></object></div>';
+    if (rb_innerhtml) {
+      var rb_flash_div = document.getElementById("rb_flash_div_2365417_51874057");
+      rb_flash_div.innerHTML = rb_html;
+    }
+    else document.write(rb_html);
+  }
+  else {
+    var rb_img_html = '<div class="rb_banner"><a href="http://r.mail.ru/n118420948?sz=1&rnd=51874057" target="_blank"><img src="http://rs.mail.ru/b23573669.gif" width="234" height="200" border="0" alt="" title="" /></a></div>';
+    if (rb_innerhtml) {
+      var rb_flash_div = document.getElementById("rb_flash_div_2365417_51874057");
+      rb_flash_div.innerHTML = rb_img_html;
+    }
+    else document.write(rb_img_html);
+  };
+})();
+</script>
+<noscript><div class="rb_banner"><a href="http://r.mail.ru/n118420948?sz=1&amp;rnd=51874057" target="_blank"><img src="http://rs.mail.ru/b23573669.gif" width="234" height="200" border="0" alt="" title="" /></a></div></noscript>
+<script>self.rb_check_px||(rb_check_px=function(){for(var i=0,_=arguments.callee,s=(_.B||(_.B=document.body,_.E=_.B.parentNode),'scrollTop'),R=self.trg_scroll_container,S=R?R[s]:_.B[s]||_.E[s],H=(R||_.E).clientHeight,b;b=rb_real_banners[i++];)S<b.h&&b.h<S+H&&(!b.i)&&(b.i=1,rb_get_px(b.pxs))}),self.rb_get_px||(rb_get_px=function(pxs){for(var v=0;v<pxs.length;v++){new Image().src=pxs[v]}}),+function(e,R,C,D){e=e[e.length-1].parentNode,C=R||self,D=~~(R&&R.getBoundingClientRect().top)||0,self.rb_real_banners||(rb_real_banners=[],C.attachEvent?C.attachEvent('onscroll',rb_check_px):C.addEventListener('scroll',rb_check_px,!1)),rb_real_banners.push({h:e.getBoundingClientRect().top-D,pxs:["http://ad.adriver.ru/cgi-bin/rle.cgi?sid=1&bt=55&ad=431807&pid=1369542&bid=2969276&bn=2969276&rnd=51874057","http://ar.tns-counter.ru/V13a****ar_ru/ru/CP1251/tmsec=77790_431807-1369542/51874057","http://rs.mail.ru/d2365417.gif?sz=1&amp;rnd=51874057&ts=1384179760&sz=1"]}),rb_check_px()}(document.getElementsByTagName('script'),self.trg_scroll_container)</script>
+ <!-- /rb: 2874?_SITEZONE=1 -->
+ </noindex>
+ </div>
+ </div>
+ </div>
+ 
+ 
+ </div>
+ </div>
+ 
+ <div class="c-carsearch js-carsearch-container">
+ <ul class="c-carsearch__tabs js-carsearch">
+ <li class="c-carsearch__tabs__item c-carsearch__tabs__item-title">
+ <span class="c-carsearch__tabs__item__wrap">Поиск авто в Рязани</span>
+ </li><!--
+ --><li class="c-carsearch__tabs__item js-carsearch__tabs__item c-carsearch__tabs__item-selected">
+ <a href="#" class="c-carsearch__tabs__item__link js-carsearch-type"  data-new-old-type="">
+ <span class="c-carsearch__tabs__item__wrap">Все</span>
+ </a>
+ </li><!--
+ --><li class="c-carsearch__tabs__item js-carsearch__tabs__item">
+ <a href="#" class="c-carsearch__tabs__item__link js-carsearch-type" data-new-old-type="1">
+ <span class="c-carsearch__tabs__item__wrap">Новые</span>
+ </a>
+ </li><!--
+ --><li class="c-carsearch__tabs__item js-carsearch__tabs__item">
+ <a href="#" class="c-carsearch__tabs__item__link js-carsearch-type" data-new-old-type="0">
+ <span class="c-carsearch__tabs__item__wrap">С пробегом</span>
+ </a>
+ </li><!--
+ --><li class="c-carsearch__tabs__item c-carsearch__tabs__item-advanced js-carsearch__tabs__item ">
+ <a href="/market/search_ext/" class="c-carsearch__tabs__item__link">
+ <span class="c-carsearch__tabs__item__wrap">Расширенный поиск</span></a>
+ </li>
+ </ul>
+ <div class="c-carsearch__box">
+ <form method="get" action="/market/found/" class="js-selectcar-form">
+ <input type="hidden" name="price_type" value="192">
+ <input type="hidden" name="country" value="24">
+ <input type="hidden" name="region" value="295">
+ <input type="hidden" name="city" value="1738">
+ <table width="100%">
+ <tr>
+ <td class="c-carsearch__colc-carsearch__option__item">
+ <select class="c-carsearch__select js-selectcar-chainselect" name="firm_id" data-name="firm" data-title="Выберите">
+ <option value="">Марка автомобиля</option>
+ <option value="9">Audi</option>
+ <option value="20">BMW</option>
+ <option value="31">Chevrolet</option>
+ <option value="33">Citroen</option>
+ <option value="51">Ford</option>
+ <option value="62">Honda</option>
+ <option value="65">Hyundai</option>
+ <option value="80">Kia</option>
+ <option value="164">Lada (ВАЗ)</option>
+ <option value="85">Land Rover</option>
+ <option value="182">Lifan</option>
+ <option value="110">Mitsubishi</option>
+ <option value="115">Nissan</option>
+ <option value="117">Opel</option>
+ <option value="123">Peugeot</option>
+ <option value="133">Renault</option>
+ <option value="144">Skoda</option>
+ <option value="148">SsangYong</option>
+ <option value="150">Suzuki</option>
+ <option value="157">Toyota</option>
+ <option value="169">Volkswagen</option>
+ </select>
+ <select class="c-carsearch__select js-selectcar-chainselect" disabled="disabled" name="model_id" data-name="model" data-title="Выберите">
+ <option value="">Модель</option>
+ </select>
+ </td>
+ <td class="c-carsearch__col">
+ <div class="c-carsearch__option c-carsearch__option-transmission">
+ <table>
+ <tr>
+ <td class="c-carsearch__option__item c-carsearch__option__title">КПП</td>
+ <td class="c-carsearch__option__item c-carsearch__option-transmission__item">
+ <nobr><input type="radio" name="gear_type" value="" checked="checked" /> <label class="c-carsearch__label">Любая</label></nobr> </td>
+ <td class="c-carsearch__option__item c-carsearch__option-transmission__item">
+ <nobr><input type="radio" name="gear_type" value="205" /> <label class="c-carsearch__label">МКПП</label></nobr> </td>
+ <td class="c-carsearch__option__item c-carsearch__option-transmission__item">
+ <nobr><input type="radio" name="gear_type" value="204" /> <label class="c-carsearch__label">АКПП</label></nobr>     </td>
+ </tr>
+ </table>
+ </div>
+ <div class="c-carsearch__option">
+ <table width="100%">
+ <tr>
+ <td class="c-carsearch__option__item c-carsearch__option__title">Цена</td>
+ <td class="c-carsearch__option__item c-carsearch__option__subtitle"><label class="c-carsearch__label">от</label> </td>
+ <td class="c-carsearch__option__item c-carsearch__col-input"> <input type="text" class="c-carsearch__input js-min" name="price_min" value="0" /></td>
+ <td class="c-carsearch__option__item c-carsearch__option__subtitle"><label class="c-carsearch__label">до</label> </td>
+ <td class="c-carsearch__option__item c-carsearch__col-input"><input type="text" class="c-carsearch__input js-max" name="price_max" value="5000000 " /></td>
+ <td class="c-carsearch__option__item"><span class="c-carsearch__currency">руб.</span></td>
+ </tr>
+ </table>
+ </td>
+ <td class="c-carsearch__col-x3">
+ <div class="c-carsearch__button">
+ <div class="c-carsearch__button__wrap">
+ <span class="c-carsearch__button__title">Найти</span><br /> среди 76 предложений
+ </div>
+ <input type="submit" class="c-carsearch__button__submit" value=" " />
+ </div>
+ </td>
+ </tr>
+ </table>
+ <input type="hidden" class="js-carsearch__new_old_type" name="new_old_type" value="" />
+ </form>
+ </div>
+ </div>
+ <script src="/js/auto/v2/jquery.maskedInput.js" type="text/javascript"></script>
+ <script src="/js/auto/v2/searchform/jquery.searchFormInit.js" type="text/javascript"></script>
+ <script type="text/javascript" src="/js/auto/v2/tools/tools.Callbacks.js"></script>
+ <script type="text/javascript" src="/js/auto/v2/tools/tools.Forms.js"></script>
+ <script type="text/javascript" src="/js/auto/v2/components/jquery.frmCtrl.js"></script>
+ <script type="text/javascript" src="/js/auto/v2/components/jquery.chainSelect.js"></script>
+ <script src="/js/auto/v2/searchform/jquery.firmSelect.js?06052013" type="text/javascript"></script>
+
+ <!-- BEGIN: PAGE BODY - TOP -->
+ <div class="p-body__top p-body__top_blue">
+ <div class="p-body__top__head">
+ <a href="/articles.html?type=2" class="p-body__top__head__link">Автообзоры</a>
+ </div>
+ <ul class="p-body__top__tabs">
+ <li class="p-body__top__tabs__item p-body__top__tabs__item_current">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?type=2" class="p-body__top__tabs__item__link" name="clb1489689">
+ Новые обзоры
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=20" class="p-body__top__tabs__item__link" name="clb1489690">
+ Российские
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=21" class="p-body__top__tabs__item__link" name="clb1489691">
+ Иномарки
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=22" class="p-body__top__tabs__item__link" name="clb1489692">
+ Рынок
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/testdrives.html" class="p-body__top__tabs__item__link" name="clb1489693">
+ Тест-драйвы
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=26" class="p-body__top__tabs__item__link" name="clb1489694">
+ Законодательство
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=66" class="p-body__top__tabs__item__link" name="clb1489695">
+ История
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=67" class="p-body__top__tabs__item__link" name="clb1489696">
+ Путешествия
+ </a>
+ </span>
+ </li>
+ <li class="p-body__top__tabs__item">
+ <span class="p-body__top__tabs__item__inner">
+ <a href="/articles.html?rubric_id=27" class="p-body__top__tabs__item__link" name="clb1572025">
+ Спорт
+ </a>
+ </span>
+ </li>
+ </ul>
+ </div><!-- /div class="p-body__top" -->
+ <!-- END: PAGE BODY - TOP -->
+ <!-- rb: 5658 (promo bakanov) -->
+ <img src="http://rs.mail.ru/d2268353.gif?rnd=183457117&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+<style>
+	.s-promo-bakanov {
+		display: block;
+		text-indent: -9999px;
+		margin: 12px 20px 4px 20px;
+		position: relative;
+		height: 103px;
+		background: url(http://rs.mail.ru/b23335702.jpg) 100% 100% no-repeat;
+	}
+	.s-promo-bakanov__item {
+		background: url(http://rs.mail.ru/b23337907.png) 0 0 no-repeat;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+<a href="http://r.mail.ru/n118110253?" class="s-promo-bakanov" title="Авторские видео-тесты Петра Баканова">
+	<div class="s-promo-bakanov__item"></div>
+</a>
+ <!-- /rb: 5658 (promo bakanov)-->
+ <div class="s-index__articles c-clearin">
+ <div class="s-index__articles__group s-index__articles__group_left">
+ <div class="c-newslink">
+ <a href="/testdrive.html?id=44035" class="c-newslink__linkpic" name="clb1489697">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/f/5/f5971f06844873561fdb7c6ce4806a5a_big.jpg" alt="" class="c-newslink__pic c-pre-news-big js-load">
+ </a>
+ <table class="c-newslink__params"><tr>
+ <td class="c-newslink__params__left">
+ <a href="/testdrive.html?id=44035" class="c-newslink__title" name="clb1489697">
+ Такие разные. Сравнительный тест Mercedes-Benz A 200, Audi A3 Sportback и BMW 118i
+ </a>
+ </td>
+ <td class="c-newslink__params__right">
+ <a href="/testdrives.html" class="c-newslink__rubric c-newslink__rubric_grey"  name="clb1489697">
+ Тест-драйвы
+ </a>
+ <div class="c-newslink__date">
+ 08.11.2013 10:00
+ </div>
+ </td>
+ </tr></table>
+ </div>
+ <div class="s-index__articles__subgroup c-clearin">
+ <div class="s-index__articles__subgroup__item s-index__articles__subgroup__item_left">
+ <div class="c-newslinktiny">
+ <div class="c-newslinktiny__inner">
+ <a href="/testdrive.html?id=44227" class="c-newslinktiny__pic"  name="clb1489699">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/6/c/6cf7866778319e98c86e6ca9e41764c3_medium.jpg" alt="" class="c-pre-news-medium">
+ </a>
+ <div class="c-newslinktiny__params">
+ <a href="/testdrives.html" class="c-newslinktiny__rubric"  name="clb1489699">
+ Тест-драйвы
+ </a>
+ <div class="c-newslinktiny__date">
+ 07.11.2013 09:00
+ </div>
+ </div>
+ </div>
+ <a href="/testdrive.html?id=44227" class="c-newslinktiny__title"  name="clb1489699">
+ Тест-драйв Infiniti Q50. Любовь идёт по проводам?
+ </a>
+ </div>
+ </div>
+ <div class="s-index__articles__subgroup__item s-index__articles__subgroup__item_right">
+ <div class="c-newslinktiny">
+ <div class="c-newslinktiny__inner">
+ <a href="/testdrive.html?id=44128" class="c-newslinktiny__pic"  name="clb1489700">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/a/e/ae30e0a7560175741f443cf2643d7738_medium.jpg" alt="" class="c-pre-news-medium">
+ <i class="c-videoplay c-videoplay_medium" title="У материала есть видео"></i>
+ </a>
+ <div class="c-newslinktiny__params">
+ <a href="/testdrives.html" class="c-newslinktiny__rubric"  name="clb1489700">
+ Тест-драйвы
+ </a>
+ <div class="c-newslinktiny__date">
+ 01.11.2013 10:01
+ </div>
+ </div>
+ </div>
+ <a href="/testdrive.html?id=44128" class="c-newslinktiny__title"  name="clb1489700">
+ Geely Emgrand: режем по живому
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/testdrives.html" class="c-toall__link c-linkwico"><i class="c-ico c-ico_toall_blue"></i><u>Все Тест-драйвы</u></a>
+ </span>
+ </div>
+ </div>
+ <div class="s-index__articles__group s-index__articles__group_right">
+ <div class="c-newslink">
+ <a href="/article.html?id=44237" class="c-newslink__linkpic" name="clb1489698">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/0/3/03629fc6f675209c26c35c8c477ca5c9_big.jpg" alt="" class="c-newslink__pic c-pre-news-big js-load">
+ </a>
+ <table class="c-newslink__params"><tr>
+ <td class="c-newslink__params__left">
+ <a href="/article.html?id=44237" class="c-newslink__title" name="clb1489698">
+ Сутки газ в пол. Едем 24-часовой картинг-марафон
+ </a>
+ </td>
+ <td class="c-newslink__params__right">
+ <a href="/articles.html?rubric_id=27" class="c-newslink__rubric c-newslink__rubric_grey"  name="clb1489698">
+ Спорт
+ </a>
+ <div class="c-newslink__date">
+ 08.11.2013 10:00
+ </div>
+ </td>
+ </tr></table>
+ </div>
+ <div class="s-index__articles__subgroup c-clearin">
+ <div class="s-index__articles__subgroup__item s-index__articles__subgroup__item_left">
+ <!-- rb: 4865 (vinos) -->
+ 
+ <!-- /rb: 4865 (vinos) -->
+ 
+ <div class="c-newslinktiny">
+ <div class="c-newslinktiny__inner">
+ <a href="/article.html?id=44272" class="c-newslinktiny__pic"  name="clb1489701">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/f/7/f71c58407fae17c87b320963fe33a9a5_medium.jpg" alt="" class="c-pre-news-medium">
+ </a>
+ <div class="c-newslinktiny__params">
+ <a href="/articles.html?rubric_id=30" class="c-newslinktiny__rubric"  name="clb1489701">
+ Автобизнес
+ </a>
+ <div class="c-newslinktiny__date">
+ 11.11.2013 12:00
+ </div>
+ </div>
+ </div>
+ <a href="/article.html?id=44272" class="c-newslinktiny__title"  name="clb1489701">
+ Новое универсально моторное масло ELF
+ </a>
+ </div>
+ 
+ </div>
+ <div class="s-index__articles__subgroup__item s-index__articles__subgroup__item_right">
+ <div class="c-newslinktiny">
+ <div class="c-newslinktiny__inner">
+ <a href="/article.html?id=44214" class="c-newslinktiny__pic"  name="clb1489702">
+ <img src="http://pic.auto.mail.ru/content/documents/announce_images/2/4/249f5e29d418187b9457f3282219b699_medium.jpg" alt="" class="c-pre-news-medium">
+ <i class="c-videoplay c-videoplay_medium" title="У материала есть видео"></i>
+ </a>
+ <div class="c-newslinktiny__params">
+ <a href="/articles.html?rubric_id=21" class="c-newslinktiny__rubric"  name="clb1489702">
+ Иномарки
+ </a>
+ <div class="c-newslinktiny__date">
+ 07.11.2013 11:40
+ </div>
+ </div>
+ </div>
+ <a href="/article.html?id=44214" class="c-newslinktiny__title"  name="clb1489702">
+ Новые шины Pirelli - все готовятся к зиме 
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/articles.html?type=2" class="c-toall__link c-linkwico"><i class="c-ico c-ico_toall_blue"></i><u>Все автообзоры</u></a>
+ </span>
+ </div>
+ </div>
+ <script>self.trg_check_px||(trg_check_px=function(){for(var i=0,_=arguments.callee,s=(_.B||(_.B=document.body,_.E=_.B.parentNode),'scrollTop'),R=self.trg_scroll_container,S=R?R[s]:_.B[s]||_.E[s],H=(R||_.E).clientHeight,b;b=trg_real_banners[i++];)S<b.h&&b.h<S+H&&(!b.i)&&(b.i=1,trg_get_px(b.id))}),self.trg_get_px||(trg_get_px=function(id){new Image().src='http://rs.mail.ru/d1195520.gif?r='+~~(Math.random()*1e9)}),+function(e,R,C,D){e=e[e.length-1].parentNode,C=R||self,D=~~(R&&R.getBoundingClientRect().top)||0,self.trg_real_banners||(trg_real_banners=[],C.attachEvent?C.attachEvent('onscroll',trg_check_px):C.addEventListener('scroll',trg_check_px,!1)),trg_real_banners.push({h:e.getBoundingClientRect().top-D,id:1195520}),trg_check_px()}(document.getElementsByTagName('script'),self.trg_scroll_container)</script>
+ </div>
+ <table class="s-index__services" cellspacing="6">
+ <tr>
+ <td class="s-index__service">
+ <!-- rb: 2349 (forum) -->
+ 
+
+	<!-- forum for new auto -->
+	<div class="s-index__service__title">
+		<div class="s-index__service__title__inner">
+			<a name="clb899630" href="http://auto.mail.ru/forum/" class="s-index__service__title__link">
+				Люди говорят
+			</a>
+		</div>
+	</div>
+
+
+	<div class="s-index__service__inner">
+	
+		<div class="s-index__service__forum">
+
+			
+
+				<div class="c-messageblock c-messageblock_left">
+					<div class="c-messageblock__avatar">
+						<span class="c-avatar c-avatar_smallsquare">
+							<a name="clb899630" href="http://auto.mail.ru/mail/ya.viktor.1970/" class="c-avatar__link" style="background-image: url(http://rs.mail.ru/b19735137.jpg);"></a>
+						</span>
+					</div>
+				
+					<div class="c-messageblock__message">
+						<div class="c-message">
+							<div class="c-message__date">
+								11.11.2013
+							</div>
+							<div class="c-message__author">
+								<a name="clb899630" href="http://auto.mail.ru/mail/ya.viktor.1970/" class="c-message__author__link">Я Виктор</a>
+							</div>
+							<div class="c-message__title">
+								<a name="clb899630" href="http://auto.mail.ru/forum/topics.html?fid=7&ord=a">Что купить?</a>
+								<div class="c-message__title__addit">
+									<a name="clb899630" href="http://auto.mail.ru/forum/topic.html?fid=7&amp;tid=111577" class="c-message__title__addit__link">Что безопасней, автомобиль весом в две тонны без подушек,...</a>
+								</div>
+							</div>
+							<div class="c-message__notice">
+								Всем привет! На дорогах очень много аварий, много гибнет людей. Как любят говорит, безопасность, она в голове. Но вот если лоб в лоб, двухтонный вн...
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+
+				<div class="c-messageblock c-messageblock_right">
+					<div class="c-messageblock__avatar">
+						<span class="c-avatar c-avatar_smallsquare">
+							<a name="clb899630" href="http://auto.mail.ru/mail/sivook/" class="c-avatar__link" style="background-image: url(http://rs.mail.ru/b23958035.jpg);"></a>
+						</span>
+					</div>
+				
+					<div class="c-messageblock__message">
+						<div class="c-message">
+							<div class="c-message__date">
+								11.11.2013
+							</div>
+							<div class="c-message__author">
+								<a name="clb899630" href="http://auto.mail.ru/mail/sivook/" class="c-message__author__link">Дядя Фёдор</a>
+							</div>
+							<div class="c-message__title">
+								<a name="clb899630" href="http://auto.mail.ru/forum/topics.html?fid=16&ord=a">&quot;Курилка&quot;</a>
+								<div class="c-message__title__addit">
+									<a name="clb899630" href="http://auto.mail.ru/forum/topic.html?fid=16&amp;tid=111575" class="c-message__title__addit__link">Нас опять грабят?</a>
+								</div>
+							</div>
+							<div class="c-message__notice">
+								&amp;lt;quote&amp;gt;Гражданам 1967 года рождения и моложе, зарегистрированным в системе обязательного пенсионного страхования, в 2013 году предоставлена в...
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+
+				<div class="c-messageblock c-messageblock_left">
+					<div class="c-messageblock__avatar">
+						<span class="c-avatar c-avatar_smallsquare">
+							<a name="clb899630" href="http://auto.mail.ru/mail/ada319/" class="c-avatar__link" style="background-image: url(http://rs.mail.ru/b23957650.jpg);"></a>
+						</span>
+					</div>
+				
+					<div class="c-messageblock__message">
+						<div class="c-message">
+							<div class="c-message__date">
+								11.11.2013
+							</div>
+							<div class="c-message__author">
+								<a name="clb899630" href="http://auto.mail.ru/mail/ada319/" class="c-message__author__link">Дмитрий Астахов</a>
+							</div>
+							<div class="c-message__title">
+								<a name="clb899630" href="http://auto.mail.ru/forum/topics.html?fid=16&ord=a">&quot;Курилка&quot;</a>
+								<div class="c-message__title__addit">
+									<a name="clb899630" href="http://auto.mail.ru/forum/topic.html?fid=16&amp;tid=111574" class="c-message__title__addit__link">Ребята , вы видите как нас  разводят.   </a>
+								</div>
+							</div>
+							<div class="c-message__notice">
+								Всякая шушара нас хочет развести. Видимо нашли потайную дверь и хотят нас забить. Встанем дружно и скажем ...На х...орошую жизнь нам и так хватает,...
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+		
+		</div>
+
+
+		<div class="c-toall c-toall_blue">
+			<span class="c-toall__inner">
+				<a name="clb899630" href="http://auto.mail.ru/forum/" class="c-toall__link c-linkwico"><i class="c-ico c-ico_toall_blue"></i><u>Все обсуждения</u></a>
+			</span>
+		</div>
+	
+
+	</div>
+	<!-- /forum for new auto -->
+
+
+
+ <!-- /rb: 2349 (forum) -->
+ </td>
+ <td class="s-index__service">
+ <!-- rb: 759 (motonews) -->
+ 
+		<div class="s-index__service__title">
+			<div class="s-index__service__title__inner">
+				<a name="clb899249" href="http://moto.mail.ru/" target="_blank" class="s-index__service__title__link">
+					Мотоновости
+				</a>
+			</div>
+		</div>
+
+
+		<div class="s-index__service__inner">
+
+
+			<div class="s-index__service__moto">
+
+				
+					<div class="s-index__service__moto__issue c-clearin">
+						
+							<a name="clb899249" href="http://moto.mail.ru/news/miscellaneous/2013/11/11/bmw_r1200_diva/" target="_blank" class="s-index__service__moto__issue__pic"><img height="58" width="75" src="http://rs.mail.ru/b23942739.jpg" alt="" class="c-pre-news-small"></a>
+						
+						<div class="s-index__service__moto__issue__title">
+							<a name="clb899249" href="http://moto.mail.ru/news/miscellaneous/2013/11/11/bmw_r1200_diva/" target="_blank">BMW R1200 Diva</a>
+						</div>
+						<div class="s-index__service__moto__issue__notice">
+							Один из стендов на прошедшей выставке EICMA в Милане был отдан кастом-ателье Giulio Paz Design. Именно там во всей красе можно было разглядеть самое свежее произведение мастера, созданное на основе BMW R1200
+						</div>
+					</div>
+				
+					<div class="s-index__service__moto__issue c-clearin">
+						
+							<a name="clb899249" href="http://moto.mail.ru/news/manufacturers/2013/11/11/absolyutno_novaya_vespa/" target="_blank" class="s-index__service__moto__issue__pic"><img height="58" width="75" src="http://rs.mail.ru/b23941659.jpg" alt="" class="c-pre-news-small"></a>
+						
+						<div class="s-index__service__moto__issue__title">
+							<a name="clb899249" href="http://moto.mail.ru/news/manufacturers/2013/11/11/absolyutno_novaya_vespa/" target="_blank">Абсолютно новая Vespa</a>
+						</div>
+						<div class="s-index__service__moto__issue__notice">
+							Концерн Piaggio продемонстрировал на выставке EICMA-2013 абсолютно новую модель скутера Vespa 2014 модельного года. Vespa Primavera &mdash; именно так будет называться новинка &mdash; позаимствовала своё название у своей предшественницы 1968 года
+						</div>
+					</div>
+				
+					<div class="s-index__service__moto__issue c-clearin">
+						
+							<a name="clb899249" href="http://moto.mail.ru/news/manufacturers/2013/11/11/novye_koncepty_yamaha/" target="_blank" class="s-index__service__moto__issue__pic"><img height="58" width="75" src="http://rs.mail.ru/b23939589.jpg" alt="" class="c-pre-news-small"></a>
+						
+						<div class="s-index__service__moto__issue__title">
+							<a name="clb899249" href="http://moto.mail.ru/news/manufacturers/2013/11/11/novye_koncepty_yamaha/" target="_blank">Новые концепты Yamaha</a>
+						</div>
+						<div class="s-index__service__moto__issue__notice">
+							Появилась информация о том, какими новыми концептуальными мотоциклами будет украшен стенд Yamaha на Tokyo Motor Show &mdash; &laquo;домашней&raquo; выставке для японского производителя двухколёсной техники
+						</div>
+					</div>
+				
+					<div class="s-index__service__moto__issue c-clearin">
+						
+							<a name="clb899249" href="http://moto.mail.ru/news/manufacturers/2013/11/11/dva_otzyva_harley-davidson/" target="_blank" class="s-index__service__moto__issue__pic"><img height="58" width="75" src="http://rs.mail.ru/b23939415.jpg" alt="" class="c-pre-news-small"></a>
+						
+						<div class="s-index__service__moto__issue__title">
+							<a name="clb899249" href="http://moto.mail.ru/news/manufacturers/2013/11/11/dva_otzyva_harley-davidson/" target="_blank">Два отзыва Harley-Davidson</a>
+						</div>
+						<div class="s-index__service__moto__issue__notice">
+							Появилась информация о двух отзывных кампаниях, объявленных Harley-Davidson. Визит в сервисный центр должны запланировать владельцы &laquo;свежих&raquo; мотоциклов и трайков 2014 модельного года
+						</div>
+					</div>
+				
+
+			</div>
+
+
+			<div class="c-toall c-toall_blue">
+				<span class="c-toall__inner">
+					<a name="clb899249" href="http://moto.mail.ru/" target="_blank" class="c-toall__link c-linkwico"><i class="c-ico c-ico_toall_blue"></i><u>Все мотоновости</u></a>
+				</span>
+			</div>
+
+		</div>
+
+	
+
+ <!-- /rb: 759 (motonews) -->
+ </td>
+ <td class="s-index__service">
+ <div class="s-index__service__title">
+ <div class="s-index__service__title__inner">
+ Медиа
+ </div>
+ </div>
+ <div class="s-index__service__inner js-media">
+ <div class="c-switcher">
+ <a href="#" name="clb1489407" class="c-switcher__link c-switcher__link_prv c-switcher__link_off js-prt_prev" title="Назад"></a>
+ <a href="#" name="clb1489407" class="c-switcher__link c-switcher__link_nxt js-prt_next" title="Вперед"></a>
+ <div class="c-switcher__title">
+ <a href="/videogalleries/" name="clb1489407" class="c-switcher__title__link js-prt_title">Видеогалерея</a>
+ <a href="/photogalleries/" name="clb1489407" class="c-switcher__title__link js-prt_title" style="display: none;">Фотогалерея</a>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="s-index__service__media">
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_video">
+ <span class="c-media-pre__inner">
+ <a href="/videogalleries/5/10/900/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://content.video.mail.ru/corp/auto/news/p-2101.jpg" alt="" class="c-pre-media-medium">
+ <i class="c-videoplay c-videoplay_small"></i>
+ </a>
+ <a href="/videogalleries/5/10/900/" class="c-media-pre__title" name="clb1489407">
+ Pirelli Ice Zero
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_video">
+ <span class="c-media-pre__inner">
+ <a href="/videogalleries/5/10/899/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://content.video.mail.ru/corp/a.sviridovsky/_myvideo/p-11.jpg" alt="" class="c-pre-media-medium">
+ <i class="c-videoplay c-videoplay_small"></i>
+ </a>
+ <a href="/videogalleries/5/10/899/" class="c-media-pre__title" name="clb1489407">
+ Социальная реклама ГАИ
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_video">
+ <span class="c-media-pre__inner">
+ <a href="/videogalleries/6/11/898/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://content.video.mail.ru/corp/auto/testdrive/p-2085.jpg" alt="" class="c-pre-media-medium">
+ <i class="c-videoplay c-videoplay_small"></i>
+ </a>
+ <a href="/videogalleries/6/11/898/" class="c-media-pre__title" name="clb1489407">
+ Geely Emgrand
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_video">
+ <span class="c-media-pre__inner">
+ <a href="/videogalleries/5/10/897/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://content.video.mail.ru/corp/auto/news/p-2098.jpg" alt="" class="c-pre-media-medium">
+ <i class="c-videoplay c-videoplay_small"></i>
+ </a>
+ <a href="/videogalleries/5/10/897/" class="c-media-pre__title" name="clb1489407">
+ THE NEW NISSAN QASHQAI PERFECTED
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_video">
+ <span class="c-media-pre__inner">
+ <a href="/videogalleries/5/10/896/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://content.video.mail.ru/corp/auto/news/p-2095.jpg" alt="" class="c-pre-media-medium">
+ <i class="c-videoplay c-videoplay_small"></i>
+ </a>
+ <a href="/videogalleries/5/10/896/" class="c-media-pre__title" name="clb1489407">
+ Робот - заправщик
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_video">
+ <span class="c-media-pre__inner">
+ <a href="/videogalleries/5/10/894/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://content.video.mail.ru/corp/auto/news/p-2088.jpg" alt="" class="c-pre-media-medium">
+ <i class="c-videoplay c-videoplay_small"></i>
+ </a>
+ <a href="/videogalleries/5/10/894/" class="c-media-pre__title" name="clb1489407">
+ Танцы на АЗС
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/videogalleries/" class="c-toall__link c-linkwico" name="clb1489407"><i class="c-ico c-ico_toall_blue"></i><u>Все видео</u></a>
+ </span>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="s-index__service__media">
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_photo">
+ <span class="c-media-pre__inner">
+ <a href="/photogalleries/test-drive/2166/15247/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://pic.auto.mail.ru/content/photogallery/photogalleries/a/c/acc070e473eb06611244d630eec446dd.jpg" alt="" class="c-pre-media-medium">
+ </a>
+ <a href="/photogalleries/test-drive/2166/15247/" class="c-media-pre__title" name="clb1489407">
+ Skoda Yeti
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_photo">
+ <span class="c-media-pre__inner">
+ <a href="/photogalleries/news/2163/15246/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://pic.auto.mail.ru/content/photogallery/photogalleries/0/1/015362c9ad747022d6487df3a4aa81c9.jpg" alt="" class="c-pre-media-medium">
+ </a>
+ <a href="/photogalleries/news/2163/15246/" class="c-media-pre__title" name="clb1489407">
+ Mercedes-Benz S 65 AMG
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_photo">
+ <span class="c-media-pre__inner">
+ <a href="/photogalleries/test-drive/2166/15245/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://pic.auto.mail.ru/content/photogallery/photogalleries/6/5/65926de83dfe995ad5d0aef3fd0d63bc.jpg" alt="" class="c-pre-media-medium">
+ </a>
+ <a href="/photogalleries/test-drive/2166/15245/" class="c-media-pre__title" name="clb1489407">
+ BMW 118i
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_photo">
+ <span class="c-media-pre__inner">
+ <a href="/photogalleries/test-drive/2166/15244/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://pic.auto.mail.ru/content/photogallery/photogalleries/8/a/8a0b4752e09fb17ee1e45241b35e87e3.jpg" alt="" class="c-pre-media-medium">
+ </a>
+ <a href="/photogalleries/test-drive/2166/15244/" class="c-media-pre__title" name="clb1489407">
+ Audi A3
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_photo">
+ <span class="c-media-pre__inner">
+ <a href="/photogalleries/test-drive/2166/15243/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://pic.auto.mail.ru/content/photogallery/photogalleries/f/4/f48c05718809d171291b1a3db1d71284.jpg" alt="" class="c-pre-media-medium">
+ </a>
+ <a href="/photogalleries/test-drive/2166/15243/" class="c-media-pre__title" name="clb1489407">
+ Mercedes-Benz A 200
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ <span class="s-index__service__media__issue">
+ <span class="s-index__service__media__issue__inner">
+ <span class="c-media-pre c-media-pre_photo">
+ <span class="c-media-pre__inner">
+ <a href="/photogalleries/news/2163/15242/" class="c-media-pre__item" name="clb1489407">
+ <img src="http://pic.auto.mail.ru/content/photogallery/photogalleries/0/0/0059282589bb879127f2a54d6b2b2f4b.jpg" alt="" class="c-pre-media-medium">
+ </a>
+ <a href="/photogalleries/news/2163/15242/" class="c-media-pre__title" name="clb1489407">
+ Nissan Qashqai 
+ </a>
+ </span>
+ </span>
+ </span>
+ </span>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/photogalleries/" class="c-toall__link c-linkwico" name="clb1489407"><i class="c-ico c-ico_toall_blue"></i><u>Все фото</u></a>
+ </span>
+ </div>
+ </div>
+ </div>
+ <script src="/js/auto/v2/jquery.prgrsvTabs.js"></script>
+ <script src="/js/auto/v2/main/jquery.prvTbsInit.js"></script>
+ <script>
+ jQuery('.js-media').initPrTabs();
+ </script>
+ </td>
+ </tr>
+ <tr>
+ <td class="s-index__service">
+ <div class="s-index__service__title">
+ <div class="s-index__service__title__inner">
+ <a href="/consultation/" class="s-index__service__title__link" name="clb1489408">
+ Консультации
+ </a>
+ </div>
+ </div>
+ <div class="s-index__service__inner js-consultation">
+ <div class="s-index__service__consult">
+ <div class="c-switcher">
+ <a href="#" name="clb1489408" class="c-switcher__link c-switcher__link_prv c-switcher__link_off js-prt_prev" title="Назад"></a>
+ <a href="#" name="clb1489408" class="c-switcher__link c-switcher__link_nxt js-prt_next" title="Вперед"></a>
+ <div class="c-switcher__title">
+ <a href="/consultation/list/rubric/8/" class="c-switcher__title__link js-prt_title" name="clb1489408">Автомобили с пробегом: что выбрать</a>
+ <a href="/consultation/list/rubric/7/" class="c-switcher__title__link js-prt_title" style="display: none;" name="clb1489408">Юридические вопросы</a>
+ <a href="/consultation/list/rubric/2/" class="c-switcher__title__link js-prt_title" style="display: none;" name="clb1489408">Автострахование</a>
+ <a href="/consultation/list/rubric/5/" class="c-switcher__title__link js-prt_title" style="display: none;" name="clb1489408">Аэрография</a>
+ <a href="/consultation/list/rubric/4/" class="c-switcher__title__link js-prt_title" style="display: none;" name="clb1489408">Защита от угона</a>
+ <a href="/consultation/list/rubric/1/" class="c-switcher__title__link js-prt_title" style="display: none;" name="clb1489408">ГИБДД</a>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="c-message">
+ <div class="c-message__date">
+ 10.11.2013
+ </div>
+ <div class="c-message__title">
+ Помогите определиться
+ </div>
+ <div class="c-message__notice">
+ Здравствуйте!
+Подскажите,что лучше: новая лада калина 2 или рено сандеро? В плане обслуживания, проходимости (в т.ч. клиренс), надежности.
+ </div>
+ <div class="c-message__addit">
+ <a href="/consultation/54541/" name="clb1489408">Прочитать ответ</a>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="c-message">
+ <div class="c-message__date">
+ 01.11.2013
+ </div>
+ <div class="c-message__title">
+ НЕ ставят на  учет, справедливо ли?!
+ </div>
+ <div class="c-message__notice">
+ Добрый день. У меня такая вот беда,вместо счастья от наконец-то купленной первой машины.Машина  у меня первая, конечно был страхи, что в угоне и тому подобное, пробивала номера, ничего криминальног...<wbr>&#8203;
+ </div>
+ <div class="c-message__addit">
+ <a href="/consultation/54145/" name="clb1489408">Прочитать ответ</a>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="c-message">
+ <div class="c-message__date">
+ 29.10.2013
+ </div>
+ <div class="c-message__title">
+ Техосмотр кончился, а страховка есть
+ </div>
+ <div class="c-message__notice">
+ В том году, в августе забрал у друга авто, сразу сделал техосмотр и ОСАГО, в июле этого года перевели автомобиль на меня, соответственно,<wbr>&#8203; после переоформления сразу пашел в страховую делать ОСАГО, ...
+ </div>
+ <div class="c-message__addit">
+ <a href="/consultation/54031/" name="clb1489408">Прочитать ответ</a>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="c-message">
+ <div class="c-message__date">
+ 23.10.2013
+ </div>
+ <div class="c-message__title">
+ Покраска авто
+ </div>
+ <div class="c-message__notice">
+ Спасибо, Ильнур!  Шагрень - это дефект при покраске,  возникающий при неправильном нанесении краски (давление, температура). Она похожа на кожуру апельсина. При солнечном свете эти волны очень заме...
+ </div>
+ <div class="c-message__addit">
+ <a href="/consultation/53837/" name="clb1489408">Прочитать ответ</a>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="c-message">
+ <div class="c-message__date">
+ 21.10.2013
+ </div>
+ <div class="c-message__title">
+ Автозапуск
+ </div>
+ <div class="c-message__notice">
+ здравствуйте хочу установить сигн. на опель вектра дизель.PANTERA SLK-625RS ver.2 можно ли? и что ещё надо к ней покупать чтоб дизелёк не мерз. машина 1988гв сейчас стоит центральный замок без сигн...
+ </div>
+ <div class="c-message__addit">
+ <a href="/consultation/53744/" name="clb1489408">Прочитать ответ</a>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="c-message">
+ <div class="c-message__date">
+ 05.09.2013
+ </div>
+ <div class="c-message__title">
+ Водительские права
+ </div>
+ <div class="c-message__notice">
+ Можно ли вернуть водительские права лишенным  за 0,10 промилле в связи с изменениями от 1 сентября 2013 года ?
+ </div>
+ <div class="c-message__addit">
+ <a href="/consultation/51982/" name="clb1489408">Прочитать ответ</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/consultation/" class="c-toall__link c-linkwico" name="clb1489408"><i class="c-ico c-ico_toall_blue"></i><u>Все вопросы</u></a>
+ </span>
+ </div>
+ </div>
+ <script>
+ jQuery('.js-consultation').initPrTabs();
+ </script>
+ </td>
+ <td class="s-index__service">
+ <!-- market -->
+ <!-- 3257 -->
+ 
+ <!-- /3257 -->
+ 
+ 	<div class="s-index__service__title">
+ <div class="s-index__service__title__inner">
+ <a href="/market/" class="s-index__service__title__link" name="clb1489409">
+ Новые объявления
+ </a>
+ </div>
+ </div>
+ <div class="s-index__service__inner js-offers">
+ <div class="c-switcher">
+ <a href="#" name="clb1489409" class="c-switcher__link c-switcher__link_prv js-prt_prev c-switcher__link_off" title="Назад"></a>
+ <a href="#" name="clb1489409" class="c-switcher__link c-switcher__link_nxt js-prt_next" title="Вперед"></a>
+ <div class="c-switcher__title">
+ <a href="/market/?type=old" class="c-switcher__title__link js-prt_title" name="clb1489409">Автомобили с пробегом</a>
+ <a href="/market/?type=new" class="c-switcher__title__link js-prt_title" name="clb1489409">Новые автомобили</a>
+ <a href="/market/found.html?certified=1" class="c-switcher__title__link js-prt_title" name="clb1489409">Сертифицированные</a>
+ </div>
+ </div>
+ <div class="s-index__service__market">
+ <div class="js-prt_tab">
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/spb/honda/civic/22381986/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/a/8/a8c89ac5526553d64da4c7c77ccad131_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/spb/honda/civic/22381986/" name="clb1489409">Honda Civic 1.8 MT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2007 год,
+ <span class="c-number">
+ <i>99</i>000
+ </span>
+ км
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>399</i>000
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/msk/ford/fusion/22358210/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/e/c/ec6434557cf6a7c51e3458bf07651347_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/msk/ford/fusion/22358210/" name="clb1489409">Ford Fusion 1.4 MT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2008 год,
+ <span class="c-number">
+ <i>97</i>093
+ </span>
+ км
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>308</i>525
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/rostov-na-donu/suzuki/sx4/22282239/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/e/e/ee0878b6a294ccbeaddf3681e875ca12_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/rostov-na-donu/suzuki/sx4/22282239/" name="clb1489409">Suzuki SX4 1.6 AT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2009 год,
+ <span class="c-number">
+ <i>79</i>528
+ </span>
+ км
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>520</i>000
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/msk/kia/rio/22376382/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/7/8/783963ca9d76294b3544b7f809202820_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/msk/kia/rio/22376382/" name="clb1489409">Kia Rio 1.6 AT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2013 год,
+ <span class="c-m-offer__details__new">
+ новый
+ </span>
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>589</i>900
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/msk/lada_vaz/granta/22375079/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/3/5/3589ba35ae0658ab9b31e0ca9f04458b_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/msk/lada_vaz/granta/22375079/" name="clb1489409">Lada (ВАЗ) Granta 1.6 120hp MT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2013 год,
+ <span class="c-m-offer__details__new">
+ новый
+ </span>
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>206</i>500
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/msk/nissan/tiida/22345234/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/9/9/993981eb0ef638254f54df3b97c54255_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/msk/nissan/tiida/22345234/" name="clb1489409">Nissan Tiida 1.6 AT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2013 год,
+ <span class="c-m-offer__details__new">
+ новый
+ </span>
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>529</i>000
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="js-prt_tab">
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/msk/mercedes-benz/glk/22382288/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/2/0/20ceda86777d3b27491df5cbf4eab073_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/msk/mercedes-benz/glk/22382288/" name="clb1489409">Mercedes-Benz GLK 300 250hp 4Matic AT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2012 год,
+ <span class="c-number">
+ <i>37</i>153
+ </span>
+ км
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>1</i><i>695</i>000
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/spb/mercedes-benz/e_coupe/22379419/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/3/1/313815228c08aa04be4ad816129b3f9a_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/spb/mercedes-benz/e_coupe/22379419/" name="clb1489409">Mercedes-Benz E Coupe 350 AT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2011 год,
+ <span class="c-number">
+ <i>32</i>000
+ </span>
+ км
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>1</i><i>690</i>000
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__market__offer">
+ <div class="c-m-offer c-m-offer_bright">
+ <a href="/market/msk/mercedes-benz/gl/22379418/" class="c-m-offer__photo" name="clb1489409"><img src="http://pic.auto.mail.ru/market/offers/4/3/4394a80e2c5d08c456673fcc02166f28_thumbnail.jpg" alt="" class="c-pre-market"></a>
+ <div class="c-m-offer__notice">
+ <span class="c-m-offer__title">
+ <a href="/market/msk/mercedes-benz/gl/22379418/" name="clb1489409">Mercedes-Benz GL 500 AT</a>
+ </span>
+ <span class="c-m-offer__details">
+ 2012 год,
+ <span class="c-number">
+ <i>30</i>357
+ </span>
+ км
+ </span>
+ <span class="c-m-offer__price">
+ <span class="c-priceplate">
+ <span class="c-number">
+ <i>4</i><i>495</i>000
+ </span>
+ руб
+ </span>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="s-index__service__autosalon">
+ <a href="/autosalon/offer.html" class="s-index__service__autosalon__link c-linkwico" name="clb1489409"><i class="c-ico c-ico_autosalon"></i><u>Автосалонам</u></a>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/market/" class="c-toall__link c-linkwico" name="clb1489409"><i class="c-ico c-ico_toall_blue"></i><u>Все объявления</u></a>
+ </span>
+ </div>
+ </div>
+ <script>
+ jQuery('.js-offers').initPrTabs();
+ </script>
+
+ 
+ <!-- /market -->
+ </td>
+ <td class="s-index__service">
+ <!-- opinions -->
+ <div class="s-index__service__title">
+ <div class="s-index__service__title__inner">
+ <a href="/opinions/" class="s-index__service__title__link" name="clb1489410">
+ Отзывы
+ </a>
+ </div>
+ </div>
+ <div class="s-index__service__inner">
+ <div class="s-index__service__opinions">
+ <div class="c-messageblock c-messageblock_left">
+ <div class="c-messageblock__avatar">
+ <span class="c-avatar c-avatar_smallsquare">
+ <a href="http://auto.mail.ru/inbox/sivilev/" class="c-avatar__link" style="background-image: url(http://cp-filin.mail.ru/pic?width=45&height=45&email=sivilev%40inbox.ru);" name="clb1489410"></a>
+ </span>
+ </div>
+ <div class="c-messageblock__message">
+ <div class="c-message">
+ <div class="c-message__date">
+ 11.11.2013
+ </div>
+ <div class="c-message__author">
+ <a href="http://auto.mail.ru/inbox/sivilev/" class="c-message__author__link" name="clb1489410">Евгений  Сивильев</a>
+ </div>
+ <div class="c-message__title">
+ <a href="/opinions/lifan/smily/54711/" name="clb1489410">Lifan Smily 1.3 MT</a>
+ </div>
+ <div class="c-message__notice">
+ Автомобиль Лифан  Смайл как раз для наших дорог и нашего климата.  Зимой, конечно, немного гребёт снег, но зато заводится с пол -оборота.  Кроме этого машина имеет хорошую печку, которая быстро разогревает салон до комфортной температуры.  И ходовые...
+ </div>
+ <div class="c-message__addit">
+ Мой рейтинг:
+ <span class="c-message__addit__stars">
+ <span class="c-rating c-rating_45"></span>
+ </span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="c-toall c-toall_blue">
+ <span class="c-toall__inner">
+ <a href="/opinions/lifan/smily/" class="c-toall__link c-linkwico" name="clb1489410"><i class="c-ico c-ico_toall_blue"></i><u>Все отзывы на Lifan Smily</u></a>
+ </span>
+ </div>
+ <div class="c-toall c-toall_blue c-toall_close">
+ <span class="c-toall__inner">
+ <a href="/opinions/" class="c-toall__link c-linkwico" name="clb1489410"><i class="c-ico c-ico_toall_blue"></i><u>Все отзывы</u></a>
+ </span>
+ </div>
+ </div>
+<!-- /opinions -->
+
+ </td>
+ </tr>
+ </table>
+ <script>self.trg_check_px||(trg_check_px=function(){for(var i=0,_=arguments.callee,s=(_.B||(_.B=document.body,_.E=_.B.parentNode),'scrollTop'),R=self.trg_scroll_container,S=R?R[s]:_.B[s]||_.E[s],H=(R||_.E).clientHeight,b;b=trg_real_banners[i++];)S<b.h&&b.h<S+H&&(!b.i)&&(b.i=1,trg_get_px(b.id))}),self.trg_get_px||(trg_get_px=function(id){new Image().src='http://rs.mail.ru/d1195581.gif?r='+~~(Math.random()*1e9)}),+function(e,R,C,D){e=e[e.length-1].parentNode,C=R||self,D=~~(R&&R.getBoundingClientRect().top)||0,self.trg_real_banners||(trg_real_banners=[],C.attachEvent?C.attachEvent('onscroll',trg_check_px):C.addEventListener('scroll',trg_check_px,!1)),trg_real_banners.push({h:e.getBoundingClientRect().top-D,id:1195581}),trg_check_px()}(document.getElementsByTagName('script'),self.trg_scroll_container)</script>
+ <!-- END: PAGE BODY - CONTENT -->
+ </div><!-- /div class="p-body__content__inner" -->
+ </div><!-- /section -->
+ </div><!-- /div class="p-body__content" -->
+ </div><!-- /div class="p-body__inner7" -->
+ <script>
+ radar.stop('midcol');
+ </script>
+ </div><!-- /div class="p-body__inner6" -->
+ <div class="c-clear"></div>
+ </div><!-- /div class="p-body__inner5" -->
+ <!-- BEGIN: PAGE BODY - LEFT -->
+ <script>
+ radar.start('leftcol');
+ </script>
+ <div class="p-body__left">
+ 
+<!-- BEGIN: BLOCK_USERBLOCK -->
+<script>
+ (function($) {
+ $.cookie('sid', 'cb9946532bc42fea963febbf760c2dd2', {
+ expires: 1,
+ path: '/',
+ domain: '.auto.mail.ru'
+ });
+ $.cookie('market_geo', '24_295_1738', { expires : -1, path: '/'});
+ $.cookie('market_geo', '24_295_1738',  { expires: 60, path: '/', domain: '.auto.mail.ru' });
+ })(jQuery);
+</script>
+ <div class="b-userlogin b-userlogin_tiny">
+ <form action="https://auth.mail.ru/cgi-bin/auth" method="post">
+ <input type="hidden" name="Page" value="http://auto.mail.ru">
+ <input type="hidden" name="FailPage" value="http://auto.mail.ru/login.html?bad_login=1">
+ <div class="b-userlogin__label">
+ <a href="http://e.mail.ru/cgi-bin/signup?from=mrg_auto" target="_blank" class="b-userlogin__label__link">Регистрация</a>
+ Имя
+ </div>
+ <table class="b-userlogin__email"><tr>
+ <td class="b-userlogin__email__login">
+ <div class="b-userlogin__field">
+ <input type="text" name="Login" tabindex="1" value="" class="b-userlogin__email__login__input">
+ </div>
+ </td>
+ <td class="b-userlogin__email__domain">
+ <div class="b-userlogin__field">
+ <select name="Domain" tabindex="2" class="b-userlogin__email__domain__select">
+ <option value="mail.ru">@mail.ru</option>
+ <option value="inbox.ru">@inbox.ru</option>
+ <option value="bk.ru">@bk.ru</option>
+ <option value="list.ru">@list.ru</option>
+ </select>
+ </div>
+ </td>
+ </tr></table>
+ <div class="b-userlogin__label">
+ <a href="http://e.mail.ru/cgi-bin/passremind?from=mrg_auto" target="_blank" class="b-userlogin__label__link">Забыли?</a>
+ Пароль
+ </div>
+ <div class="b-userlogin__field b-userlogin__password">
+ <input type="password" name="Password" tabindex="3" class="b-userlogin__password__input">
+ </div>
+ <div class="b-userlogin__submit">
+ <input type="submit" tabindex="5" value="Войти" class="b-userlogin__submit__button">
+ <label class="b-userlogin__submit__alien">
+ <input type="checkbox" name="level" tabindex="4" class="b-userlogin__submit__alien__input">
+ Чужой<br>компьютер
+ </label>
+ </div>
+ <script>
+ (function($) {
+ var currentLocation = window.location.toString();
+ $('.b-userlogin')
+ .find('input[name=Page]').val( currentLocation ).end()
+ .find('input[name=FailPage]').val( "http://auto.mail.ru/login.html?bad_login=1&page=" + encodeURIComponent(currentLocation) )
+ ;
+ var Mpop, isCorp, selectedDomain, authLogin, jDomainSelect;
+ if((Mpop = $.cookie('Mpop')) && (MpopVals = Mpop.match(/(\d+):(\w+):(([.\w\-]+)\@((\w+)\.[.\w]+)):/))){
+ selectedDomain = MpopVals[5];
+ $('.b-userlogin input[name=Login]').val(authLogin = MpopVals[4]);
+ if(isCorp = MpopVals[6]=='corp'){
+ jDomainSelect = $('.b-userlogin select[name=Domain]').append(
+ $('<option />').val(selectedDomain).text('@'+selectedDomain).attr('selected', 'selected')
+ );
+ } else {
+ jDomainSelect = $('.b-userlogin select[name=Domain]').find('option[value="'+selectedDomain+'"]').attr('selected', 'selected');
+ }
+ }
+ })(jQuery);
+ </script>
+ </form>
+ </div>
+<!-- END: BLOCK_USERBLOCK -->
+
+ <!-- rb: 5651 (promo bakanov) -->
+ 
+ <!-- /rb: 5651 (promo bakanov)-->
+ 
+<div class="b-m-statstiny">
+ <a href="/market/" class="b-m-statstiny__link">
+ 53112 объявлений &raquo;
+ </a>
+</div>
+
+ 
+<div class="c-head-3">
+ Все о
+</div>
+<div class="b-firms b-firms_tiny">
+ <div class="c-clearin">
+ <div class="b-firms__group">
+ <a href="/catalogue/audi/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_audi">
+ </span>
+ <u class="b-firms__item__title">
+ Audi
+ </u>
+ </a>
+ <a href="/catalogue/bmw/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_bmw">
+ </span>
+ <u class="b-firms__item__title">
+ BMW
+ </u>
+ </a>
+ <a href="/catalogue/cadillac/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_cadillac">
+ </span>
+ <u class="b-firms__item__title">
+ Cadillac
+ </u>
+ </a>
+ <a href="/catalogue/chery/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_chery">
+ </span>
+ <u class="b-firms__item__title">
+ Chery
+ </u>
+ </a>
+ <a href="/catalogue/chevrolet/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_chevrolet">
+ </span>
+ <u class="b-firms__item__title">
+ Chevrolet
+ </u>
+ </a>
+ <a href="/catalogue/chrysler/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_chrysler">
+ </span>
+ <u class="b-firms__item__title">
+ Chrysler
+ </u>
+ </a>
+ <a href="/catalogue/citroen/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_citroen">
+ </span>
+ <u class="b-firms__item__title">
+ Citroen
+ </u>
+ </a>
+ <a href="/catalogue/daewoo/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_daewoo">
+ </span>
+ <u class="b-firms__item__title">
+ Daewoo
+ </u>
+ </a>
+ <a href="/catalogue/dodge/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_dodge">
+ </span>
+ <u class="b-firms__item__title">
+ Dodge
+ </u>
+ </a>
+ <a href="/catalogue/fiat/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_fiat">
+ </span>
+ <u class="b-firms__item__title">
+ Fiat
+ </u>
+ </a>
+ <a href="/catalogue/ford/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_ford">
+ </span>
+ <u class="b-firms__item__title">
+ Ford
+ </u>
+ </a>
+ <a href="/catalogue/great_wall/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_great_wall">
+ </span>
+ <u class="b-firms__item__title">
+ Great Wall
+ </u>
+ </a>
+ <a href="/catalogue/honda/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_honda">
+ </span>
+ <u class="b-firms__item__title">
+ Honda
+ </u>
+ </a>
+ <a href="/catalogue/hyundai/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_hyundai">
+ </span>
+ <u class="b-firms__item__title">
+ Hyundai
+ </u>
+ </a>
+ <a href="/catalogue/infiniti/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_infiniti">
+ </span>
+ <u class="b-firms__item__title">
+ Infiniti
+ </u>
+ </a>
+ <a href="/catalogue/jaguar/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_jaguar">
+ </span>
+ <u class="b-firms__item__title">
+ Jaguar
+ </u>
+ </a>
+ <a href="/catalogue/jeep/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_jeep">
+ </span>
+ <u class="b-firms__item__title">
+ Jeep
+ </u>
+ </a>
+ <a href="/catalogue/kia/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_kia">
+ </span>
+ <u class="b-firms__item__title">
+ Kia
+ </u>
+ </a>
+ <a href="/catalogue/lada_vaz/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_lada_vaz">
+ </span>
+ <u class="b-firms__item__title">
+ Lada (ВАЗ)
+ </u>
+ </a>
+ <a href="/catalogue/land_rover/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_land_rover">
+ </span>
+ <u class="b-firms__item__title">
+ Land Rover
+ </u>
+ </a>
+ <a href="/catalogue/lexus/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_lexus">
+ </span>
+ <u class="b-firms__item__title">
+ Lexus
+ </u>
+ </a>
+ <a href="/catalogue/lifan/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_lifan">
+ </span>
+ <u class="b-firms__item__title">
+ Lifan
+ </u>
+ </a>
+ <a href="/catalogue/mazda/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_mazda">
+ </span>
+ <u class="b-firms__item__title">
+ Mazda
+ </u>
+ </a>
+ <a href="/catalogue/mercedes-benz/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_mercedes-benz">
+ </span>
+ <u class="b-firms__item__title">
+ Mercedes
+ </u>
+ </a>
+ <a href="/catalogue/mini/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_mini">
+ </span>
+ <u class="b-firms__item__title">
+ Mini
+ </u>
+ </a>
+ <a href="/catalogue/mitsubishi/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_mitsubishi">
+ </span>
+ <u class="b-firms__item__title">
+ Mitsubishi
+ </u>
+ </a>
+ <a href="/catalogue/nissan/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_nissan">
+ </span>
+ <u class="b-firms__item__title">
+ Nissan
+ </u>
+ </a>
+ <a href="/catalogue/opel/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_opel">
+ </span>
+ <u class="b-firms__item__title">
+ Opel
+ </u>
+ </a>
+ <a href="/catalogue/peugeot/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_peugeot">
+ </span>
+ <u class="b-firms__item__title">
+ Peugeot
+ </u>
+ </a>
+ <a href="/catalogue/porsche/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_porsche">
+ </span>
+ <u class="b-firms__item__title">
+ Porsche
+ </u>
+ </a>
+ <a href="/catalogue/renault/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_renault">
+ </span>
+ <u class="b-firms__item__title">
+ Renault
+ </u>
+ </a>
+ <a href="/catalogue/seat/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_seat">
+ </span>
+ <u class="b-firms__item__title">
+ SEAT
+ </u>
+ </a>
+ <a href="/catalogue/skoda/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_skoda">
+ </span>
+ <u class="b-firms__item__title">
+ Skoda
+ </u>
+ </a>
+ <a href="/catalogue/ssangyong/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_ssangyong">
+ </span>
+ <u class="b-firms__item__title">
+ SsangYong
+ </u>
+ </a>
+ <a href="/catalogue/subaru/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_subaru">
+ </span>
+ <u class="b-firms__item__title">
+ Subaru
+ </u>
+ </a>
+ <a href="/catalogue/suzuki/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_suzuki">
+ </span>
+ <u class="b-firms__item__title">
+ Suzuki
+ </u>
+ </a>
+ <a href="/catalogue/toyota/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_toyota">
+ </span>
+ <u class="b-firms__item__title">
+ Toyota
+ </u>
+ </a>
+ <a href="/catalogue/volkswagen/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_volkswagen">
+ </span>
+ <u class="b-firms__item__title">
+ Volkswagen
+ </u>
+ </a>
+ <a href="/catalogue/volvo/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_volvo">
+ </span>
+ <u class="b-firms__item__title">
+ Volvo
+ </u>
+ </a>
+ <a href="/catalogue/zaz/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_zaz">
+ </span>
+ <u class="b-firms__item__title">
+ ZAZ
+ </u>
+ </a>
+ <a href="/catalogue/gaz/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_gaz">
+ </span>
+ <u class="b-firms__item__title">
+ ГАЗ
+ </u>
+ </a>
+ <a href="/catalogue/uaz/" class="b-firms__item c-linkwico">
+ <span class="b-firms__item__logo c-fi c-fi_sprite c-fi_uaz">
+ </span>
+ <u class="b-firms__item__title">
+ УАЗ
+ </u>
+ </a>
+ </div>
+ </div>
+ <div class="c-toall c-toall_aside">
+ <span class="c-toall__inner">
+ <a href="/catalogue/" class="c-toall__link c-linkwico" name="clb1489703"><i class="c-ico c-ico_toall_gs"></i><u>Все марки</u></a>
+ </span>
+ </div>
+</div>
+
+ <noindex>
+ <!-- rb: 1368 (traffic jams) -->
+ <!-- # include virtual="/rb/1368" -->
+ <!-- /rb: 1368 (traffic jams) -->
+ <!-- rb: 1441 (poll) -->
+ <!-- # include virtual="/rb/1441" -->
+ <!-- /rb: 1441 (poll) -->
+ </noindex>
+ </div><!-- /div class="p-body__left" -->
+ <script>
+ radar.stop('leftcol');
+ </script>
+ <!-- END: PAGE BODY - LEFT -->
+ </div><!-- /div class="p-body__inner4 c-clearin" -->
+ </div><!-- /div class="p-body__inner3" -->
+ </div><!-- /div class="p-body__inner2" -->
+ </div><!-- /div class="p-body__inner1" -->
+</div><!-- /div class="p-body p-body_right_no" -->
+<!-- END: PAGE BODY -->
+<!-- BEGIN: PAGE FOOTER -->
+<div class="p-foot">
+ <div class="p-foot__branding">
+ <!-- rb: 3664 (branding foot) -->
+ 
+ <!-- /rb: 3664 (branding foot) -->
+ </div>
+ <div class="p-foot__links">
+ <span class="p-foot__links__item">
+ <a href="http://m.auto.mail.ru/">Мобильная версия</a>
+ </span>
+ <span class="p-foot__links__item">
+ <a href="http://my.mail.ru/community/automailru/">Наше сообщество</a>
+ </span>
+ <span class="p-foot__links__item">
+ <a href="http://auto.mail.ru/common/policy.html">Условия использования материалов</a>
+ </span>
+ <span class="p-foot__links__item">
+ <a href="http://auto.mail.ru/feedback.html">Обратная связь</a>
+ </span>
+ <span class="p-foot__links__item">
+ <a href="http://sales.mail.ru/">Реклама на Mail.Ru</a>
+ </span>
+ <span class="p-foot__links__item">
+ <a href="http://corp.mail.ru/">О компании</a>
+ </span>
+ </div>
+ 
+ <div class="p-foot__copyright">
+ <!-- rb: 3312 (copyright) -->
+ &#169; <a name="cln9082" href="http://corp.mail.ru/" class="mf_w">Mail.Ru</a>, 1999&mdash;2013
+ <!-- /rb: 3312 (copyright) -->
+ </div>
+ 
+</div><!-- /div class="p-foot" -->
+<!-- END: PAGE FOOTER -->
+<script src="/js/auto/v2/tools/jquery/jquery.Popup.js?1364300032" type="text/javascript"></script>
+<div class="g-pbox-wrapper g-pbox-wrapper_white js-popup" style="display:none">
+ <div class="g-pbox-position js-popup_close">
+ <div class="g-pbox-position-inner js-box_sz" style="min-height: 100%; padding-top: 0">
+ <table class="g-pbox-container js-box_cont">
+ <tr>
+ <td>
+ <table class="g-pbox-container__inner js-box_cont_inner">
+ <tr>
+ <td class="g-pbox-container__inner__display_area">
+ <div class="g-pbox js-pbox">
+ <div class="g-pbox_loader js-popup_loader"></div>
+ <div class="g-pbox__popup_blocks js-popup_blocks">
+ </div>
+ </div>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ </table>
+ </div>
+ </div>
+</div>
+ <!-- BEGIN: PAGE COUNTER - BOTTOM -->
+ <div class="p-counters">
+ <!-- rb: 195 (allpages counters) -->
+ <img src="http://rs.mail.ru/d225269.gif?rnd=147573634&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+<!-- mr_counter type="topmail" domain="df.c4.b1.a0.top.mail.ru" id="85837" -->
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">//<![CDATA[
+var _tmr = _tmr || [];
+_tmr.push({id: '85837',  type: 'pageView', start: (new Date()).getTime()});
+(function (d, w) {
+ var ts = d.createElement('script'); ts.type = 'text/javascript'; ts.async = true;
+ ts.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//top-fwz1.mail.ru/js/code.js';
+ var f = function () {var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ts, s);};
+ if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+//]]></script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=85837;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+<!-- /mr_counter -->
+
+<!-- mr_counter type="liru" personal="personal-auto" -->
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit;personal-auto?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random();//--></script><!--/LiveInternet-->
+<!-- /mr_counter -->
+
+<!-- mr_counter type="googl" id="UA-30346235-1" -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30346235-1']);
+  _gaq.push(['_setDomainName', 'auto.mail.ru']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- /mr_counter --> 
+
+  
+<!-- mr_counter type="rbmail" src="http://b.scorecardresearch.com/p?c1=2&c2=9999305&cv=2.0&cj=1" -->
+<!-- Begin comScore Tag -->
+<script type="text/javascript">
+new Image().src = "http://b.scorecardresearch.com/p?c1=2&c2=9999305&cj=1&c4="+escape(document.location.href) +"&cv=2.0"
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=9999305&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+<!-- /mr_counter --> 
+ <!-- /rb: 195 (allpages counters) -->
+ <!-- rb: 3 cln count -->
+ 
+
+<script type="text/javascript">
+//<![CDATA[
+(function(w, d) {
+        if (w.rb_counter) return;
+        function h() {
+                var n, a = arguments;
+                for(var i=a.length;i--;){
+                        n = a[i].split(',');
+                        for(var j=n.length;j--;){
+                                c(n[j]);
+                        }
+                }
+        }
+        function c(n) {
+                var m, r = parseInt(Math.random()*1E9), s;
+                if (!(m = n.match(/^(?:cl([bn])|([adgin]))(\d+)(?:sz(\d+))?/))) return;
+                if (m[1]) {
+                        s = "s" + m[1];
+                }
+                else if(m[2] == "n") {
+                        s = "nc";
+                }
+                else if(m[2]=="i") {
+                        r = null;
+                        s = m[2];
+                }
+                else {
+                        s = m[2];
+                }
+                s += m[3] + ".gif?";
+                if (m[4]) s += "sz=" + m[4];
+                if (r) s += "&rnd=" + r;
+                (new Image).src = "//rs.mail.ru/" + s;
+        }
+        (function(o, e, fn) {
+                if (o.addEventListener) o.addEventListener(e, fn, false);
+                else if (o.attachEvent) o.attachEvent('on' + e, fn);
+                else o['on' + e] = fn;
+        })(d, 'mousedown', function(e) {
+                var n;
+                e = e || w.event;
+                e = e.target || e.srcElement;
+                while (e.parentNode){
+                        if ((n = e.getAttribute('name')) && (n = n.toString())){
+                                h(n);
+                        }
+                        e = e.parentNode;
+                }
+        });
+        w.rb_counter = h;
+})(window, document);
+//]]>
+</script>
+
+
+
+
+ <!-- /rb: 3 cln count -->
+ </div>
+ <!-- END: PAGE COUNTER - BOTTOM -->
+ <script src="http://img.imgsmail.ru/r/js/mrim_replacer.js"></script>
+
+ <script type="text/javascript">
+ radar.stop('all').save();
+ </script>
+</body>
+</html>

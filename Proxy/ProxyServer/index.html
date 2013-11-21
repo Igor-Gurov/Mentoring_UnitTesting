@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Proxy</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>This is proxy server</h1>
+        <script>
+            function myfunc(event, text) {
+                if (event.keyCode == 13) {
+                    var handlerPath = new String("http://localhost:53047/ProxyHandler.ashx");
+                    //sessvars.myObj = { proxyHandlerPath: handlerPath};
+                    alert("Переход по адресу: " + text.value);
+                    document.location.href = handlerPath + "?url=" + text.value;
+                }
+            };
+        </script>
+    </header>
+    <section>
+        <label>Type URL Here</label>
+        <input type="text" name="siteUrl" onkeyup="myfunc(event, this)" />
+    </section>
+    <section class="">
+    </section>
+    <footer>
+    </footer>
+</body>
+</html>

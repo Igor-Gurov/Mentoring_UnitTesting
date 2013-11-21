@@ -1,0 +1,1704 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cuemon.Data.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:Cuemon.Data.Entity.BusinessEntity">
+            <summary>
+            An abstract class representing a Business Entity to be used in your business logic code.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IBusinessEntityRepository">
+            <summary>
+            The following tables list the members exposed by the IBusinessEntityRepository type.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IBusinessEntity">
+            <summary>
+            The following tables list the members exposed by the IBusinessEntity type.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IBusinessEntityDataMapped">
+            <summary>
+            The following tables list the members exposed by the IBusinessEntityDataMapped type.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataMapped.GetDataMappedEntitiesColumns">
+            <summary>
+            Gets the data mapped entities and its reflected columns.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IDictionary`2"/> compatible object holding the entity type and column information.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataMapped.GetDataMappedEntityColumns(System.Type)">
+            <summary>
+            Gets the reflected columns of the specified data mapped entity.
+            </summary>
+            <param name="entityType">The data mapped entity type.</param>
+            <returns>An array of refected <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> objects.</returns>
+        </member>
+        <member name="P:Cuemon.Data.Entity.IBusinessEntity.IsDirty">
+            <summary>
+            Gets a value indicating whether this object has changed.
+            </summary>
+            <value><c>true</c> if the content has changed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.IBusinessEntity.IsNew">
+            <summary>
+            Gets a value indicating whether this instance is new.
+            </summary>
+            <value><c>true</c> if this instance is new; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityRepository.Save">
+            <summary>
+            Saves this object to a data source and reloads the instance afterwards.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityRepository.SaveOnly">
+            <summary>
+            Saves this object to a data source. 
+            Does not reload the instance from the data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityRepository.Delete">
+            <summary>
+            Deletes this object from a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityRepository.Load">
+            <summary>
+            Loads this object from a data source.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IIdentifier">
+            <summary>
+            An interface describing the contract for retreiving an indentifier as a string.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IIdentifier.GetIdentifier">
+            <summary>
+            Gets the identifier of this object as a string.
+            </summary>
+            <returns>A <see cref="T:System.String"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.CreateDescendantOrSelfEntity``1(System.Object[])">
+            <summary>
+            An experimental method to create a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance from the descendant-or-self <typeparamref name="TEntity"/>.
+            </summary>
+            <typeparam name="TEntity">The base type of <see cref="M:System.Object.GetType"/> to lookup derived types from.</typeparam>
+            <param name="entityConstructorArgs">The entity constructor args to dynamically invoke a new <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <returns>An instance of either the source type of <see cref="M:System.Object.GetType"/> or the derived version of <typeparamref name="TEntity"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.CreateDescendantOrSelfEntity``1(System.Type,System.Object[])">
+            <summary>
+            An experimental method to create a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance from the descendant-or-self <typeparamref name="TEntity"/>.
+            </summary>
+            <typeparam name="TEntity">The base type of the <paramref name="entityType"/> to lookup derived types from.</typeparam>
+            <param name="entityType">The type to search derived implementations from (descendant-or-self).</param>
+            <param name="entityConstructorArgs">The entity constructor args to dynamically invoke a new <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <returns>An instance of either the source type <paramref name="entityType"/> or the derived version of <typeparamref name="TEntity"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.InitializeDataAdapter">
+            <summary>
+            Gets the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> associated with this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>
+            </summary>
+            <returns>An implementation of the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Initialize">
+            <summary>
+            Method to override default initialization of this instance.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Demote``1(System.Object[])">
+            <summary>
+            Demotes the current instance to it's predecessor specified <typeparamref name="T"/> type.
+            </summary>
+            <typeparam name="T">The demoted rank type to apply to this instance.</typeparam>
+            <param name="entityConstructorArgs">The constructor arguments necessary to retrieve the demoted instance from a data source.</param>
+            <returns>The demoted (predecessor) instance of this instance.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Promote``1(``0,System.Object[])">
+            <summary>
+            Promotes the current instance to it's derived specified <paramref name="newRank"/> instance.
+            </summary>
+            <typeparam name="T">The promoted rank type to apply to this instance.</typeparam>
+            <param name="newRank">The new rank to apply to this instance object hierarchy.</param>
+            <param name="entityConstructorArgs">The constructor arguments necessary to retreive the promoted instance from a data source.</param>
+            <returns>The promoted (derived) instance of this instance.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.PropertyChanged"/> event.
+            </summary>
+            <param name="name">The name of the property being changed.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnInitializing">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.Initializing"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnInitialized">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.Initialized"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnDataLoading">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.DataLoading"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnDataLoaded">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.DataLoaded"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnDataBinding">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.DataBinding"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.OnDataBindingComplete">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntity.DataBindingComplete"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.GetDataMappedEntitiesColumns">
+            <summary>
+            Gets the data mapped entities and its reflected columns.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.Generic.IDictionary`2"/> compatible object holding the entity type and column information.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.GetDataMappedEntityColumns(System.Type)">
+            <summary>
+            Gets the reflected columns of the specified data mapped entity.
+            </summary>
+            <param name="entityType">The data mapped entity type.</param>
+            <returns>An array of reflected <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> objects.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.CreateNavigator">
+            <summary>
+            Returns a new <see cref="T:System.Xml.XPath.XPathNavigator"></see> object.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.XPath.XPathNavigator"></see> object.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.GetIdentifier">
+            <summary>
+            Gets the identifier of this instance as a string.
+            </summary>
+            <returns>A <see cref="T:System.String"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.GetFormat(System.Type)">
+            <summary>
+            Gets an object that provides formatting services for the specified type. 
+            Default format is taken from the <see cref="T:System.Globalization.CultureInfo"/> CurrentUICulture static method.
+            </summary>
+            <param name="formatType">An object that specifies the type of format object to get.</param>
+            <returns>
+            The current instance, if formatType is the same type as the current instance; otherwise, null.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetHasValue(System.Boolean)">
+            <summary>
+            Sets the <see cref="P:Cuemon.Data.Entity.BusinessEntity.HasValue"/> property to indicate whether this object was successfully loaded from the data source.
+            </summary>
+            <param name="hasValue">if set to <c>true</c> this object was successfully loaded from the data source; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetIsNew(System.Boolean)">
+            <summary>
+            Sets the <see cref="P:Cuemon.Data.Entity.BusinessEntity.IsNew"/> property to indicate whether this object is new.
+            </summary>
+            <param name="isNew">if set to <c>true</c> the object is marked as new; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetIsDirty(System.Boolean)">
+            <summary>
+            Sets the <see cref="P:Cuemon.Data.Entity.BusinessEntity.IsDirty"/> property to indicate whether this object has changed.
+            </summary>
+            <param name="isDirty">if set to <c>true</c> the object is marked as content has changed; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetHasLoaded(System.Boolean)">
+            <summary>
+            Sets the <see cref="P:Cuemon.Data.Entity.BusinessEntity.HasLoaded"/> property to indicate whether this object has been loaded from the data source.
+            </summary>
+            <param name="hasLoaded">if set to <c>true</c> the object is marked as been loaded from a data source; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetIsInitialized(System.Boolean)">
+            <summary>
+            Sets the IsInitialized property to indicate whether this object has been initialized.
+            </summary>
+            <param name="isInitialized">if set to <c>true</c> the object is marked as been initialized; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetIsInitializing(System.Boolean)">
+            <summary>
+            Sets the IsInitializing property to indicate whether this object is currently initializing.
+            </summary>
+            <param name="isInitializing">if set to <c>true</c> the object is marked as being currently initializing; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Delete">
+            <summary>
+            Deletes this object from a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Load">
+            <summary>
+            Loads this object from a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Save">
+            <summary>
+            Saves this object to a data source and reloads the instance afterwards.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SaveOnly">
+            <summary>
+            Saves this object to a data source. 
+            Does not reload the instance from the data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.GetCore``1(System.String)">
+            <summary>
+            An infrastructure helper method to be used by properties, from which trivial calls will be handled.
+            </summary>
+            <param name="propertyName">The property from which information is gathered from.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.SetCore(System.String,System.Object)">
+            <summary>
+            An infrastructure helper method to be used by properties, from which trivial calls will be handled.
+            </summary>
+            <param name="propertyName">The property from which information is gathered from.</param>
+            <param name="newValue">The new value to be assigned to the property.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Validate">
+            <summary>
+            Validates this instance towards any <see cref="T:Cuemon.Annotations.ValidationAttribute"/> decorated properties.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.Validate(System.Type)">
+            <summary>
+            Validates this instance towards any <see cref="T:Cuemon.Annotations.ValidationAttribute"/> decorated properties.
+            </summary>
+            <param name="entityType">The <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> to validate towards.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.GetProperty(System.String)">
+            <summary>
+            Infrastructure. Helper method for retrieving a property associated with a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.
+            </summary>
+            <param name="propertyName">Name of the property to get.</param>
+            <returns>A <see cref="T:System.Reflection.PropertyInfo"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntity.CheckForAttribute(System.Reflection.PropertyInfo)">
+            <summary>
+            Infrastructure. Verifies and returns the specified <paramref name="property"/> for the presence of a <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> attribute.
+            </summary>
+            <param name="property">The property to look for <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/>.</param>
+            <returns>A <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> if present; otherwise an <see cref="T:System.ArgumentException"/> is thrown.</returns>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.Initializing">
+            <summary>
+            Occurs when this instance is initializing.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.Initialized">
+            <summary>
+            Occurs when this instance has initialized.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.DataLoading">
+            <summary>
+            Occurs when this instance is loading data from a datasource.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.DataLoaded">
+            <summary>
+            Occurs when this instance has loaded data from a datasource.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.DataBinding">
+            <summary>
+            Occurs when this instance is binding the loaded data into storage fields.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntity.DataBindingComplete">
+            <summary>
+            Occurs when this instance has bound the loaded data into storage fields.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.IsInitialized">
+            <summary>
+            Gets a value indicating whether this instance is initialized.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is initialized; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.IsInitializing">
+            <summary>
+            Gets a value indicating whether this instance is initializing.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is initializing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.HasLoaded">
+            <summary>
+            Gets a value indicating whether this instance has loaded.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has loaded; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.DataAdapter">
+            <summary>
+            Gets the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> reference for this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance.
+            </summary>
+            <value>The <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> reference for this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only (no changes can be made to the repository).
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only (no changes can be made to the repository); otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.IsDirty">
+            <summary>
+            Gets a value indicating whether this object has changed.
+            </summary>
+            <value><c>true</c> if the content has changed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.IsNew">
+            <summary>
+            Gets a value indicating whether this instance is new.
+            </summary>
+            <value><c>true</c> if this instance is new; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.HasValue">
+            <summary>
+            Gets a value indicating whether this instance has values from the underlying repository.
+            </summary>
+            <value>
+              <c>true</c> if this instance has values from the underlying repository; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntity.Document">
+            <summary>
+            Gets or sets the IXPathNavigable object.
+            </summary>
+            <value>The IXPathNavigable object generated from the data adapter.</value>
+        </member>
+        <member name="T:Cuemon.Data.Entity.BusinessEntityCollection`1">
+            <summary>
+            Represent a generic <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/> collection.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IBusinessEntityCollection`1">
+            <summary>
+            The following tables list the members exposed by the IBusinessEntityCollection type.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityCollection`1.GetEntityType">
+            <summary>
+            Gets the type of elements in this collection.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IIdentifiers">
+            <summary>
+            An interface describing the contract for retreiving multiple indentifiers as a string.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IIdentifiers.GetIdentifiers">
+            <summary>
+            Gets a delimited string of identifiers of this object.
+            </summary>
+            <returns>A <see cref="T:System.String"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.ParseEntityRelation(System.String)">
+            <summary>
+            Parse and match and entity relation from the specified <paramref name="identifier"/>.
+            </summary>
+            <param name="identifier">The identifier to search and match in this instance.</param>
+            <returns>The value associated with the specified <paramref name="identifier"/> of this instance or the default value for the type of the <typeparamref name="T"/> parameter.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.CreateDescendantOrSelfEntity``1(System.Object[])">
+            <summary>
+            An experimental method to create a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance from the descendant-or-self <typeparamref name="TEntity"/>.
+            </summary>
+            <typeparam name="TEntity">The base type of <see cref="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetEntityType"/> to lookup derived types from.</typeparam>
+            <param name="entityConstructorArgs">The entity constructor args to dynamically invoke a new <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <returns>An instance of either the source type of <see cref="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetEntityType"/> or the derived version of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.CreateDescendantOrSelfEntity``1(System.Type,System.Object[])">
+            <summary>
+            An experimental method to create a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance from the descendant-or-self <typeparamref name="TEntity"/>.
+            </summary>
+            <typeparam name="TEntity">The base type of the <paramref name="entityType"/> to lookup derived types from.</typeparam>
+            <param name="entityType">The type to search derived implementations from (descendant-or-self).</param>
+            <param name="entityConstructorArgs">The entity constructor args to dynamically invoke a new <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <returns>An instance of either the source type <paramref name="entityType"/> or the derived version of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.InitializeDataAdapter">
+            <summary>
+            Gets the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> associated with this <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/>
+            </summary>
+            <returns>An implementation of the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Initialize">
+            <summary>
+            Method to override default initialization of this instance.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.PropertyChanged"/> event.
+            </summary>
+            <param name="name">The name of the property being changed.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnInitializing">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.Initializing"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnInitialized">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.Initialized"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnDataLoading">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataLoading"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnDataLoaded">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataLoaded"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnDataBinding">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataBinding"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.OnDataBindingComplete">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataBindingComplete"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetEntityType">
+            <summary>
+            Gets the type of elements in this collection.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetDataMappedEntityColumns(System.Type)">
+            <summary>
+            Gets the reflected columns of the specified data mapped entity.
+            </summary>
+            <param name="entityType">The data mapped entity type.</param>
+            <returns>An array of refected <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> objects.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetDataMappedEntitiesColumns">
+            <summary>
+            Gets the data mapped entities and its reflected columns.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.Generic.IDictionary`2"/> compatible object holding the entity type and column information.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.CreateNavigator">
+            <summary>
+            Returns a new <see cref="T:System.Xml.XPath.XPathNavigator"/> object.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.XPath.XPathNavigator"/> object.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Add(`0)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Clear">
+            <summary>
+            Removes all items from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only. </exception>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Contains(`0)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.Generic.ICollection`1"/> contains a specific value.
+            </summary>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+            <returns>
+            true if <paramref name="item"/> is found in the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="arrayIndex"/> is less than 0.</exception>
+            <exception cref="T:System.ArgumentException">
+            	<paramref name="array"/> is multidimensional.-or-<paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.-or-The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.-or-Type <typeparamref name="T"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.</exception>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Remove(`0)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"/>.</param>
+            <returns>
+            true if <paramref name="item"/> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </returns>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.SetIsNew(System.Boolean)">
+            <summary>
+            Sets the IsNew property to indicate whether this object is new.
+            </summary>
+            <param name="isNew">if set to <c>true</c> the object is marked as new; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.SetIsDirty(System.Boolean)">
+            <summary>
+            Sets the IsDirty property to indicate whether this object has changed.
+            </summary>
+            <param name="isDirty">if set to <c>true</c> the object is marked as content has changed; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.SetHasLoaded(System.Boolean)">
+            <summary>
+            Sets the HasLoaded property to indicate whether this object has been loaded from the data source.
+            </summary>
+            <param name="hasLoaded">if set to <c>true</c> the object is marked as been loaded from a data source; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.SetIsInitialized(System.Boolean)">
+            <summary>
+            Sets the IsInitialized property to indicate whether this object has been initialized.
+            </summary>
+            <param name="isInitialized">if set to <c>true</c> the object is marked as been initialized; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.SetIsInitializing(System.Boolean)">
+            <summary>
+            Sets the IsInitializing property to indicate whether this object is currently initializing.
+            </summary>
+            <param name="isInitializing">if set to <c>true</c> the object is marked as being currently initializing; otherwise <c>false</c>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Load">
+            <summary>
+            Loads a collection of objects from a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Save">
+            <summary>
+            Saves one or more objects to a data source and reloads the instance afterwards.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.SaveOnly">
+            <summary>
+            Saves these objects to a data source. 
+            Does not reload the collection of instances from the data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.Delete">
+            <summary>
+            Deletes one or more objects from a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetIdentifiers">
+            <summary>
+            Gets a comma (,) delimited string of identifiers of this object.
+            </summary>
+            <returns>A <see cref="T:System.String"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetIdentifiers(System.String)">
+            <summary>
+            Gets a by parameter defined delimited string of identifiers of this object.
+            </summary>
+            <returns>A <see cref="T:System.String"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetFormat(System.Type)">
+            <summary>
+            Gets an object that provides formatting services for the specified type. 
+            Default format is taken from the <see cref="T:System.Globalization.CultureInfo"/> CurrentUICulture static method.
+            </summary>
+            <param name="formatType">An object that specifies the type of format object to get.</param>
+            <returns>
+            The current instance, if formatType is the same type as the current instance; otherwise, null.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"></see> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityCollection`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.Initialized">
+            <summary>
+            Occurs when this instance is initialized.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.Initializing">
+            <summary>
+            Occurs when this instance is initializing.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataLoading">
+            <summary>
+            Occurs when this instance is loading data from a datasource.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataLoaded">
+            <summary>
+            Occurs when this instance has loaded data from a datasource.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataBinding">
+            <summary>
+            Occurs when this instance is binding the loaded data into storage fields.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityCollection`1.DataBindingComplete">
+            <summary>
+            Occurs when this instance has bound the loaded data into storage fields.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/>.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.IsInitialized">
+            <summary>
+            Gets a value indicating whether this instance is initialized.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is initialized; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.IsInitializing">
+            <summary>
+            Gets a value indicating whether this instance is initializing.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is initializing; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.HasLoaded">
+            <summary>
+            Gets a value indicating whether this instance has loaded.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has loaded; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <value></value>
+            <returns>The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.</returns>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only (no changes can be made to the repository).
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only (no changes can be made to the repository); otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.LoadLimit">
+            <summary>
+            Gets or sets a value limiting the maximum amount of <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instances to retrieve from the repository. Default is 1000.
+            </summary>
+            <value>
+            The maximum amount of <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instances to retrieve from the repository.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.EnableLoadLimit">
+            <summary>
+            Gets or sets a value indicating whether to enforce a limitation on how many <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instances (<see cref="P:Cuemon.Data.Entity.BusinessEntityCollection`1.LoadLimit"/>) can be retrieved from the repository. Default is false.
+            </summary>
+            <value>
+              <c>true</c> to enforce a limitation on how many <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instances (<see cref="P:Cuemon.Data.Entity.BusinessEntityCollection`1.LoadLimit"/>) can be retrieved from the repository; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.EnableBulkLoad">
+            <summary>
+            Gets or sets a value indicating whether this instance should perform a bulk load of the entities from the repository.
+            </summary>
+            <value>
+              <c>true</c> if  this instance should perform a bulk load of the entities from the repository; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.IsDirty">
+            <summary>
+            Gets a value indicating whether this object has changed.
+            </summary>
+            <value><c>true</c> if the content has changed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.IsNew">
+            <summary>
+            Gets a value indicating whether this instance is new.
+            </summary>
+            <value><c>true</c> if this instance is new; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.DataAdapter">
+            <summary>
+            Gets the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> reference for this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance.
+            </summary>
+            <value>The <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> reference for this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instance.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityCollection`1.Document">
+            <summary>
+            Gets or sets the IXPathNavigable object.
+            </summary>
+            <value>The IXPathNavigable object generated from the data adapter.</value>
+        </member>
+        <member name="T:Cuemon.Data.Entity.BusinessEntityDataAdapter">
+            <summary>
+            An abstract class for handling all DSL related logic for the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> class.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.IBusinessEntityDataAdapter">
+            <summary>
+            An interface providing methods of handling all DSL related logic for an <see cref="T:Cuemon.Data.Entity.IBusinessEntityRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Delete">
+            <summary>
+            Deletes this instance from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Delete(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Deletes this instance from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.DeleteList">
+            <summary>
+            Deletes a collection of instances from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.DeleteList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Deletes a collection of instances from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Modify">
+            <summary>
+            Modifies this instance in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Modify(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Modifies this instance in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.ModifyList">
+            <summary>
+            Modifies a collection of instances in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.ModifyList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Modifies a collection of instances in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Create">
+            <summary>
+            Creates a new instance in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Create(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Creates a new instance in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.CreateList">
+            <summary>
+            Creates a collection of instannces in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.CreateList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Creates a collection of instannces in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Open">
+            <summary>
+            Opens this instance from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.Open(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Opens this instance from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.OpenList">
+            <summary>
+            Lists a collection of instances from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.IBusinessEntityDataAdapter.OpenList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Lists a collection of instances from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.#ctor(Cuemon.Data.Entity.IBusinessEntityRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> class.
+            </summary>
+            <param name="entity">The calling business entity.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.#ctor(Cuemon.Data.Entity.IBusinessEntityRepository,Cuemon.Data.DataManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> class.
+            </summary>
+            <param name="entity">The calling business entity.</param>
+            <param name="manager">The data manager to be used for the underlying operations.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OnDataBindingCompleted">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityDataAdapter.DataBindingCompleted"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OnDataBinding">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.Entity.BusinessEntityDataAdapter.DataBinding"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Delete">
+            <summary>
+            Deletes this instance from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Delete(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Deletes this instance from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Modify">
+            <summary>
+            Modifies this instance in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Modify(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Modifies this instance in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.CheckExists(System.Type)">
+            <summary>
+            This method will determine from the entity type whether a record already exists from the data mapped PK-columns.
+            </summary>
+            <param name="entityType">An object containing the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> type.</param>
+            <returns>true if a record exists from the data mapped PK-columns; otherwise false.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.CheckExists(System.Type,Cuemon.Data.Entity.Mapping.ColumnAttribute[])">
+            <summary>
+            This method will determine from the entity type whether a record already exists from the by parameter specified columns.
+            </summary>
+            <param name="entityType">An object containing the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> type.</param>
+            <param name="columns">The columns to use in the query.</param>
+            <returns>true if a record exists from specified columns; otherwise false.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Create">
+            <summary>
+            Creates a new instance in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Create(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Creates a new instance in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Open">
+            <summary>
+            Opens this instance from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Open(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Opens this instance from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.ParseEntityTypeForOpenList(Cuemon.Data.Entity.IBusinessEntityRepository,System.Type)">
+            <summary>
+            Parse and resolve the <see cref="T:System.Type"/> to fill a <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/> with.
+            </summary>
+            <param name="entity">An <see cref="T:Cuemon.Data.Entity.IBusinessEntityRepository"/> instance to invoke.</param>
+            <param name="entitiesType">The type of a <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/>.</param>
+            <returns>The <see cref="T:System.Type"/> to fill a <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/> with.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.ParseEntityTypeForOpenList(System.Type)">
+            <summary>
+            Parse and resolve the <see cref="T:System.Type"/> to fill a <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/> with.
+            </summary>
+            <param name="entitiesType">The type of a <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/>.</param>
+            <returns>The <see cref="T:System.Type"/> to fill a <see cref="T:Cuemon.Data.Entity.BusinessEntityCollection`1"/> with.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OpenList">
+            <summary>
+            Lists a collection of instances from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OpenList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Lists a collection of instances from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.DeleteList">
+            <summary>
+            Deletes a collection of instances from the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.DeleteList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Deletes a collection of instances from the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.ModifyList">
+            <summary>
+            Modifies a collection of instances in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.ModifyList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Modifies a collection of instances in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.CreateList">
+            <summary>
+            Creates a collection of instannces in the data source using the reflected columns of the data mapped <see cref="T:Cuemon.Data.Entity.IBusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.CreateList(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Creates a collection of instannces in the data source.
+            </summary>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> compatible object to use against the data source.</param>
+            <param name="parameters">The parameters to use against the data source.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetDataParameters(System.Type,System.Collections.Generic.IList{Cuemon.Data.Entity.Mapping.ColumnAttribute})">
+            <summary>
+            Gets the data parameters necessary for data mapping.
+            </summary>
+            <param name="entityType">The entity type to fetch private field values from.</param>
+            <param name="columns">The data mapping columns of the entity type.</param>
+            <returns>An array of <see cref="T:System.Data.IDataParameter"/> compatible objects.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetDataParametersForObjectRanking(Cuemon.Data.Entity.IBusinessEntityRepository,System.Collections.Generic.IList{Cuemon.Data.Entity.Mapping.ColumnAttribute})">
+            <summary>
+            Gets the data parameters necessary for data mapping when either promoting or demoting an object.
+            </summary>
+            <param name="entity">The entity to fetch private field values from.</param>
+            <param name="columns">The data mapping columns of the entity type.</param>
+            <returns>An array of <see cref="T:System.Data.IDataParameter"/> compatible objects.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Promote``1(``0)">
+            <summary>
+            A specialized method for promotion of this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> object with the specified new rank.
+            </summary>
+            <typeparam name="T">The new rank type of the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</typeparam>
+            <param name="newRank">The new rank to apply for a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> object hierarchy.</param>
+            <remarks>Experimental implementation tested on normal 1-1 entity relationships.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.Demote``1">
+            <summary>
+            A specialized method for demotion of this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> object.
+            </summary>
+            <typeparam name="T">The new rank type to apply this <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> object hierarchy.</typeparam>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.SetStorageValue(System.Type,System.String,System.Object)">
+            <summary>
+            Sets the given value in a private storage field in the provided class type.
+            </summary>
+            <param name="entityType">The class that holds the private storage field.</param>
+            <param name="fieldName">Name of the private storage field.</param>
+            <param name="value">The value to assign the private storage field.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.SetStorageValue(Cuemon.Data.Entity.IBusinessEntityRepository,System.Type,System.String,System.Object)">
+            <summary>
+            Sets the given value in a private storage field in the provided class type.
+            </summary>
+            <param name="entity">The <see cref="T:Cuemon.Data.Entity.IBusinessEntityRepository"/> instance to invoke from.</param>
+            <param name="entityType">The class that holds the private storage field.</param>
+            <param name="fieldName">Name of the private storage field.</param>
+            <param name="value">The value to assign the private storage field.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetStorageFields(System.Type)">
+            <summary>
+            Gets the storage fields from the specified <paramref name="entityType"/>.
+            </summary>
+            <param name="entityType">The <see cref="T:System.Type"/> that holds the private storage fields.</param>
+            <returns>A sequence of <see cref="T:System.Reflection.FieldInfo"/> objects associated with the specified <paramref name="entityType"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetStorageFields(Cuemon.Data.Entity.IBusinessEntityRepository,System.Type)">
+            <summary>
+            Gets the storage fields from the specified <paramref name="entityType"/>.
+            </summary>
+            <param name="entity">An instance from where to access the private storage fields from.</param>
+            <param name="entityType">The <see cref="T:System.Type"/> that holds the private storage fields.</param>
+            <returns>A sequence of <see cref="T:System.Reflection.FieldInfo"/> objects associated with the specified <paramref name="entityType"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetStorageType(System.Type,System.String)">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of a private storage field from the provided class type.
+            </summary>
+            <param name="entityType">The class that holds the private storage field.</param>
+            <param name="fieldName">Name of the private storage field.</param>
+            <returns>The <see cref="T:System.Type"/> of the private storage field.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetStorageType(Cuemon.Data.Entity.IBusinessEntityRepository,System.Type,System.String)">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of a private storage field from the provided class type.
+            </summary>
+            <param name="entity">An instance from where to access the private storage fields from.</param>
+            <param name="entityType">The class that holds the private storage field.</param>
+            <param name="fieldName">Name of the private storage field.</param>
+            <returns>The <see cref="T:System.Type"/> of the private storage field.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetStorageValue(System.Type,System.String)">
+            <summary>
+            Gets the value of a private storage field from the provided class type.
+            </summary>
+            <param name="entityType">The class that holds the private storage field.</param>
+            <param name="fieldName">Name of the private storage field.</param>
+            <returns>The value of the private storage field.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetStorageValue(Cuemon.Data.Entity.IBusinessEntityRepository,System.Type,System.String)">
+            <summary>
+            Gets the value of a private storage field from the provided class type.
+            </summary>
+            <param name="entity">An instance from where to access the private storage fields from.</param>
+            <param name="entityType">The class that holds the private storage field.</param>
+            <param name="fieldName">Name of the private storage field.</param>
+            <returns>The value of the private storage field.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetDataParameter(Cuemon.Data.Entity.Mapping.ColumnAttribute,System.Object)">
+            <summary>
+            The core method for returning an <see cref="T:System.Data.IDataParameter"/> compatible object to use against the prefered datasource.
+            </summary>
+            <param name="column">An instance of the <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> object.</param>
+            <param name="value">The value to assign the <see cref="T:System.Data.IDataParameter"/> compatible object.</param>
+            <returns>An <see cref="T:System.Data.IDataParameter"/> compatible object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.GetDataMappedQuery(Cuemon.Data.QueryType,Cuemon.Data.Entity.Mapping.DataSourceAttribute,Cuemon.Data.Entity.Mapping.TableAttribute,Cuemon.Data.Entity.Mapping.ColumnAttribute[],System.Type)">
+            <summary>
+            The core method for building a data mapped query.
+            </summary>
+            <param name="queryType">The query type to use in datasource.</param>
+            <param name="dataSource">The datasource to execute the query towards.</param>
+            <param name="table">The database table to get data from.</param>
+            <param name="columns">The columns to include in the query.</param>
+            <param name="entityType">The type of the business entity to query from.</param>
+            <returns>
+            A <see cref="T:System.String"/> object containing the resolved query from databinding.
+            </returns>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityDataAdapter.DataBinding">
+            <summary>
+            Occurs just before the data is being bound and processed.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.Entity.BusinessEntityDataAdapter.DataBindingCompleted">
+            <summary>
+            Occurs just after the data has been bound, processed and optional distributed.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.EnableBulkLoad">
+            <summary>
+            Gets a value indicating whether to perform a bulk load of entities from the repository.
+            </summary>
+            <value>
+              <c>true</c> to perform a bulk load of entities from the repository; otherwise, <c>false</c>.
+            </value>
+            <remarks>This property, on its default implementation, only has effect on <see cref="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OpenList"/>.</remarks>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.ReadLimit">
+            <summary>
+            Gets a value limiting the maximum amount of records that can be retrieved from a repository.
+            </summary>
+            <value>
+            The maximum amount of records that can be retrieved from a repository.
+            </value>
+            <remarks>This property, on its default implementation, only has effect on <see cref="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OpenList"/>.</remarks>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.EnableReadLimit">
+            <summary>
+            Gets a value indicating whether a query is restricted in how many records (<see cref="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.ReadLimit"/>) can be retrieved from a repository. Default is false.
+            </summary>
+            <value>
+              <c>true</c> if a query is restricted in how many records (<see cref="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.ReadLimit"/>) can be retrieved from a repository; otherwise, <c>false</c>.
+            </value>
+            <remarks>This property, on its default implementation, only has effect on <see cref="M:Cuemon.Data.Entity.BusinessEntityDataAdapter.OpenList"/>.</remarks>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/>.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.EnableConcurrencyCheck">
+            <summary>
+            Gets or sets a value indicating whether the data mapping classes should do a concurrency check on the data fetched in accordance with the objects the data is exposed to.
+            </summary>
+            <value>
+            	<c>true</c> if data mapping classes should do a concurrency check on the data fetched in accordance with the objects the data is exposed to; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.EnableDerivedEntityLookup">
+            <summary>
+            Gets or sets a value indicating whether the data mapping logic should try to discover any deriving classes from the currently available <see cref="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.Entity"/> class.
+            </summary>
+            <value>
+            	<c>true</c> if the data mapping logic should try to discover any deriving classes from the currently available <see cref="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.Entity"/> class; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.BusinessEntityDataAdapter.Entity">
+            <summary>
+            Gets the reference to the calling business entity.
+            </summary>
+            <value>A reference to the the business entity.</value>
+        </member>
+        <member name="T:Cuemon.Data.Entity.BusinessEntityEventArgs">
+            <summary>
+            Provides data for BusinessEntity related operations.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.Entity.BusinessEntityEventArgs.Empty">
+            <summary>
+            Represents an event with no event data.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.RuntimeBusinessEntity">
+            <summary>
+            Infrastructure. Will resolve a runtime constructor for a <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.RuntimeBusinessEntity.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.RuntimeBusinessEntity"/> class.
+            </summary>
+            <param name="entityType"></param>
+            <param name="primaryKeyValues">A sequence of primary key values.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.RuntimeBusinessEntity.GetConstructor">
+            <summary>
+            Gets the associated constructor for <see cref="P:Cuemon.Data.Entity.RuntimeBusinessEntity.EntityType"/>.
+            </summary>
+            <returns>A <see cref="T:System.Reflection.ConstructorInfo"/> that can be invoked to create a new instance of the <see cref="P:Cuemon.Data.Entity.RuntimeBusinessEntity.EntityType"/>.</returns>
+        </member>
+        <member name="P:Cuemon.Data.Entity.RuntimeBusinessEntity.ConstructorArguments">
+            <summary>
+            Gets an array of constructor arguments.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.RuntimeBusinessEntity.EntityType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.
+            </summary>
+            <value>
+            The <see cref="T:System.Type"/> of the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.
+            </value>
+        </member>
+        <member name="T:Cuemon.Data.Entity.BusinessEntityUtility">
+            <summary>
+            Infrastructure. This utility class is designed to make common <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> related operations easier to comprehend.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityUtility.ParseEntityRelation``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Parse and match and entity relation from the specified <paramref name="identifier"/>.
+            </summary>
+            <typeparam name="TEntity">The type of the T entity.</typeparam>
+            <param name="entities">The entities (implementing the <see cref="T:Cuemon.Data.Entity.IIdentifier"/> interface) to search for a matching <paramref name="identifier"/>.</param>
+            <param name="identifier">The identifier to search and match in the <paramref name="entities"/> sequence.</param>
+            <returns>The value associated with the specified <paramref name="identifier"/> of the <paramref name="entities"/> sequence or the default value for the type of the <typeparamref name="TEntity"/> parameter.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="entities"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="identifier"/> is null.</exception>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityUtility.CreateDescendantOrSelfEntity``1(System.Type,Cuemon.Data.Entity.BusinessEntityDataAdapter,System.Object[])">
+            <summary>
+            An experimental method to create <see cref="T:Cuemon.Data.Entity.BusinessEntity"/> instances from the ancestor-and-descendant-or-self <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The base type of the <paramref name="entityType"/> to lookup derived types from.</typeparam>
+            <param name="entityType">The type to search derived implementations from (descendant-or-self).</param>
+            <param name="adapter">An instance of a <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> to lookup derived types in the associated database.</param>
+            <param name="entityConstructorArgs">The entity constructor args to dynamically invoke a new <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <returns>An instance of ancestor-and-descendant-or-self derived version of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityUtility.GetDataMappedEntitiesColumnsCore(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Infrastructure. Gets the data mapped entities and its reflected columns.
+            </summary>
+            <param name="dataMappedEntityTypes">The type list of data mapped entities.</param>
+            <returns>
+            An <see cref="T:System.Collections.Generic.IDictionary`2"/> compatible object holding the entity type and column information.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityUtility.GetDataMappedEntitiesCore(System.Type,System.Type)">
+            <summary>
+            Infrastructure. Gets the data mapped entities.
+            </summary>
+            <param name="entityType">Type of the <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <param name="baseEntityType">Type of the base <see cref="T:Cuemon.Data.Entity.BusinessEntity"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.BusinessEntityUtility.GetDataMappedEntityColumnsCore(System.Type,System.Collections.Generic.IDictionary{System.Type,Cuemon.Data.Entity.Mapping.ColumnAttribute[]})">
+            <summary>
+            Gets the reflected columns of the specified data mapped entity.
+            </summary>
+            <param name="entityType">The data mapped entity type.</param>
+            <param name="dataMappedEntitiesColumns">An <see cref="T:System.Collections.Generic.IDictionary`2"/> compatible object holding the entity type and column information.</param>
+            <returns>An array of reflected <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> objects.</returns>
+        </member>
+        <member name="T:Cuemon.Data.Entity.Mapping.AssociationAttribute">
+            <summary>
+            Designates a property to represent a database association, such as a foreign key relationship.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.Mapping.ColumnAttribute">
+            <summary>
+            Associates a class with a column in a database table.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.Entity.Mapping.DataAttribute">
+            <summary>
+            Provides members to describe attributes of data in columns.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.DataAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.Mapping.DataAttribute"/> class.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataAttribute.Name">
+            <summary>
+            Gets or sets the name of a column.
+            </summary>
+            <value>The name of a column.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataAttribute.Storage">
+            <summary>
+            Gets or sets a private storage field to hold the value from a column.
+            </summary>
+            <value>The name of the storage field.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataAttribute.StorageType">
+            <summary>
+            Gets or sets the type where to retrieve the storage field.
+            Default is the class the attribute is located.
+            </summary>
+            <value>The type where to retrieve the storage field.</value>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.ColumnAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> class.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.DBType">
+            <summary>
+            Gets or sets the type of the database column.
+            </summary>
+            <value>The type of the database column.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.NameAlias">
+            <summary>
+            Gets or sets the column name alias that can be used for instance in XML related queries.
+            </summary>
+            <value>The column name alias that can be used for instance in XML related queries.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.ParameterName">
+            <summary>
+            Gets or sets the name of the parameter reflecting the database column. 
+            Default is the <c>Name</c> property of this object (in case of a property reference, any dots (.) will be removed).
+            </summary>
+            <value>
+            The name of the parameter reflecting the database column. 
+            Default is the <c>Name</c> property of this object (in case of a property reference, any dots (.) will be removed).
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.ParameterDirection">
+            <summary>
+            Gets or sets the column parameter direction. Default is <c>Input</c>.
+            </summary>
+            <value>The column parameter direction. Default is <c>Input</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.CanBeNull">
+            <summary>
+            Gets or sets whether a column can contain null values.
+            </summary>
+            <value>
+            	<c>true</c> if a column can contain null values; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.IsDBGenerated">
+            <summary>
+            Gets or sets whether a column contains values that the database auto-generates.
+            </summary>
+            <value>
+            	<c>true</c> if a column contains values that the database auto-generates; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.IsPrimaryKey">
+            <summary>
+            Gets or sets whether this class member represents a column that is part or all of the primary key of the table.
+            </summary>
+            <value>
+            	<c>true</c> if this class member represents a column that is part or all of the primary key of the table; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.ColumnAttribute.CompositePrimaryKeyOrder">
+            <summary>
+            Gets or sets a composite primary key sort order when reading values runtime for constructor.
+            </summary>
+            <value>A composite primary key sort order when reading values runtime for constructor.</value>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.AssociationAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.Mapping.AssociationAttribute"/> class.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.AssociationAttribute.IsForeignKey">
+            <summary>
+            Gets or sets the member as the foreign key in an association representing a database relationship.
+            </summary>
+            <value>
+            	<c>true</c> this member represent a foreign key in an association representing a database relationship; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.AssociationAttribute.AssociatedStorage">
+            <summary>
+            Gets or sets the private storage field for the associated type to hold the value from a column.
+            </summary>
+            <value>The private storage field for the associated type to hold the value from a column.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.AssociationAttribute.AssociatedStorageType">
+            <summary>
+            Gets or sets the associated type where to retreive the storage field.
+            </summary>
+            <value>The associated type where to retreive the storage field.</value>
+        </member>
+        <member name="T:Cuemon.Data.Entity.Mapping.DataSourceAttribute">
+            <summary>
+            Specifies certain attributes of a class that represents a datasource.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.DataSourceAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.Mapping.DataSourceAttribute"/> class.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataSourceAttribute.EnableRowVerification">
+            <summary>
+            Gets or sets a value indicating whether the datasource should execute a subquery to test for the existence of rows.
+            </summary>
+            <value>
+            	<c>true</c> if the datasource should execute a subquery to test for the existence of rows; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataSourceAttribute.EnableDirtyReads">
+            <summary>
+            Gets or sets a value indicating whether the datasource should try to prevent locking from readonly queries.
+            </summary>
+            <value>
+                <c>true</c> if the datasource should try to prevent locking from readonly queries; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataSourceAttribute.EnableTableAndColumnEncapsulation">
+            <summary>
+            Gets or sets a value indicating whether an encapsulation should be commited automatically on table and column names.
+            </summary>
+            <value>
+            	<c>true</c> if an encapsulation should be commited automatically on table and column names; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.DataSourceAttribute.DatabaseName">
+            <summary>
+            Gets or sets the name of the database.
+            </summary>
+            <value>The name of the database.</value>
+        </member>
+        <member name="T:Cuemon.Data.Entity.Mapping.MappingUtility">
+            <summary>
+            This utility class is designed to make data mapping related operations easier to work with.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.ExcludeOnlyDbGeneratedColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute)">
+            <summary>
+            A predicate for excluding columns having a DB-generated value definition.
+            </summary>
+            <param name="column">The column to check upon.</param>
+            <returns>true if the column is not marked as a DB-generated value; otherwise false.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.ExcludeOnlyPrimaryKeyColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute)">
+            <summary>
+            A predicate for excluding columns having a primary key definition.
+            </summary>
+            <param name="column">The column to check upon.</param>
+            <returns>true if the column is not marked as a primary key; otherwise false.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.IncludeOnlyPrimaryKeyColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute)">
+            <summary>
+            A predicate for including only columns having a primary key definition.
+            </summary>
+            <param name="column">The column to check upon.</param>
+            <returns>true if the column is marked as a primary key; otherwise false.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.IncludeOnlyForeignKeyColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute)">
+            <summary>
+            A predicate for including only columns having a foreign key definition.
+            </summary>
+            <param name="column">The column to check upon.</param>
+            <returns>true if the column is marked as a foreign key; otherwise false.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetDataMappedEntitiesAssociations(System.Collections.Generic.IDictionary{System.Type,Cuemon.Data.Entity.Mapping.ColumnAttribute[]})">
+            <summary>
+            Infrastructure. Gets the data mapped entities associations.
+            </summary>
+            <param name="dataMappedEntitiesColumns">The data mapped entities columns to search for associations.</param>
+            <returns>A dictionary with the data mapped entities associations.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.ParseStorageField(System.String@,System.String[]@)">
+            <summary>
+            Infrastructure. This method will parse the provided field name and resolve possible property names (separated by dots, eg. _myField.MyProperty) as well as the actual field name.
+            </summary>
+            <param name="fieldName">The resolved field name from the original value of this parameter.</param>
+            <param name="propertyNames">The resolved property names from the field name parameter; otherwise empty.</param>
+            <returns>
+            	<c>true</c> if property names are assumed part of the field name; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.ParseStorageFieldValue(System.Object,System.Reflection.FieldInfo,Cuemon.Collections.Generic.IReadOnlyCollection{System.Reflection.PropertyInfo})">
+            <summary>
+            Infrastructure. This method will parse the result set of <see cref="M:Cuemon.Data.Entity.Mapping.MappingUtility.ParseStorageField(System.String@,System.Type,Cuemon.Collections.Generic.IReadOnlyCollection{System.Reflection.PropertyInfo}@)"/> and return it's associated value.
+            </summary>
+            <param name="storage">An instance of the storage where the <paramref name="field"/> is located.</param>
+            <param name="field">The field to retrieve a value from.</param>
+            <param name="properties">A read-only collection of <see cref="T:System.Reflection.PropertyInfo"/> instances matching the result of the parsed <paramref name="field"/> or null if no properties where defined.</param>
+            <returns>The return value of the field or the chained properties of associated <paramref name="properties"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.SetStorageFieldPropertyValue(System.Object,System.Reflection.FieldInfo,Cuemon.Collections.Generic.IReadOnlyCollection{System.Reflection.PropertyInfo},System.Type,System.Object)">
+            <summary>
+            Infrastructure. Will set a new value on a chained property if <see cref="P:System.Reflection.PropertyInfo.CanWrite"/> is enabled.
+            </summary>
+            <param name="storage">An instance of the storage where the <paramref name="field"/> is located.</param>
+            <param name="field">The field to retrieve the chained properties from.</param>
+            <param name="properties">A read-only collection of chained <see cref="T:System.Reflection.PropertyInfo"/> instances.</param>
+            <param name="propertyType">The type of the property value in <paramref name="propertyValue"/>.</param>
+            <param name="propertyValue">The new property value to assign the last property in <paramref name="properties"/>.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.ParseStorageField(System.String@,System.Type,Cuemon.Collections.Generic.IReadOnlyCollection{System.Reflection.PropertyInfo}@)">
+            <summary>
+            Infrastructure. This method will parse the provided <paramref name="fieldName"/> with built-in support for chained property retrieval separated by dots (.).
+            </summary>
+            <param name="fieldName">Name of the field or the chained property separated by dots (.) to retrieve.</param>
+            <param name="storageType">The type of the storage where the <paramref name="fieldName"/> is located.</param>
+            <param name="properties">A read-only collection of <see cref="T:System.Reflection.PropertyInfo"/> instances matching the result of the parsed <paramref name="fieldName"/> or null if no properties where defined.</param>
+            <returns>A <see cref="T:System.Reflection.FieldInfo"/> instance matching the result of the parsed <paramref name="fieldName"/>.</returns>
+            <remarks>A default implementation where the <paramref name="storageType"/> is parsed using the following <see cref="T:System.Reflection.BindingFlags"/> combination: <see cref="F:Cuemon.Reflection.ReflectionUtility.BindingInstancePublicAndPrivateNoneInherited"/>.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.ParseStorageField(System.String@,System.Type,System.Reflection.BindingFlags,Cuemon.Collections.Generic.IReadOnlyCollection{System.Reflection.PropertyInfo}@)">
+            <summary>
+            Infrastructure. This method will parse the provided <paramref name="fieldName"/> with built-in support for chained property retrieval separated by dots (.).
+            </summary>
+            <param name="fieldName">Name of the field or the chained property separated by dots (.) to retrieve.</param>
+            <param name="storageType">The type of the storage where the <paramref name="fieldName"/> is located.</param>
+            <param name="bindings">A bitmask comprised of one or more <see cref="T:System.Reflection.BindingFlags"/> that specify how the search is conducted.</param>
+            <param name="properties">A read-only collection of <see cref="T:System.Reflection.PropertyInfo"/> instances matching the result of the parsed <paramref name="fieldName"/> or null if no properties where defined.</param>
+            <returns>A <see cref="T:System.Reflection.FieldInfo"/> instance matching the result of the parsed <paramref name="fieldName"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetNoneDbGeneratedColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute[])">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing no DB generated columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetNoneDbGeneratedColumns(System.Collections.Generic.IEnumerable{Cuemon.Data.Entity.Mapping.ColumnAttribute})">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing no DB generated columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute[])">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing no primary key columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetColumns(System.Collections.Generic.IEnumerable{Cuemon.Data.Entity.Mapping.ColumnAttribute})">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing no primary key columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetForeignKeyColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute[])">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing only foreign key columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetForeignKeyColumns(System.Collections.Generic.IEnumerable{Cuemon.Data.Entity.Mapping.ColumnAttribute})">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing only foreign key columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetPrimaryKeyColumns(Cuemon.Data.Entity.Mapping.ColumnAttribute[])">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing only primary key columns.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.Mapping.MappingUtility.GetPrimaryKeyColumns(System.Collections.Generic.IEnumerable{Cuemon.Data.Entity.Mapping.ColumnAttribute})">
+            <summary>
+            Infrastructure. Helper method for filtering columns.
+            </summary>
+            <param name="columns">The columns to filter.</param>
+            <returns>A filtered result of <paramref name="columns"/> containing only primary key columns.</returns>
+        </member>
+        <member name="T:Cuemon.Data.Entity.Mapping.TableAttribute">
+            <summary>
+            Specifies certain attributes of a class that is associated with a database table.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.TableAttribute.Name">
+            <summary>
+            Gets or sets the name of the table or view.
+            </summary>
+            <value>The name of the table or view.</value>
+        </member>
+        <member name="P:Cuemon.Data.Entity.Mapping.TableAttribute.NameAlias">
+            <summary>
+            Gets or sets the table name or view alias to use in conjuction with <see cref="P:Cuemon.Data.Entity.Mapping.TableAttribute.Name"/>.
+            </summary>
+            <value>The table name or view alias to use in conjuction with <see cref="P:Cuemon.Data.Entity.Mapping.TableAttribute.Name"/>.</value>
+            <remarks>This property can be set to help clarify meaning in for instance XML related queries.</remarks>
+        </member>
+        <member name="T:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter">
+            <summary>
+            A Microsoft SQL implementation of the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter.#ctor(Cuemon.Data.Entity.IBusinessEntityRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter"/> class.
+            Will try to resolve the underlying <see cref="T:Cuemon.Data.SqlClient.SqlDataManager"/> object from a default Cuemon/Data section in a app/web.config file.
+            </summary>
+            <param name="entity">The calling business entity.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter.#ctor(Cuemon.Data.Entity.IBusinessEntityRepository,Cuemon.Data.DataManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter"/> class.
+            </summary>
+            <param name="entity">The calling business entity.</param>
+            <param name="manager">The data manager to be used for the underlying operations.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter.GetDataParameter(Cuemon.Data.Entity.Mapping.ColumnAttribute,System.Object)">
+            <summary>
+            The core method for returning an <see cref="T:System.Data.IDataParameter"/> compatible object to use against the data source.
+            </summary>
+            <param name="column">An instance of the <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> object.</param>
+            <param name="value">The value to assign the <see cref="T:System.Data.IDataParameter"/> compatible object.</param>
+            <returns>An <see cref="T:System.Data.IDataParameter"/> compatible object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlClient.SqlBusinessEntityDataAdapter.GetDataMappedQuery(Cuemon.Data.QueryType,Cuemon.Data.Entity.Mapping.DataSourceAttribute,Cuemon.Data.Entity.Mapping.TableAttribute,Cuemon.Data.Entity.Mapping.ColumnAttribute[],System.Type)">
+            <summary>
+            The core method for building a data mapped query.
+            </summary>
+            <param name="queryType">The query type to use in data source.</param>
+            <param name="dataSource">The data source to execute the query towards.</param>
+            <param name="table">The database table to get data from.</param>
+            <param name="columns">The columns to include in the query.</param>
+            <param name="entityType">The type of the business entity to query from.</param>
+            <returns>
+            A <see cref="T:System.String"/> object containing the resolved query from data binding.
+            </returns>
+        </member>
+    </members>
+</doc>

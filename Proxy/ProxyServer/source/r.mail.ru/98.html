@@ -1,0 +1,250 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ru" class="platform-not-PC">
+<head><meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=2, user-scalable=yes">
+
+
+<link rel="SHORTCUT ICON" href="//go.imgsmail.ru/favicon.ico">
+<link rel="apple-touch-icon" href="/static/smartphone/img/ico/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/smartphone/img/ico/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/smartphone/img/ico/touch-icon-iphone4.png">
+
+
+
+
+<title>
+	Поиск@Mail.Ru
+</title><script type="text/javascript">//<![CDATA[
+var STP = {
+    query: "",
+	qswap: "",
+	time: 1384179761000,
+
+
+    detector_result: "PC",
+	detector_touch: false,
+
+
+
+
+
+
+
+	qid: "b96eb00269a4ffaf",
+
+
+
+	userType: "18",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	section: "main",
+
+
+
+	base_section: "main",
+
+
+
+	foundCount: 0,
+	foundCountF: "0",
+    foundCountOld: 0,
+    foundCountOldF: "0",
+
+
+	sgmus: true,
+
+
+
+
+
+
+
+
+
+
+
+
+
+	rch: "l",
+
+
+  fake: ""
+
+}; 
+//]]></script>
+
+	<link rel="stylesheet" href="/static/smartphone/css/main.css?2910">
+
+    
+    <script src="//go.imgsmail.ru/static/smartphone/js/lib.js?0917"></script>
+    
+    <script src="//go.imgsmail.ru/static/smartphone/js/base.js?0711"></script>
+
+	<script src="//go.imgsmail.ru/static/smartphone/js/main.js?0917"></script>
+
+</head>
+<body id="section-main" >
+    
+	
+	
+	<section class="main">
+		<div class="logo-main">
+			
+				<span class="logo-main__img"></span> 
+			
+		</div>	<div class="s_form">
+		<div class="s_wrapper">
+			<div class="wrapper">
+				<form id="MSearch" name="MSearch" method="get" action="/msearch">
+					<table>
+						<tr>
+							<td class="wrapper__inp">
+								<div class="qwrap">
+									<input type="search" id="q" name="q" maxlength="255" value="" autocomplete="off" autocapitalize="off" autocorrect="off">
+									<a id="qclear" href="#">&times;</a>
+								</div>
+		
+								
+								
+								
+								
+								
+							</td>
+							<td class="wrapper__btn">
+								<button class="loupe" type="submit">
+									
+										<i class="loupe__img"></i>
+									
+								</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div><!--/wrapper-->
+		</div>
+		
+		<div id="go-suggests" class="go-suggests">
+			<div class="go-suggests__list"></div>
+		</div>
+
+		<script id="go-suggests__suggest-tmpl" class="go-suggests__suggest-tmpl" type="text/jstmpl">
+			<div class="go-suggests__suggest<% if( itemData.type === "site" ) { %> go-suggests__suggest__nav<% } %>">
+				<% if( itemData.type === "site" ) { %>
+					<a href="<%= itemData.link %>" class="go-suggests__suggest_link">
+						<% if( $.support.dataURI ) { %>
+							<i
+								class="go-suggests__suggest__favicon"
+								<% if( itemData.favicon ) { %>
+									style="background-image:url('data:image/png;base64,<%= itemData.favicon %>')"
+								<% } %>	
+							></i>
+						<% } %>
+						<%= itemData.site %>
+					</a>
+				<% } else { %>
+					<a href="#" class="go-suggests__suggest_link">
+          <%= itemData.textMarked || itemData.text %><% STP.sgmus = (AudioIsSupported() != "") ? true : false; if (STP.sgmus && itemData.mus) { %><i class="go-suggests__music"></i><% } %>
+					
+					</a>
+				<% } %>
+			</div>
+		</script>
+						
+	</div><!--/s_form--><div id="icoHide">
+			<ul class="main-tab">	
+				
+					<li><a class="main-tab_in" href="#mweb"><img src="/static/smartphone/img/tabs/tab_internet.png" alt=""><span>Интернет</span></a></li>
+					<li><a class="main-tab_in" href="#mimages"><img src="/static/smartphone/img/tabs/tab_pictures.png" alt=""><span>Картинки</span></a></li>
+					<li><a class="main-tab_in" href="#mvideo"><img src="/static/smartphone/img/tabs/tab_video.png" alt=""><span>Видео</span></a></li>
+					<li><a class="main-tab_in" href="#mnews"><img src="/static/smartphone/img/tabs/tab_news.png" alt=""><span>Новости</span></a></li>
+					<li><a class="main-tab_in" href="#mrealtime"><img src="/static/smartphone/img/tabs/tab_discuss.png" alt=""><span>Обсуждения</span></a></li>
+					<li><a class="main-tab_in" href="#manswer"><img src="/static/smartphone/img/tabs/tab_answers.png" alt=""><span>Ответы</span></a></li>
+					
+				
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</section>
+
+	
+	<div class="footer">
+		<div class="footer__wrap">
+            
+			    <a class="footer__wrap_l" href="/lad?set=PC&amp;page=/">Полная версия</a>
+            
+			<a class="footer__wrap_r" href="http://mail.ru/">Mail.Ru</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+  
+</body>
+</html><div style="position:absolute;top:0;height:0;overflow:hidden;visibility:hidden;">
+	<img src="http://rs.mail.ru/d329803.gif?rnd=135671600&ts=1384179761" style="width:0;height:0;position:absolute;" alt=""/>
+<img src="http://c.waplog.net/ru/38028.cnt" width="1" height="1" alt="waplog" />
+<img src="http://rs.mail.ru/d368066.gif?" width="1" height="1" border="0" alt="" style="position:absolute;" />
+<img src="http://www.tns-counter.ru/V13a****mail_ru/ru/CP1251/tmsec=mail_go-mobile/" width="1" height="1" border="0" alt="" style="position:absolute;" />
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">//<![CDATA[
+var _tmr = _tmr || [];
+_tmr.push({id: '2104775',  type: 'pageView', start: (new Date()).getTime()});
+(function (d, w) {
+ var ts = d.createElement('script'); ts.type = 'text/javascript'; ts.async = true;
+ ts.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//top-fwz1.mail.ru/js/code.js';
+ var f = function () {var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ts, s);};
+ if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+//]]></script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=2104775;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">//<![CDATA[
+var _tmr = _tmr || [];
+_tmr.push({id: '48844',  type: 'pageView', start: (new Date()).getTime()});
+(function (d, w) {
+ var ts = d.createElement('script'); ts.type = 'text/javascript'; ts.async = true;
+ ts.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//top-fwz1.mail.ru/js/code.js';
+ var f = function () {var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ts, s);};
+ if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+//]]></script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=48844;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+<script type="text/javascript">
+(new Image).src="http://counter.yadro.ru/hit?r"+escape(document.referrer)+("undefined"==typeof screen?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();
+</script>
+
+<img src="http://bs.mail.ru/count/U_4amYGH3by40X00gP800OwtQLST1MnPYBhJ0H04agcEPWEcG8e1gW6bbHmwaRpGIMG6auKDGQxswDfur72lu0In0RlhwnEnLdlHL7W8?135671600" style="width:0;height:0;position:absolute;" alt="" />
+
+
+<img src="//go.mail.ru/0c.gif?megarandom=b96eb00269a4ffaf&amp;h=l" width="1" height="1" alt=""></div>

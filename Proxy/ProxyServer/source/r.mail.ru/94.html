@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN"
+"http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=Windows-1251" />
+	<meta name="description" content="Деньги Mail.Ru (мобильная версия)" />
+	<title>Деньги@Mail.Ru</title>
+	<link rel="shortcut icon" href="/img/favicon.ico" />
+	<link rel="apple-touch-icon" href="/img/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<meta name="apple-itunes-app" content="app-id=571658840"/>
+	<script type="text/javascript" src="/js006/common.js"></script>
+</head>
+<body onLoad="checkMain()">
+
+<style>
+
+body{font-family:Arial,sans-serif;margin:0;padding:0;color:#000;background:#fff}
+*{font-size:100%;margin:0}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+th,td{padding:0;text-align:left;vertical-align:top;border-collapse:collapse;border-spacing:0}
+ol,ul{list-style:none}
+ol,ul,li{padding:0}
+p{font-size:0.875em;padding-bottom:5px}
+input,textarea,select{font:normal 100% Arial,sans-serif;vertical-align: middle}
+a{color:#06c;line-height:1.2em;text-decoration:underline}
+img{border:0;vertical-align: middle}
+.a{text-decoration:none}
+.t{text-decoration:underline}
+.i{height:16px;width:16px}
+
+.content_err ul li{ list-style-type: circle;  font-size: 0.75em;}
+.content_err ul { margin: 10px 10px 10px 20px; }
+div.content_err { padding: 5px; }
+
+.b-head{background:#036;border-bottom:1px solid #003;color:white;margin-bottom:1px}
+.b-head table{width:100%}
+.b-head td{padding:5px 10px 6px;vertical-align:middle}
+.b-head a{color:white}
+.b-head img{height:14px;width:67px}
+.b-head .link{font-size:.8em;margin-left:5px}
+/*.b-alert{background:#fb8512;border-bottom:1px solid #630;color:white;margin-bottom:1px;padding:5px 10px}
+.b-alert a{color:white}*/
+
+.alert{background:#ff9;font-size:.75em;margin:0 0 5px;padding:5px 10px}
+.ralert{background:#F00000;font-size:.75em;margin:0 0 5px;padding:5px 10px}
+
+.title{font-size:1.2em;font-weight:bold;padding:0 10px 5px}
+
+.cns{margin:10px}
+.cnt,.cnr,.cnb,.cnl,.cn{background-color:#ecf4de}
+.cnt,.cnr,.cnb,.cnl{background-repeat:no-repeat;height:8px}
+.cnt{background-image:url(/img/smart/cnt.gif);background-position:top left;padding:0 0 0 8px}
+.cnr{background-image:url(/img/smart/cnr.gif);background-position:top right}
+.cn{padding:0 10px}
+.cnb{background-image:url(/img/smart/cnb.gif);background-position:bottom right;padding:0 8px 0 0}
+.cnl{background-image:url(/img/smart/cnl.gif);background-position:bottom left}
+
+.bgr{background:#c00}
+.bgg{background:#990}
+.bbw{border-bottom:1px solid #fff}
+
+.pics{font-size:.8em;margin:0 0 10px}
+.pics-l{padding:0 5px 5px 10px}
+.pics-r{padding:0 10px 5px 0;vertical-align:middle}
+.pics-img{border:1px solid #ccc}
+.agreement{margin:0 10px 5px}
+.agreement span{color:#666;display:block;margin:5px 0 5px 20px;}
+.agreement span span{color:#999}
+
+.ul{font-size:.875em;list-style-type:disc;padding-left:30px}
+.ul li{padding:0 0 5px}
+.ol{font-size:.875em;list-style-type:decimal;padding-left:30px}
+.ol li{padding:0 0 5px}
+
+.bg{background:#f2f3f7}
+.bg2{background:#e6e8ed}
+.bgred{background:red}
+.bgadv{background:#efefef}
+.bgyel{}
+.r{text-align:right}
+.cb{color:#000}
+.cg{color:#999}
+.cg2{color:#666}
+.cgr{color:#990}
+.cr{color:#f00}
+.cr2{color:#c00}
+.cw{color:#fff}
+.co{color:#f96}
+.cadv{color:#3d3d3d}
+.tdn{text-decoration:none}
+.fs7{font-size:.7em}
+.fs75{font-size:.75em}
+.fs8{font-size:.8em}
+.fs1{font-size:1em}
+.fs12{font-size:1.2em}
+.w100p{width:100%}
+.w80p{width:80%}
+.w50p{width:50%}
+.w20p{width:20%}
+.w1p{width:1%}
+.w20{width:20px}
+.bb{border-bottom:1px solid #e6e8ed}
+.bbdot{border-bottom:1px dotted #06c}
+.bbadv{border-bottom:1px solid #000}
+.bt{border-top:1px solid #e6e8ed}
+.btw{border-top:1px solid #fff}
+.fwb{font-weight:bold}
+.chbx{padding:0 10px;text-align:center;vertical-align:middle}
+.mb{margin-bottom:5px}
+.mr{margin-right:5px}
+.mb10{margin-bottom:10px}
+.mt10{margin-top:10px}
+.mt{margin-top:5px}
+.pb{padding-bottom:5px}
+.pb10{padding-bottom:10px}
+.pl{padding-left:10px}
+.pr{padding-right:10px}
+.pt{padding-top:5px}
+.pt10{padding-top:10px}
+.vam{vertical-align:middle}
+.error{border:1px solid #f00}
+.clip{height:11px;vertical-align:middle;width:7px}
+.tac{text-align:center}
+.rbut{margin:0 1.5em}
+
+.b-footer{background:#f2f2f2 url(/img/smart/g.gif) 0 0 repeat-x;border-top:1px solid #999;margin-top:10px;padding:14px 10px 5px}
+
+
+
+
+
+/* Password Input */
+#PassInp {display:none; position: absolute; left: 0; top: 0; z-index: 9999; width: 100%;background: #ffffff}
+#PassInp .PassInp {float: left;  background: #fff; width:100%; height:100%}
+.PassInp .PHead {position: relative; width:100%; margin: 0 0 15px 0; padding: 0 0 10px 0; border-bottom: 1px solid #dadada;}
+.PayMenu {position: absolute; right: 0; top: 0; width: auto; font-size: 75%;}
+.PayMenu li {float: left; width: auto; padding: 4px 8px 6px; background: url('/img/bg-acc-item.gif') right center no-repeat;}
+.PayMenu li.nobg {padding: 4px 0 6px 8px;}
+.PassInp .PasForm {float: left; width: 468px;}
+.PassInp .PasForm .bot {clear: both;}
+.PassInp .PasForm .top div, .PassInp .PasForm .bot div {float: left; width: auto;}
+.PassInp .PasForm .top div.name {width: 155px; margin: 0 0 5px 0; padding-top: 3px;}
+.PassInp .PasForm .top div.fld input {width: 215px; margin: 0 5px 5px 0;}
+.PassInp .PasForm .lnk {padding-top: 3px;}
+.PassInp .PasForm .chk {margin-left: 143px; padding-top: 5px;}
+.PassInp .PasForm .btn {padding: 0 0 0 154px;}
+/*.PassInp .Note {float: right; width: 200px; padding: 15px 18px; background: #fff7d0;}*/
+
+
+.Payment .Pay span.kods {width: 37px; margin-left:18px}
+.Payment .Pay span.numb {width: 28% !important; margin-left: 37px !important;}
+
+
+/* *** */
+.black {color: #000;}
+.white {color: #feffff;}
+.grey {color: #666666;}
+.orange {color: #f26d00;}
+.red {color: #c00;}
+.green {color: #619100;}
+.blue {color:#145aa0;}
+
+.Parts ul {margin-bottom: -7px;font-size: 75%; line-height: 153%; line-height: 1.4em;}
+.Parts li {padding: 0 0 5px 22px; background: url('/img/bullit-1.gif') 5px 7px no-repeat;}
+.Parts li.cur {background: url('/img/bullit-1a.gif') 0 1px no-repeat;}
+.Parts li.cur a {color: #e66a06; font-weight: bold; text-decoration: none;}
+
+div.Info { color:#999; font-size:.8em; border-top:1px solid #e6e8ed }
+
+.Help h3 { font-size: 120%; color: #2E4762;}
+.Help p {padding-bottom:5px;}
+.Help ol {list-style-type: decimal; padding: 0 0 0 25px}
+.Help ul {list-style-type: circle; padding: 0 0 0 25px}
+.Help .even {background: none repeat scroll 0 0 #F2F2F2;}
+.Help .red {color: #CC0000;}
+
+/* ToolTip */
+.tooltip
+{
+    position: absolute;
+    margin-top: 0px;
+    width: 166px !important;
+    height: 20px;
+}
+
+.tooltip .tail
+{
+    background: url(/img/tooltip/tail.png) no-repeat;
+    _background-image: url(/img/tooltip/tail.gif);
+    width: 9px !important;
+    height: 5px;
+    left: 39px;
+    top: -4px;
+    position: absolute;
+    float: left !important;
+}
+
+.tooltip .ltc
+{
+    background: url(/img/tooltip/ltc.png) no-repeat;
+    _background-image: url(/img/tooltip/ltc.gif);
+    width: 6px !important;
+    height: 6px;
+    float: left !important;
+}
+
+.tooltip .rtc
+{
+    background: url(/img/tooltip/rtc.png) no-repeat;
+    _background-image: url(/img/tooltip/rtc.gif);
+    float: right !important;
+    width: 6px !important;
+    height: 6px;
+}
+
+.tooltip .lbc
+{
+    background: url(/img/tooltip/lbc.png) no-repeat;
+    _background-image: url(/img/tooltip/lbc.gif);
+    width: 6px !important;
+    height: 6px;
+    float: left !important;
+}
+
+.tooltip .rbc
+{
+    background: url(/img/tooltip/rbc.png) no-repeat;
+    _background-image: url(/img/tooltip/rbc.gif);
+    float: right !important;
+    width: 6px !important;
+    height: 6px;
+}
+
+.tooltip .ts, .tooltip .bs
+{
+    height: 6px;
+    line-height: 6px;
+    background: #fbf7c7 url(/img/tooltip/border_pix.gif) repeat-x top;
+    margin: 0 6px;
+    _margin: 0;
+    float: none !important;
+}
+
+.tooltip .bs
+{
+    background: #fbf7c7 url(/img/tooltip/border_pix.gif) repeat-x bottom;
+    _border-bottom: solid 1px #a6a8ae;
+}
+
+.tooltip .rborder
+{
+    background: url(/img/tooltip/border_pix.gif) repeat-y right;
+    padding: 0 9px;
+    float: none !important;
+    height: 5px;
+}
+
+.tooltip .inner
+{
+    background: #fbf7c7 url(/img/tooltip/border_pix.gif) repeat-y;
+    float: none !important;
+}
+
+.tooltip .mess
+{
+    font-family: tahoma !important;
+    color: #5a393f;
+    font-size: 9px;
+    position: absolute;
+    margin-top: -3px;
+    white-space: nowrap;
+    float: none !important;
+}
+
+.header_wtrid1, .header_wtrid4 {
+	position: relative;
+	-webkit-box-sizing: border-box;
+/* iOS 4-, Android 3- */
+	-moz-box-sizing: border-box;
+/* Firefox for Android */
+	box-sizing: border-box;
+	border-top: 1px solid #abcadf;
+	border-bottom: 1px solid #0b396c;
+	background-color: #336ca0;
+	background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #619ac2), color-stop(100%, #0e4989));
+	background-image: -webkit-linear-gradient(top, #619ac2, #0e4989);
+	background-image: -moz-linear-gradient(top, #619ac2, #0e4989);
+	background-image: -o-linear-gradient(top, #619ac2, #0e4989);
+	background-image: linear-gradient(to bottom, #619ac2, #0e4989);
+	-webkit-box-shadow: 0 1px 1px rgba(76,84,97,0.5);
+/* Android */
+	box-shadow: 0 1px 1px rgba(76,84,97,0.5);
+}
+
+.header_wtrid1 {
+	height: 36px;
+}
+
+.header_wtrid4 {
+	height: 42px;
+}
+
+.header_logotype_wtrid1, .header_logotype_wtrid4 {
+	display: inline-block;
+	margin-left: 10px;
+	height: 100%;
+	line-height: 0;
+	background: url(/img/header_logotype.png) no-repeat;
+}
+
+.header_logotype_wtrid1 {
+	margin-top: 8px;
+	width: 138px;
+	background-size: 138px 18px;
+	-webkit-background-size: 138px 18px;
+    -o-background-size: 138px 18px;
+    -moz-background-size: 138px 18px;
+}
+
+.header_logotype_wtrid4 {
+	margin-top: 11px;
+	width: 146px;
+	background-size: 146px 19px;
+    -webkit-background-size: 146px 19px;
+    -o-background-size: 146px 19px;
+    -moz-background-size: 146px 19px;
+}
+
+</style>
+
+
+
+	<div class="b-head">
+		<table>
+			<tr>
+				<td class="l"><a href="/">Деньги</a></td>
+				<td class="r"><a href="http://m.mail.ru/"><img src="/img/smart/mail_ru.png" alt="Mail.Ru" /></a></td>
+			</tr>
+		</table>
+	</div>
+
+
+<div class="mb25">
+	
+</div>
+
+
+	<form method="post" action="https://auth.mail.ru/cgi-bin/auth" class="mb pl pr">
+	<input type="hidden" name="Page" value="https://m.money.mail.ru" />
+	<input type="hidden" name="FailPage" value="https://m.money.mail.ru/nologin" />
+
+	<p class="fwb mb mt10 pl pr">Введите свои имя и&nbsp;пароль</p>
+	<div class="bt bg pb pl pr">
+		<p class="pt">Имя</p>
+		<p><input type="text" class="w80p" name="Login" /></p>
+	</div>
+	<p class="bg pl pr pt">@
+		<select name="Domain">
+			<option selected="selected">mail.ru</option>
+			<option value="inbox.ru">inbox.ru</option>
+			<option value="bk.ru">bk.ru</option>
+			<option value="list.ru">list.ru</option>
+			
+		</select>
+	</p>
+	<div class="bb bg mb10 pb pl pr">
+		<p class="pt">Пароль</p>
+		<p><input type="password" class="w80p" name="Password"/></p>
+	</div>
+	<p><input type="checkbox" value="1" name="level" id="alied" />&nbsp;&mdash; не запоминать</p>
+	<p class="mb mt"><input type="submit" value="Войти" /></p>
+	<p><a href="http://www.mail.ru/pages/help/92.html">Восстановить пароль</a></p>
+	<p><a href="http://e.mail.ru/cgi-bin/signup?page=https://m.money.mail.ru">Регистрация нового пользователя</a></p>
+</form>
+
+
+
+
+	
+
+
+
+	<!-- Project menu -->
+	
+	<div class="mb pl pr">
+			<h2 class="fs12 fwb pb"><a href="/add/"><i></i>Внести деньги</a>
+				
+			</h2>
+			<h2 class="fs12 fwb pb"><a class="pay" href="/pay/"><i></i>Оплатить товары и услуги</a>
+				
+			</h2>
+			
+	</div>
+	
+<!-- //Project menu -->
+
+
+<!-- Content -->
+<div id="Content">
+
+
+	<script type="text/javascript" src="/js1383737779/smart-search_shop_list.js"></script>
+	<script src="/js/search_shop.js" type="text/javascript"></script>
+	<div class="Frame pl pr">
+	<div class="Parts">
+		<h1 class="mb5">Найти магазин:</h1>
+		<form  id="shop_list" onsubmit="return search_shop();">
+			<p><input type="text" id="search_data" autocomplete="off" onKeyUp="search_shop()" class="w80p"></p>
+			<div id="search_result" style="display:none;" class="pt10">
+			</div>
+		</form>
+	</div>
+</div>
+                                            
+
+
+
+<div class="MainTop mb pl pr">
+	<div class="Money">
+		
+			
+				
+					<div class="noSwa">
+	<h1>Для открытия счета в&nbsp;системе Деньги@Mail.Ru Вам необходимо авторизоваться в&nbsp;общей системе Mail.Ru</h1>
+</div>
+			
+				
+			
+		
+	</div>
+</div>
+
+
+
+
+    
+
+	<div class="mb pl pr">
+	<h2 class="fs12 fwb pb">Оплата товаров и услуг</h2>
+
+	<h3 class="fwb"><a class="cb" href="/catalog/phone">Сотовая связь</a></h3>
+	<p class="fs75">
+	<a class="mr" href="/pay/service/mts/">МТС</a>
+	<a class="mr" href="/pay/service/beeline/">Билайн</a>
+	<a class="mr" href="/pay/service/megafon/">МегаФон Москва</a>
+	<a class="mr" href="/pay/service/megafon_sz/">МегаФон Северо-Запад</a>
+	<a class="mr" href="/pay/service/tele2/">TELE2</a>
+	<a class="mr" href="/pay/service/utel_mb/">Utel (сотовая связь)</a>
+	
+</p>
+	<h3 class="fwb"><a class="cb" href="/catalog/telephony">Телефония</a></h3>
+	<p class="fs75">
+	<a class="mr" href="/pay/service/shop-skype/">Skype</a>
+	<a class="mr" href="/pay/service/sipnet/">SIPNET</a>
+	<a class="mr" href="/pay/service/mgts/">МГТС</a>
+	<a class="mr" href="/pay/service/akado/">АКАДО</a>
+	
+</p>
+	<h3 class="fwb"><a class="cb" href="/catalog/internet/">Интернет</a></h3>
+	<p class="fs75">
+	<a class="mr" href="/pay/service/akado/">АКАДО</a>
+	<a class="mr" href="/pay/service/mgts/">МГТС</a>
+	<a class="mr" href="/pay/service/stream/">СТРИМ (МТС интернет и ТВ, Москва, л/с)</a>
+	<a class="mr" href="/pay/service/yota/">Yota Интернет</a>
+	<a class="mr" href="/pay/service/shop-trikolor111/">Триколор ТВ.Личный счет</a>
+	<a class="mr" href="/pay/service/onlime/">Onlime</a>
+	
+</p>
+	<h3 class="fwb"><a class="cb" href="/catalog/comm">Коммунальные услуги</a></h3>
+	<p class="fs75">
+	<a class="mr" href="/pay/service/zhku_moscow/">ЖКУ (Москва)</a>
+	<a class="mr" href="/pay/service/mgts/">МГТС</a>
+	<a class="mr" href="/pay/service/mosenergosbyt/">Мосэнергосбыт</a>
+	
+</p>
+	<h3 class="fwb"><a class="cb" href="/catalog/mail">Проекты Mail.Ru</a></h3>
+	<p class="fs75">
+	<a class="mr" href="http://terrabank.ru/data.jsf?project=179&account=2231" target="new">Мини-игры@mail.ru</a>
+	<a class="mr" href="https://target.mail.ru/adv/help/prices/#sposoby_oplaty" target="new">Таргет@Mail.ru</a>
+	<a class="mr" href="http://content.mail.ru" target="new">Рассылки@Mail.Ru</a>
+	<a class="mr" href="http://realty.mail.ru/" target="new">Недвижимость@Mail.Ru</a>
+	
+</p>
+	<h3 class="fwb"><a class="cb" href="/catalog/games/">Игры</a></h3>
+	<p class="fs75">
+	<a class="mr" href="/pay/service/ao/">Аллоды Онлайн</a>
+	<a class="mr" href="/pay/service/pw/">Perfect World</a>
+	<a class="mr" href="/pay/service/gwtanks/">Ground War: Tanks</a>
+	<a class="mr" href="/pay/service/wot/">World of Tanks</a>
+	<a class="mr" href="/pay/service/wf/">Warface</a>
+	
+</p>
+	<p class="fwb"><a class="cb" href="/catalog/">Все магазины и&nbsp;сервисы</a></p>
+</div>
+
+
+
+<img src="https://rs.mail.ru/d1605420.gif?rnd=312220654&ts=1384179760" style="width:0;height:0;position:absolute;" alt=""/>
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">//<![CDATA[
+var _tmr = _tmr || [];
+_tmr.push({id: '1744514',  type: 'pageView', start: (new Date()).getTime()});
+(function (d, w) {
+ var ts = d.createElement('script'); ts.type = 'text/javascript'; ts.async = true;
+ ts.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//top-fwz1.mail.ru/js/code.js';
+ var f = function () {var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ts, s);};
+ if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+//]]></script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=1744514;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+  
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.mail.ru/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+<noscript>
+<img src="https://piwik.mail.ru/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+</noscript>
+<!-- End Piwik Code -->
+
+	<div class="bt fs8 mb pl pr pt10">
+	<p><a href="/help/">Помощь</a></p>
+	<p><a href="/help/tariff">Тарифы</a></p>
+	<p class="cg fs75">По&nbsp;всем вопросам: <a href="mailto:money@corp.mail.ru">money@corp.mail.ru</a></p>
+</div>
+
+	</div>
+<!-- //Content -->	
+
+<div class="b-footer">
+	
+	<p>
+		<a href="https://money.mail.ru/">Полная версия</a>&nbsp;| Для смартфонов<br />
+		&#169; <a name="cln9082" href="http://corp.mail.ru/" class="mf_w">Mail.Ru</a>, 1999&mdash;2013
+	</p>
+</div>
+<div id="tooltipAuth_shell" class="tooltip" style="display: none;">
+	<div id="tooltipAuth_tail" class="tail"></div>
+	<div class="ltc"></div><div class="rtc"></div>
+	<div class="ts"></div>
+	<div class="inner">
+		<div class="rborder" >
+			<div id="tooltipAuth_mess" class="mess">
+				<span id="tooltipAuth_mess_var">Вы вводите русские буквы</span>
+				<span id="tooltipAuth_mess_var2" style="display: none;">Включен Caps Lock</span>
+				<span id="tooltipAuth_mess_var3" style="display: none;">Пароль содержит русские буквы</span>
+			</div>
+			<div id="tooltipAuth_struter" class="struter"></div>
+		</div>
+	</div>
+<div class="lbc"></div><div class="rbc"></div><div class="bs"></div></div>
+</body>
+</html>

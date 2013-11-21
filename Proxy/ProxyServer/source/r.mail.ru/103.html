@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	var lang=''; // language from profile
+	var cookie_lang_set=0; // is language cookie set?
+	var cookie_lang=''; // language cookie value
+	var cookie_swa_lang=''; // old language cookie value
+	var project_lang=''; // current project language
+	var swa_lang='';
+	if(lang!=''){
+		swa_lang=lang.substr(0,2);
+		if(swa_lang=='ru'){swa_lang=''}
+	}
+	if((!cookie_lang_set && lang!='' && swa_lang!=cookie_lang) || (cookie_lang_set && swa_lang!=cookie_swa_lang)){ // v1
+		var expiresDate=new Date(); 
+		expiresDate.setTime(expiresDate.getTime()+365*24*60*60*1000); 
+		var expires = expiresDate.toGMTString(); 
+		document.cookie='lang='+swa_lang+'; path=/; domain=.help.mail.ru; expires='+expires+';';
+		document.cookie='lang_set=1; path=/; domain=.help.mail.ru; expires='+expires+';';
+		document.cookie='swa_lang='+swa_lang+'; path=/; domain=.help.mail.ru; expires='+expires+';';
+console.log('set lang='+swa_lang+' and reload');
+		window.location.reload();
+	
+	}else if(cookie_lang_set && project_lang!='0' && project_lang!=cookie_lang && cookie_lang==''){ // v2
+console.log('redirect /mmail');
+		window.location='/mmail';
+	}
+</script>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Система помощи поможет найти ответы на все ваши вопросы, возникающие при использовании портала Mail.Ru.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="Keywords" content="почта, бесплатная электронная почта, авто, новости, спорт, музыка, работа, знакомства, анекдоты, открытки, погода">
+	<title>Помощь Мобильная Почта</title>
+	<link rel="shortcut icon" href="//img.imgsmail.ru/r/wap_img/favicon.ico" />
+	<link rel="apple-touch-icon" href="//img.imgsmail.ru/r/ru/ios/icon_114.png"/>
+	<link href="/css/mobile_main.css?12" rel="stylesheet" type="text/css">
+	<link href="/css/form.css" rel="stylesheet" />
+	<link href="/css/slam.css" rel="stylesheet" />
+	<script language="JavaScript" type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body>
+<img src="//rs.mail.ru/d1190316.gif" style="width:0;height:0;position:absolute;" alt=""/>
+
+<div class="head">
+		<a href="http://m.mail.ru/" class="head__help" style="background: url('/img/mobile/head__help.png') no-repeat;" title="Помощь@Mail.Ru"></a>
+		<a href="//m.mail.ru/cgi-bin/splash" class="head__mail" title="Mail.Ru"></a>
+	<a href="#" class="head__search" title="Поиск" onClick="document.getElementById('search_top').style.display='block';return false;"></a>
+</div>
+<div class="search" id="search_top">
+	<form action="/mmail/search/">
+		<table class="search__fields"><tr>
+		<td class="search__fields__text"><input type="text" class="search__text" name="q" value="" /></td>
+		<td class="search__fields__submit"><input type="submit" class="search__submit" value="Найти" /></td>
+		</tr></table>
+	</form>
+</div>
+
+<div class="wrapper mobile">
+	
+
+	
+	
+	<div class="project">
+		<i class="icon icon_project icon_project_mail" style="background: url('/img/mobile/icon_project_mail.png') no-repeat"></i>
+		<h2 class="project__txt">Мобильная Почта</h2>
+	</div>
+	
+	
+		
+		<h3><a href="/mmail/ua">Пользовательское Соглашение</a></h3>
+		
+	
+		
+		<h3><a href="/mmail/registration">Регистрация почтового ящика</a></h3>
+		
+	
+		
+		<h3><b>Вход и выход</b></h3>
+		<ul>
+			
+				<li><a class="sm gr" href="/mmail/auth/login/">Вход в почтовый ящик</a></li>
+			
+				<li><a class="sm gr" href="/mmail/auth/problem/">Не могу войти в почтовый ящик</a></li>
+			
+				<li><a class="sm gr" href="/mmail/auth/fast/">Быстрый доступ к почте</a></li>
+			
+				<li><a class="sm gr" href="/mmail/auth/logout/">Выход из почты</a></li>
+			
+		</ul>
+		
+	
+		
+		<h3><a href="/mmail/messagelist">Вид списка писем</a></h3>
+		
+	
+		
+		<h3><b>Папки</b></h3>
+		<ul>
+			
+				<li><a class="sm gr" href="/mmail/folders/system/">Системные папки</a></li>
+			
+				<li><a class="sm gr" href="/mmail/folders/create/">Создание новой папки</a></li>
+			
+		</ul>
+		
+	
+		
+		<h3><b>Письмо</b></h3>
+		<ul>
+			
+				<li><a class="sm gr" href="/mmail/letters/write/">Написать письмо</a></li>
+			
+				<li><a class="sm gr" href="/mmail/letters/read/">Читать письмо</a></li>
+			
+				<li><a class="sm gr" href="/mmail/letters/forward/">Переслать другому адресату</a></li>
+			
+				<li><a class="sm gr" href="/mmail/letters/search/">Найти письмо</a></li>
+			
+				<li><a class="sm gr" href="/mmail/letters/action/">Остальные действия с письмами</a></li>
+			
+		</ul>
+		
+	
+		
+		<h3><b>Вложенные файлы</b></h3>
+		<ul>
+			
+				<li><a class="sm gr" href="/mmail/attachments/send/">Отправка файлов с письмом</a></li>
+			
+				<li><a class="sm gr" href="/mmail/attachments/receive/">Получение вложений</a></li>
+			
+		</ul>
+		
+	
+		
+		<h3><a href="http://help.mail.ru/mobile-support/m">Обратиться в службу поддержки</a></h3>
+		
+	
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
+		
+
+
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,371 @@
+
+
+	
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN""http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<script>
+  try { top.location.toString(); } catch (e) { top.location = location; }
+</script>
+<script>
+function createRadar(name, iZ, log){
+	var data	= {};
+	var radar	= function (s, x, time)
+	{
+		if( s == 'clear' ){ data = {}; }
+		else if( typeof s == 'string' ){
+			if( x == 1 && data[s] && !data[s][1] ){
+				if (typeof time === 'number'){
+					data[s][1] = time;
+				} else {
+					data[s][1] = +new Date;
+				}
+			}
+			else if( x != 1 && !data[s] ){
+				if (typeof time === 'number'){
+					data[s] = [time, 0]
+				} else {
+					data[s] = [+new Date, 0];
+				}
+			}
+		} else {
+			var i = [], a, v, k, dt;
+			for( k in data ) if( data.hasOwnProperty(k) )
+			{
+				v = data[k];
+				dt = v[1] - v[0];
+				if( dt < 0 )
+				{
+					data = {};
+					return;
+				}
+				else if( iZ && !dt ) continue;
+				i.push(k +':'+ dt);
+				if( k == 'all' ) a = dt;
+			}
+			if( i.length && a ) {
+				(new Image).src = 'http://msplash.radar.imgsmail.ru/update?p=msplash&t='+ name +'&v='+ a +'&i='+ i.join(',') +'&rnd='+ Math.random() + (document.referrer ? '&r='+ escape(document.referrer) : '');
+			}
+			data = {};
+		}
+		return	radar;
+	};
+	radar.clear	= function (){ data = {}; return radar; };
+	return	radar;
+}
+
+var splashRadar = createRadar('page');
+</script>
+<script>try{ splashRadar('all'); }catch(ex){};</script>
+<script>try{ splashRadar('head'); }catch(ex){};</script>
+<script>try{ splashRadar('inline_style'); }catch(ex){};</script>
+<style type="text/css">
+body{font-family:Arial,sans-serif;margin:0;padding:0;color:#000;background:#fff}
+*{font-size:100%;margin:0}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+th,td{padding:0;text-align:left;vertical-align:top;border-collapse:collapse;border-spacing:0}
+p{font-size:0.875em;padding-bottom:5px}
+input,textarea,select{font:normal 100% Arial,sans-serif;vertical-align: middle}
+a{color:#06c;text-decoration:underline}
+img{border:0;vertical-align: middle}
+
+
+/* header & footer */
+.head{background:url('//img.imgsmail.ru/r/m_img/head_bg_active.221.png') left top repeat-x #00468c;border-bottom:1px solid #14467A;color:#fff;line-height:1;padding:5px 7px 4px 7px;}
+.head-active{background:url('//img.imgsmail.ru/r/m_img/head_bg_active.221.png') left top repeat-x #00468c;border-bottom:1px solid #011d3a;color:#fff;line-height:1;padding:5px 7px 4px 7px;}
+.head-a{color:#fff;line-height:1;text-decoration:none}
+.mail_ru{margin:0px;border:none;}
+.mail_ru_retina{display:none;margin:0px;border:none;}
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	.mail_ru{display:none;}
+	.mail_ru_retina{display:inline;}
+}
+.footer{background:#f2f2f2 url('//img.imgsmail.ru/r/m_img/g.gif') 0 0 repeat-x;border-top:1px solid #999;padding:9px 10px 5px}
+
+/* common */
+input[type="checkbox"]{margin:0;padding:0;vertical-align:middle}
+label{vertical-align:middle}
+i{color:#666;font-style:normal}
+.a{line-height:16px;text-decoration:none;vertical-align:middle}
+.t{line-height:16px;text-decoration:underline;vertical-align:middle}
+.i{height:16px;width:16px}
+.clear{clear:both;display:block}
+.counter{left:-100px;position:absolute;top:-100px}
+.r{text-align:right}
+/* styles */
+.dn{display:none;}
+.db{display:block;}
+.bt{border-top:1px solid #e6e8ed}
+.cb{color:#000}
+.cg{color:#999}
+.cgr{color:#990}
+.cr{color:#f00}
+.cw{color:#fff}
+.fwb{font-weight:bold}
+.fwn{font-weight:normal}
+.fr{float:right}
+.fs10{font-size:10px}
+.fs13{font-size:13px}
+.fs15{font-size:1.5em}
+.lh18{line-height:18px}
+.mb{margin-bottom:5px}
+.ml{margin-left:5px}
+.mr{margin-right:5px}
+.mr8{margin-right:8px}
+.mt{margin-top:5px}
+.mt10{margin-top:10px}
+.plr{padding-left:10px;padding-right:10px}
+.p{padding:5px 10px}
+.p10{padding:10px}
+.pt{padding-top:5px}
+.tdn{text-decoration:none}
+.tdu{text-decoration:underline}
+.vam{vertical-align:middle}
+.w80p{width:80%}
+.w100p{width:100%}
+
+/* custom */
+.ad{text-align:center}
+.board{background:#d6e4f0 url('//img.imgsmail.ru/r/m_img/gboard.gif') 0 0 repeat-x;border-bottom:1px solid #a0b7cd}
+.board-link{color:#000;font-size:1em;font-weight:bold;line-height:16px;margin:0 5px 0 0;text-decoration:none;white-space:nowrap}
+.board table{width:100%}
+.board td{padding:4px 0 6px 10px;vertical-align:middle}
+.board td.r{padding:5px 10px 5px 0}
+
+.button{background:url(//img.imgsmail.ru/r/m_img/button.png) 0 0 no-repeat;color:#fff;display:block;font-size:.8em;padding-left:12px;text-decoration:none}
+.button-i{background:url(//img.imgsmail.ru/r/m_img/button.png) 100% 0 no-repeat;display:block;padding-right:12px}
+.button-t{background:#006cd7 url(//img.imgsmail.ru/r/m_img/button.png) 0 -24px repeat-x;display:block;height:24px;line-height:24px;padding:0;vertical-align:middle}
+
+.login_link{float:right}
+.login_form{background:#f2f2f2 url(//img.imgsmail.ru/r/m_img/g.gif) 0 0 repeat-x;border-top:1px solid #a0b7cd;padding:10px 10px 5px}
+
+.h{background:#edf7ff;border-top:1px solid #c1d1df;color:#000;font-size:1em;font-weight:bold;margin:10px 0 8px;padding:5px 10px}
+.pic{padding:0 5px 5px 0}
+.stars{height:11px;vertical-align:middle;width:63px}
+.search{padding:0 5px 0 0;vertical-align:middle;width:100%}
+.search-i{margin:0;padding-left:0;padding-right:0;vertical-align:middle;width:100%}
+.vlinks p{margin:0 0 3px;}
+.vlinks a:visited{color:#039}
+.vlinks a.cb:visited{color:#000}
+.vlinks a.cg:visited{color:#999}
+.weather{margin:0 0 5px}
+.w-l{background:#edf7ff;padding:10px 15px;text-align:center;vertical-align:middle}
+.w-c{padding:0 5px;text-align:center;vertical-align:middle;width:80px}
+.w-r{color:#333;padding:0 0 0 5px;vertical-align:middle;white-space:nowrap}
+.cols{margin:0 0 5px}
+.cols td{padding:0 0 0 10px}
+.error{background:#f00;color:#fff;font-weight:bold;margin:0 0 5px;padding:5px 10px}
+
+/* user info */
+.avatar{float:right;height:45px;margin:0 0 5px 5px;width:45px}
+.cns{color:#000;margin:0px 0 0px}
+.cnt,.cnr,.cnb,.cnl,.cn{background-color:#fff}
+.cnt,.cnr,.cnb,.cnl{background-repeat:no-repeat;height:4px}
+.cnt{background-image:url('//img.imgsmail.ru/r/m_img/cnt.6682.png');background-position:top left;padding:0 0 0 4px}
+.cnr{background-image:url('//img.imgsmail.ru/r/m_img/cnr.6682.png');background-position:top right}
+.cn{padding:1px 5px 0 8px}
+.cnb{background-image:url('//img.imgsmail.ru/r/m_img/cnb.6682.png');background-position:bottom right;padding:0 4px 0 0}
+.cnl{background-image:url('//img.imgsmail.ru/r/m_img/cnl.6682.png');background-position:bottom left}
+
+.search-form {padding-top:3px;}
+/* suggest */
+.go-suggests{display:none;margin-top:-6px;border-top:1px solid #b8b8b8;border-bottom:1px solid #b8b8b8;width:100%;background:#f6f6f6;-webkit-box-shadow:0 1px 1px 0 #d9d9d9;-moz-box-shadow:0 1px 1px 0 #d9d9d9;-o-box-shadow:0 1px 1px 0 #d9d9d9;box-shadow:0 1px 1px 0 #d9d9d9;font:13px arial,sans-serif}.go-suggests__open{display:block}.go-suggests__list{font-size:130%}.go-suggests__suggest{border-bottom:1px solid #e0e0e0}.go-suggests__suggest__hover{background:#e1e1e1}.go-suggests__suggest_link{display:block;padding:6px 11px;color:#000;line-height:1.2;text-decoration:none}.go-suggests__suggest_link:hover,.go-suggests__suggest_link:visited{color:#000;text-decoration:none}.go-suggests__suggest__nav .go-suggests__suggest_link,.go-suggests__suggest__nav .go-suggests__suggest_link:hover,.go-suggests__suggest__nav .go-suggests__suggest_link:visited{color:#00468c}.go-suggests__suggest__favicon{float:left;margin:2px 5px 0 0;width:16px;height:16px;background:0 0 no-repeat}
+</style>
+
+<script>try{ splashRadar('inline_style',1); }catch(ex){};</script>
+<meta name="keywords" content="почта, мобильная почта, мобильный Mail.Ru, создать почту, почтовый ящик, почта для телефона, новости, поиск в интернете, авто, спорт, игры, знакомства, погода" />
+<meta name="description" content="Мобильная версия Mail.Ru" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="176" />
+<meta name="PalmComputingPlatform" content="true" />
+<link rel="shortcut icon" href="//img.mail.ru/r/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="//img.imgsmail.ru/r/ru/ios/icon_114.png"/>
+<link rel="alternate" media="handheld" href="http://tel.mail.ru/cgi-bin/splash"/>
+<title>Mail.Ru</title>
+<script>try{ splashRadar('head_script'); }catch(ex){};</script>
+<script type="text/javascript">
+function show(id) {
+	var elem = document.getElementById(id);
+	var visible = elem.style.display == '';
+	elem.style.display = visible ? 'none' : '';
+	if (id == 'login_form') {
+		document.getElementById('login_link').innerHTML = visible ? 'Вход' : 'Закрыть';
+		if (!visible) {
+			new Image().src = '//rs.mail.ru/sn9799.gif?' + Math.random();
+		}
+	}
+}
+</script>
+<script type="text/javascript" src="/js/sg.js?2"></script>
+<script>try{ splashRadar('head_script',1); }catch(ex){};</script>
+<!-- - MAIL-14266 -->
+ <!-- Touch 656 -->
+<!-- - MAIL-14266 -->
+<script>try{ splashRadar('head', 1); }catch(ex){};</script>
+</head>
+<body>
+<script>try{ splashRadar('body'); }catch(ex){};</script>
+
+<div class="head">
+	<p style="padding-bottom:0;">
+		<a style="line-height: 20px;" href="/"><img class="mail_ru" alt="Mail.Ru" src="//img.imgsmail.ru/r/m_img/logo_splash_active.x1.6682.png" /></a>
+	</p>
+</div>
+<p class="h" style="margin-top:0">Общение</p>
+<div class="mb plr">
+	<p><a href="http://m.mail.ru/cgi-bin/folders" class="a"><img src="//img.imgsmail.ru/r/m_img/at.gif" alt="" class="i" />&nbsp;<span class="t">Почта</span></a></p>
+	<p><a href="http://m.my.mail.ru/?from=mmail" class="a"><img src="//img.imgsmail.ru/r/m_img/my.png" alt="" class="i" />&nbsp;<span class="t">Мой Мир</span></a></p>
+	<p><a href="http://m.agent.mail.ru/cgi-bin/getagent_splash35" class="a"><img src="//img.imgsmail.ru/r/m_img/at_agent32.png" width="16" height="16" alt="" class="i" />&nbsp;<span class="t">Агент</span></a></p>
+	<p><a href="http://icq.com/ru" class="a"><img src="//img.imgsmail.ru/r/m_img/icq.gif" alt="" class="i" />&nbsp;<span class="t">ICQ</span></a></p>
+	<p><a href="http://wap.love.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/love.gif" alt="" class="i" />&nbsp;<span class="t">Знакомства</span></a></p>
+	<p><a href="http://wap.otvet.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/answers.gif" alt="" class="i" />&nbsp;<span class="t">Ответы</span></a></p>
+</div>
+<p class="h">Информация</p>
+<div class="mb plr">
+	<p><a href="http://news.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/news.gif" alt="" class="i" />&nbsp;<span class="t">Новости</span></a></p>
+	<p><a href="http://sport.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/soccer.png" alt="" class="i" />&nbsp;<span class="t">Спорт</span></a></p>
+	<p><a href="http://pogoda.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/weatherall.gif" alt="" class="i" />&nbsp;<span class="t">Погода</span></a></p>
+	<p><a href="http://wap.tv.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/tv.gif" alt="" class="i" />&nbsp;<span class="t">Телепрограмма</span></a></p>
+	<p><a href="http://auto.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/auto.gif" alt="" class="i" />&nbsp;<span class="t">Авто</span></a></p>
+	<p><a href="http://lady.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/lady.gif" alt="" class="i" />&nbsp;<span class="t">Леди</span></a></p>
+	<p><a href="http://m.hi-tech.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/hi-tech.gif" alt="" class="i" />&nbsp;<span class="t">Hi-tech</span></a></p>
+	<p><a href="http://health.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/health.gif" alt="" class="i" />&nbsp;<span class="t">Здоровье</span></a></p>
+</div>
+<p class="h">Товары и&nbsp;услуги</p>
+<div class="mb plr">
+  <p><a href="http://m.torg.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/torg.gif" alt="" class="i" />&nbsp;<span class="t">Товары</span></a></p>
+  <p><a href="https://m.money.mail.ru" class="a"><img src="//img.imgsmail.ru/r/m_img/money.gif" alt="" class="i" />&nbsp;<span class="t">Деньги</span></a></p>
+</div>
+<p class="h">Поиск</p>
+<div class="mb plr">
+	<p><a href="http://m.go.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/search.gif" alt="" class="i" />&nbsp;<span class="t">Поиск и&nbsp;каталог</span></a></p>
+	<p><a href="http://maps.mail.ru" class="a"><img src="//img.imgsmail.ru/r/m_img/map.gif" alt="" class="i" />&nbsp;<span class="t">Мобильные карты</span></a></p>
+</div>
+<p class="h">Развлечения</p>
+<div class="mb plr">
+	<p><a href="http://afisha.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/afisha2.gif" alt="" class="i" />&nbsp;<span class="t">Афиша</span></a></p>
+	<p><a href="http://horo.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/horo.gif" alt="" class="i" />&nbsp;<span class="t">Гороскопы</span></a></p>
+	<p><a href="http://m.games.mail.ru/" class="a"><img src="//img.imgsmail.ru/r/m_img/games32.png" width="16" height="16" alt="" class="i" />&nbsp;<span class="t">Игры</span></a></p>
+</div>
+
+
+<div style="position:absolute;margin-left:-100px;"><img src="http://rs.mail.ru/d957301.gif?rnd=134768675&ts=1384179759" style="width:0;height:0;position:absolute;" alt=""/>
+<img src="http://c.waplog.net/ru/16453.cnt" width="1" height="1" alt="waplog" />
+<img src="//top-fwz1.mail.ru/counter?id=2104775;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+<img src="//rs.mail.ru/d368066.gif" width="1" height="1" border="0" alt="" style="position:absolute;" />
+<img src="//www.tns-counter.ru/V13a****mail_ru/ru/CP1251/tmsec=mail_main-mobile/" width="1" height="1" alt="" style="position:absolute;"  />
+
+<img src="//top-fwz1.mail.ru/counter?id=110605;js=na;r=;u=http%3A%2F%2Fmail.ru%2Fm" height="1" width="1" alt="" border="0" /> 
+<img src="//counter.yadro.ru/hit;mail-splash/m?r;uhttp%3A%2F%2Fm.mail.ru%2f;" height="1" width="1" alt="" border="0" />
+
+
+<img src="http://bs.mail.ru/count/U_4amYGH3by40X00gP800OwtQLST1MnPYBhJ0H04agcEPWEcG8e1gW6bbHmwaRpGIMG6auKDGQxswDfur72lu0In0RlhwnEnLdlHL7W8?134768675" style="width:0;height:0;position:absolute;" alt="" />
+
+
+
+<img src="//r3.mail.ru/k?81e4121baf7286eca0b199916eff4bfd" style="width:0;height:0;position:absolute;" alt="" /></div>
+<script>try{ splashRadar('footer'); }catch(ex){};</script>
+<div class="footer">
+	
+	<p><a href="/cgi-bin/login?splashlogin=1">Войти</a></p>
+	
+	
+	<p><a href="/">Главная</a>&nbsp;| <span class="cb fwb">Все проекты</span></p>
+	
+	<p><a href="http://r.mail.ru/n98429392">Полная версия</a>&nbsp;| Для смартфонов</p>
+	<p><a href="//r.mail.ru/n102788475">Помощь</a></p>
+	<p class="cg">&copy;&nbsp;Mail.Ru, 1999&ndash;2013</p>
+	
+</div>
+<script>try{ splashRadar('footer',1); }catch(ex){};</script>
+<!-- /new -->
+<script>try{ splashRadar('footer_script'); }catch(ex){};</script>
+<script type="text/javascript" src="/js/sg_init.min.js?2"></script>
+<script>try{ splashRadar('footer_script',1); }catch(ex){};</script>
+
+
+<img src="//r3.mail.ru/k?81e4121baf7286eca0b199916eff4bfd" style="width:0;height:0;position:absolute;" alt="" />
+<script>
+try{
+splashRadar('body', 1);
+splashRadar('all', 1);
+splashRadar(true);
+}catch(ex){};
+</script>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function(w, d) {
+        if (w.rb_counter) return;
+        function h() {
+                var n, a = arguments;
+                for(var i=a.length;i--;){
+                        n = a[i].split(',');
+                        for(var j=n.length;j--;){
+                                c(n[j]);
+                        }
+                }
+        }
+        function c(n) {
+                var m, r = parseInt(Math.random()*1E9), s;
+                if (!(m = n.match(/^(?:cl([bn])|([adgin]))(\d+)(?:sz(\d+))?/))) return;
+                if (m[1]) {
+                        s = "s" + m[1];
+                }
+                else if(m[2] == "n") {
+                        s = "nc";
+                }
+                else if(m[2]=="i") {
+                        r = null;
+                        s = m[2];
+                }
+                else {
+                        s = m[2];
+                }
+                s += m[3] + ".gif?";
+                if (m[4]) s += "sz=" + m[4];
+                if (r) s += "&rnd=" + r;
+                (new Image).src = "//rs.mail.ru/" + s;
+        }
+        (function(o, e, fn) {
+                if (o.addEventListener) o.addEventListener(e, fn, false);
+                else if (o.attachEvent) o.attachEvent('on' + e, fn);
+                else o['on' + e] = fn;
+        })(d, 'mousedown', function(e) {
+                var n;
+                e = e || w.event;
+                e = e.target || e.srcElement;
+                while (e.parentNode){
+                        if ((n = e.getAttribute('name')) && (n = n.toString())){
+                                h(n);
+                        }
+                        e = e.parentNode;
+                }
+        });
+        w.rb_counter = h;
+})(window, document);
+//]]>
+</script>
+
+
+
+

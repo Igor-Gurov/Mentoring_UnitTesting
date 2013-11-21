@@ -1,0 +1,1731 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cuemon.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Cuemon.Data.DataAdapter">
+            <summary>
+            An abstract class representing the actual data binding to a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.#ctor(Cuemon.Data.DataManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataAdapter"/> class.
+            </summary>
+            <param name="manager">The data manager as underlying DSL wrapper logic.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnDeletedRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Deleted"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnDeletingRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Deleting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnInsertedRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Inserted"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnInsertingRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Inserting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnSelectedRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Selected"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnSelectingRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Selecting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnUpdatedRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Updated"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.OnUpdatingRaised(Cuemon.Data.DataAdapterEventArgs)">
+            <summary>
+            Raises the <see cref="E:Cuemon.Data.DataAdapter.Updating"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Cuemon.Data.DataAdapterEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.Delete(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Deletes data from a data source.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.Insert(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Inserts data to a data source with default insert action, AffectedRows.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>A <see cref="T:System.Void"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.Insert(Cuemon.Data.IDataCommand,Cuemon.Data.QueryInsertAction,System.Data.IDataParameter[])">
+            <summary>
+            Inserts data to a data source.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="action">The insert action you wish to apply.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>A <see cref="T:System.Void"/> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.Select(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Selects data from a data source.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>An object supporting the <see cref="T:System.Data.IDataReader"/> interface.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.Update(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Updates data in the data source.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.ExecuteDelete(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the delete statement for the Delete method.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.ExecuteInsert(Cuemon.Data.IDataCommand,Cuemon.Data.QueryInsertAction,System.Data.IDataParameter[])">
+            <summary>
+            Executes the insert statement for the Insert method.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="action">The insert action you wish to apply.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.ExecuteSelect(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the select statement for the Select method.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapter.ExecuteUpdate(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the update statement Update method.
+            </summary>
+            <param name="dataCommand">The data command.</param>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="P:Cuemon.Data.DataAdapter.Manager">
+            <summary>
+            Gets the data manager for this object.
+            Please be aware, that you should only use this for custom methods as you will loose event control on Entity classes by using the manager directly.
+            </summary>
+            <value>A <b><see cref="T:Cuemon.Data.DataManager"/></b> object.</value>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Deleting">
+            <summary>
+            Occurs before a Delete operation.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Deleted">
+            <summary>
+            Occurs when a Delete operation has completed.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Inserted">
+            <summary>
+            Occurs when an Insert operation has completed.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Inserting">
+            <summary>
+            Occurs before an Insert operation.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Selected">
+            <summary>
+            Occurs when a Select operation has completed.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Selecting">
+            <summary>
+            Occurs before a Select operation.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Updated">
+            <summary>
+            Occurs when an Update operation has completed.
+            </summary>
+        </member>
+        <member name="E:Cuemon.Data.DataAdapter.Updating">
+            <summary>
+            Occurs before an Update operation.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.DataAdapterEventArgs">
+            <summary>
+            Provides data for DataAdapter related operations.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.DataAdapterEventArgs.Empty">
+            <summary>
+            Represents an <see cref="T:Cuemon.Data.DataAdapter"/> event with no event data.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.DataAdapterException">
+            <summary>
+            The exception that is thrown when a <see cref="T:Cuemon.Data.DataAdapter"/> operation is in an invalid state.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapterException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.ParseException"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapterException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.ParseException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapterException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.ParseException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataAdapterException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.ParseException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="info"/> parameter is null. </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). </exception>
+        </member>
+        <member name="T:Cuemon.Data.DataCommand">
+            <summary>
+            Represents a Transact-SQL statement or stored procedure to execute against a SQL Server database.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.IDataCommand">
+            <summary>
+            Represents a statement that is executed while an open connection to a data source exists.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.IDataCommand.Text">
+            <summary>
+            Gets or sets the command text to execute.
+            </summary>
+            <value>The command text to execute.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataCommand.Type">
+            <summary>
+            Gets or sets the command type value to execute.
+            </summary>
+            <value>The command type value to exceute.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataCommand.Timeout">
+            <summary>
+            Gets or sets the wait time before terminating the attempt to execute a command and generating an error.
+            </summary>
+            <value>The timespan to wait for the command to execute.</value>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="text">The command text to execute.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="textFormat">The command text to execute as a composite format string (see Remarks).</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <remarks>
+            For more information regarding the <paramref name="textFormat"/>, have a look here: http://msdn.microsoft.com/en-us/library/txafckwd(v=vs.80).aspx.
+            </remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="text">The command text to execute.</param>
+            <param name="timeout">The timeout for the command to execute.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.TimeSpan,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="textFormat">The command text to execute as a composite format string (see Remarks).</param>
+            <param name="timeout">The timeout for the command to execute.</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <remarks>
+            For more information regarding the <paramref name="textFormat"/>, have a look here: http://msdn.microsoft.com/en-us/library/txafckwd(v=vs.80).aspx.
+            </remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.Data.CommandType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="text">The command text to execute.</param>
+            <param name="type">The command type value to execute.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.Data.CommandType,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="textFormat">The command text to execute as a composite format string (see Remarks).</param>
+            <param name="type">The command type value to execute.</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <remarks>
+            For more information regarding the <paramref name="textFormat"/>, have a look here: http://msdn.microsoft.com/en-us/library/txafckwd(v=vs.80).aspx.
+            </remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.Data.CommandType,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="text">The command text to execute.</param>
+            <param name="type">The command type value to execute.</param>
+            <param name="timeout">The timeout for the command to execute.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataCommand.#ctor(System.String,System.Data.CommandType,System.TimeSpan,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataCommand"/> class.
+            </summary>
+            <param name="textFormat">The command text to execute as a composite format string (see Remarks).</param>
+            <param name="type">The command type value to execute.</param>
+            <param name="timeout">The timeout for the command to execute.</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <remarks>
+            For more information regarding the <paramref name="textFormat"/>, have a look here: http://msdn.microsoft.com/en-us/library/txafckwd(v=vs.80).aspx.
+            </remarks>
+        </member>
+        <member name="P:Cuemon.Data.DataCommand.DefaultTimeout">
+            <summary>
+            Gets or sets the default wait time before terminating the attempt to execute a command and generating an error.
+            </summary>
+            <value>
+            The <see cref="T:System.TimeSpan"/> to wait for the command to execute. Default value is 1 minute and 30 seconds.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.DataCommand.Text">
+            <summary>
+            Gets or sets the command text to execute.
+            </summary>
+            <value>The command text to execute.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataCommand.Type">
+            <summary>
+            Gets or sets the command type value to execute.
+            </summary>
+            <value>The command type value to exceute. Default type value is Text.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataCommand.Timeout">
+            <summary>
+            Gets or sets the wait time before terminating the attempt to execute a command and generating an error.
+            </summary>
+            <value>The timespan to wait for the command to execute. Default value is 1 minute and 30 seconds.</value>
+        </member>
+        <member name="T:Cuemon.Data.DataConnection">
+            <summary>
+            Represents a connection to a database.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.IDataConnection">
+            <summary>
+            Represents a connection to a data source.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.IDataConnection.Address">
+            <summary>
+            Gets or sets the server address of the connection.
+            </summary>
+            <value>The server address of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataConnection.ConfigurationElement">
+            <summary>
+            Gets or sets the data configuration element.
+            </summary>
+            <value>The data configuration element.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataConnection.NetworkLibrary">
+            <summary>
+            Gets or sets the network library of the connection.
+            </summary>
+            <value>The network library of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataConnection.Password">
+            <summary>
+            Gets or sets the password of the connection.
+            </summary>
+            <value>The password of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataConnection.Timeout">
+            <summary>
+            Gets or sets the time to wait while trying to establish a connection before terminating the attempt and generating an error.
+            </summary>
+            <value>The timespan to wait for a connection to open. The default value is 10 seconds.</value>
+        </member>
+        <member name="P:Cuemon.Data.IDataConnection.UserId">
+            <summary>
+            Gets or sets the user id of the connection.
+            </summary>
+            <value>The user id of the connection.</value>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataConnection"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.#ctor(Cuemon.Configuration.DataConnectionElement)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataConnection"/> class.
+            </summary>
+            <param name="configurationElement">The cuemon data configuration element.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataConnection"/> class.
+            </summary>
+            <param name="connectionString">The connection string used to establish the connection.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataConnection"/> class.
+            </summary>
+            <param name="database">The database of the connection.</param>
+            <param name="address">The address of the connection.</param>
+            <param name="userId">The user id of the connection.</param>
+            <param name="password">The password of the connection.</param>
+            <param name="networkLibrary">The network library of the connection.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.#ctor(System.String,System.String,System.String,System.String,System.String,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataConnection"/> class.
+            </summary>
+            <param name="database">The database of the connection.</param>
+            <param name="address">The address of the connection.</param>
+            <param name="userId">The user id of the connection.</param>
+            <param name="password">The password of the connection.</param>
+            <param name="networkLibrary">The network library of the connection.</param>
+            <param name="timeout">The timespan to wait of the connection to open.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.GetConnectionString(Cuemon.Configuration.IDataConnectionElement)">
+            <summary>
+            Renders a connection string from the given <see cref="T:Cuemon.Configuration.DataSection"/>.
+            </summary>
+            <param name="configurationElement">The <see cref="T:Cuemon.Configuration.DataConnectionElement"/> configuration element.</param>
+            <returns>A connection string.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.GetConnectionString(System.Data.IDbConnection)">
+            <summary>
+            Renders a connection string from objects with the implemented <see cref="T:Cuemon.Data.IDataConnection"/> interface.
+            </summary>
+            <param name="dataConnection">The data connection interface.</param>
+            <returns>A connection string.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.ToString">
+            <summary>
+            Renders the properties of this class to a connection string (if no "manuel" connectionString has been specified). 
+            If ConfigurationElement has been set, values are derived from this object.
+            </summary>
+            <returns>
+            A connection string.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Begins a database transaction with the specified <see cref="T:System.Data.IsolationLevel"></see> value.
+            </summary>
+            <param name="il">One of the <see cref="T:System.Data.IsolationLevel"></see> values.</param>
+            <returns>
+            An object representing the new transaction.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.BeginTransaction">
+            <summary>
+            Begins a database transaction.
+            </summary>
+            <returns>
+            An object representing the new transaction.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.ChangeDatabase(System.String)">
+            <summary>
+            Changes the current database for an open Connection object.
+            </summary>
+            <param name="databaseName">The name of the database to use in place of the current database.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.Close">
+            <summary>
+            Closes the connection to the database.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.CreateCommand">
+            <summary>
+            Creates and returns a Command object associated with the connection.
+            </summary>
+            <returns>
+            A Command object associated with the connection.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.Open">
+            <summary>
+            Opens a database connection with the settings specified by the ConnectionString property of the provider-specific Connection object.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataConnection.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.ConfigurationElement">
+            <summary>
+            Gets or sets the cuemon data configuration section. Will use the connection settings from the specified default connection.
+            </summary>
+            <value>The cuemon data configuration section.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.ConnectionString">
+            <summary>
+            Gets or sets the string used to open the connection.
+            </summary>
+            <value></value>
+            <returns>The connection string used to establish the initial connection. The exact contents of the connection string depend on the specific data source for this connection. The default value is based upon the properties of this class.</returns>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.Database">
+            <summary>
+            Gets or sets the database of the connection.
+            </summary>
+            <value>The database of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.Address">
+            <summary>
+            Gets or sets the server address of the connection.
+            </summary>
+            <value>The server address of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.ConnectionTimeout">
+            <summary>
+            Gets the time to wait while trying to establish a connection before terminating the attempt and generating an error. Preserved for backward compatibility.
+            </summary>
+            <returns>The time (in seconds) to wait for a connection to open. The value is taken from the Timeout value, and is default 10 seconds.</returns>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.UserId">
+            <summary>
+            Gets or sets the user id of the connection.
+            </summary>
+            <value>The user id of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.Password">
+            <summary>
+            Gets or sets the password of the connection.
+            </summary>
+            <value>The password of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.NetworkLibrary">
+            <summary>
+            Gets or sets the network library of the connection.
+            </summary>
+            <value>The network library of the connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.Timeout">
+            <summary>
+            Gets or sets the time to wait while trying to establish a connection before terminating the attempt and generating an error.
+            </summary>
+            <value>The timespan to wait for a connection to open. The default value is 10 seconds.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataConnection.State">
+            <summary>
+            Gets the current state of the connection.
+            </summary>
+            <value></value>
+            <returns>One of the <see cref="T:System.Data.ConnectionState"></see> values.</returns>
+        </member>
+        <member name="T:Cuemon.Data.DataDependency">
+            <summary>
+            This <see cref="T:Cuemon.Data.DataDependency"/> class will monitor any changes occurred to an underlying data source while notifying subscribing objects.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataDependency.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataDependency"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="parameters">An optional sequence of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+            <remarks>The signaling is default delayed 15 seconds before first invoke. Signaling occurs every 2 minutes.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataDependency.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.TimeSpan,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataDependency"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="period">The time interval between periodic signaling for changes to the specified <paramref name="command"/> by the associated <see cref="T:Cuemon.Data.DataWatcher"/>. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+            <param name="parameters">An optional sequence of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+            <remarks>The signaling is default delayed 15 seconds before first invoke.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataDependency.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.TimeSpan,System.TimeSpan,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataDependency"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="dueTime">The amount of time to delay before the associated <see cref="T:Cuemon.Data.DataWatcher"/> starts signaling. Specify negative one (-1) milliseconds to prevent the signaling from starting. Specify zero (0) to start the signaling immediately.</param>
+            <param name="period">The time interval between periodic signaling for changes to the specified <paramref name="command"/> by the associated <see cref="T:Cuemon.Data.DataWatcher"/>. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+            <param name="parameters">An optional sequence of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+        </member>
+        <member name="M:Cuemon.Data.DataDependency.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.TimeSpan,System.TimeSpan,System.TimeSpan,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataDependency"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="dueTime">The amount of time to delay before the associated <see cref="T:Cuemon.Data.DataWatcher"/> starts signaling. Specify negative one (-1) milliseconds to prevent the signaling from starting. Specify zero (0) to start the signaling immediately.</param>
+            <param name="period">The time interval between periodic signaling for changes to the specified <paramref name="command"/> by the associated <see cref="T:Cuemon.Data.DataWatcher"/>. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+            <param name="parameters">An optional sequence of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+            <param name="dueTimeOnChanged">The amount of time to postpone a <see cref="E:Cuemon.Watcher.Changed"/> event. Specify zero (0) to disable postponing.</param>
+        </member>
+        <member name="P:Cuemon.Data.DataDependency.HasChanged">
+            <summary>
+            Gets a value indicating whether the <see cref="T:Cuemon.Dependency"/> object has changed.
+            </summary>
+            <value>
+            	<c>true</c> if the <see cref="T:Cuemon.Dependency"/> object has changed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Cuemon.Data.DataManager">
+            <summary>
+            The DataManager is an abstract class in the <see cref="N:Cuemon.Data"/> namespace that can be used to implement execute commands of different database providers.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ParseDbType(System.Data.DbType)">
+            <summary>
+            Parses and returns a <see cref="T:System.Type"/> equivalent of <paramref name="dbType"/>.
+            </summary>
+            <param name="dbType">The <see cref="T:System.Data.DbType"/> to parse.</param>
+            <returns>A <see cref="T:System.Type"/> equivalent of <paramref name="dbType"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.GetReaderColumnNames(System.Data.IDataReader)">
+            <summary>
+            Creates and returns a sequence of column names resolved from the specified <paramref name="reader"/>.
+            </summary>
+            <param name="reader">The reader to resolve column names from.</param>
+            <returns>A sequence of column names resolved from the specified <paramref name="reader"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.GetReaderColumnValues(System.Data.IDataReader)">
+            <summary>
+            Creates and returns a sequence of column values resolved from the specified <paramref name="reader"/>.
+            </summary>
+            <param name="reader">The reader to resolve column values from.</param>
+            <returns>A sequence of column values resolved from the specified <paramref name="reader"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.GetReaderColumns(System.Data.IDataReader)">
+            <summary>
+            Creates and returns a <see cref="T:System.Collections.Generic.KeyValuePair`2"/> sequence of column names and values resolved from the specified <paramref name="reader"/>.
+            </summary>
+            <param name="reader">The reader to resolve column names and values from.</param>
+            <returns>A <see cref="T:System.Collections.Generic.KeyValuePair`2"/> sequence of column names and values resolved from the specified <paramref name="reader"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.GetReaderColumnsAsDictionary(System.Data.IDataReader)">
+            <summary>
+            Creates and returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> of column names and values resolved from the specified <paramref name="reader"/>.
+            </summary>
+            <param name="reader">The reader to resolve column names and values from.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IDictionary`2"/> of column names and values resolved from the specified <paramref name="reader"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.GetDefaultDataConnectionElementFromConfigurationFile">
+            <summary>
+            Gets the default data connection element from the calling application configuration file.
+            </summary>
+            <returns>A <see cref="T:Cuemon.Configuration.DataConnectionElement"/> object holding the default connection attributes from a Cuemon/Data section in an app/web.config file.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ReaderToStream(System.Data.IDataReader)">
+            <summary>
+            Converts the given <see cref="T:System.Data.IDataReader"/> compatible object to a stream.
+            Note: IDataReader must return only one field (for instance, a XML field), otherwise an exception is thrown!
+            </summary>
+            <param name="value">The <see cref="T:System.Data.IDataReader"/> to build a stream from.</param>
+            <returns>A <b><see cref="T:System.IO.Stream"/></b> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ReaderToString(System.Data.IDataReader)">
+            <summary>
+            Converts the given <see cref="T:System.Data.IDataReader"/> compatible object to a string.
+            Note: IDataReader must return only one field, otherwise an exception is thrown!
+            </summary>
+            <param name="value">The <see cref="T:System.Data.IDataReader"/> to build a string from.</param>
+            <returns>A <b><see cref="T:System.String"/></b> object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.Execute(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns the number of rows affected.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            A <b><see cref="T:System.Int32"/></b> value.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteExists(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns <c>true</c> if one or more records exists; otherwise <c>false</c>.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            A <b><see cref="T:System.Boolean"/></b> value.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteIdentityInt32(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an identity value as int.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns><see cref="T:System.Int32"/></returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteIdentityInt64(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an identity value as long.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns><see cref="T:System.Int64"/></returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteIdentityDecimal(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an identity value as decimal.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns><see cref="T:System.Decimal"/></returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteReader(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an object supporting the IDataReader interface.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            An object supporting the <b><see cref="T:System.Data.IDataReader"/></b> interface.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteXPathDocument(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an IXPathNavigable object.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            An <b><see cref="T:System.Xml.XPath.IXPathNavigable"/></b> object.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteXmlDocument(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an XmlDocument object.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            An <b><see cref="T:System.Xml.XmlDocument"/></b> object.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteXmlReader(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an XmlReader object.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            An <b><see cref="T:System.Xml.XmlReader"/></b> object.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteXmlString(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns a string object with the retrieved XML.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>
+            An <b><see cref="T:System.String"/></b> object.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalar(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsType(Cuemon.Data.IDataCommand,System.Type,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as the specified <paramref name="returnType"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="returnType">The type to return the first column value as.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as the specified <paramref name="returnType"/>.</returns>
+            <remarks>This method uses <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/> when casting the first column of the first row in the result from <paramref name="dataCommand"/>.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsType(Cuemon.Data.IDataCommand,System.Type,System.IFormatProvider,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as the specified <paramref name="returnType"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="returnType">The type to return the first column value as.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as the specified <paramref name="returnType"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAs``1(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <typeparamref name="TResult"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <typeparam name="TResult">The type of the return value.</typeparam>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <typeparamref name="TResult"/>.</returns>
+            <remarks>This method uses <see cref="P:System.Globalization.CultureInfo.InvariantCulture"/> when casting the first column of the first row in the result from <paramref name="dataCommand"/>.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAs``1(Cuemon.Data.IDataCommand,System.IFormatProvider,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <typeparamref name="TResult" /> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <typeparam name="TResult">The type of the return value.</typeparam>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="provider">An object that supplies culture-specific formatting information.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand" /> as <typeparamref name="TResult"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsBoolean(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Boolean"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsDateTime(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.DateTime"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.DateTime"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsInt16(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Int16"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Int16"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsInt32(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Int32"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Int32"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsInt64(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Int64"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Int64"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsByte(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Byte"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Byte"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsSByte(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.SByte"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.SByte"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsDecimal(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Decimal"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Decimal"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsDouble(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Double"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Double"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsUInt16(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.UInt16"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.UInt16"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsUInt32(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.UInt32"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.UInt32"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsUInt64(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.UInt64"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.UInt64"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsString(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.String"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.String"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteScalarAsGuid(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement, and returns the value as <see cref="T:System.Guid"/> from the first column of the first row in the result set.
+            Additional columns or rows are ignored.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>The first column of the first row in the result from <paramref name="dataCommand"/> as <see cref="T:System.Guid"/>.</returns>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.ExecuteCommandCore(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Core method for executing all commands.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns>System.Data.IDbCommand</returns>
+            <remarks>
+            If <see cref="P:Cuemon.Data.DataManager.EnableTransientFaultRecovery"/> is set to <c>true</c>, this method will with it's default implementation try to gracefully recover from transient faults when the following condition is met:<br/>
+            <see cref="P:Cuemon.Data.DataManager.RetryAttempts"/> is less than the current attempt starting from 1 with a maximum of <see cref="F:System.Byte.MaxValue"/> retries<br/>
+            <see cref="M:Cuemon.Data.DataManager.IsTransientFault(System.Exception)"/> must evaluate to <c>true</c><br/>
+            In case of a transient failure the default implementation will wait 5 seconds before retrying; then this ruleset is applied:<br/>
+            <see cref="P:Cuemon.Data.DataManager.RecoveryWaitTime"/> + 2^ to a maximum of 5; a total of 5 + 32 = 37 seconds.<br/>
+            In any other case the originating exception is thrown.
+            </remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.TransientFaultRecoveryWaitTime(System.Int32)">
+            <summary>
+            Specifies the amount of time to wait for a transient fault to recover gracefully before trying a new attempt.
+            </summary>
+            <param name="currentAttempt">The current attempt.</param>
+            <returns>A <see cref="T:System.TimeSpan"/> that defines the amount of time to wait for a transient fault to recover gracefully.</returns>
+            <remarks>Default implementation is <see cref="P:Cuemon.Data.DataManager.RecoveryWaitTime"/> + 2^ to a maximum of 5; a total of 5 (default) + 32 = 37 seconds.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.IsTransientFault(System.Exception)">
+            <summary>
+            Determines whether the specified <paramref name="exception"/> contains clues that would suggest a transient fault.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> to parse for clues that would suggest a transient fault that should be retried.</param>
+            <returns><c>true</c> if the specified <paramref name="exception"/> contains clues that would suggest a transient fault; otherwise, <c>false</c>.</returns>
+            <remarks>This method must be overridden as the default implementation on this base class always returns false.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataManager.GetCommandCore(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Gets the command object to be used by all execute related methods.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Cuemon.Data.DataManager.ConnectionString">
+            <summary>
+            Gets the string used to open the connection.
+            </summary>
+            <value>The connection string used to establish the initial connection. The exact contents of the connection string depend on the specific data source for this connection.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataManager.EnableTransientFaultRecovery">
+            <summary>
+            Gets or sets a value indicating whether transient faults should be attempted gracefully recovered. Default is <c>true</c>.
+            </summary>
+            <value><c>true</c> if transient faults should be attempted gracefully recovered; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataManager.RetryAttempts">
+            <summary>
+            Gets or sets the amount of retry attempts for transient faults. Default value is specified by <see cref="P:Cuemon.TransientFaultUtility.DefaultRetryAttempts"/>.
+            </summary>
+            <value>The amount of retry attempts for transient faults.</value>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="value"/> is zero.
+            </exception>
+        </member>
+        <member name="P:Cuemon.Data.DataManager.RecoveryWaitTime">
+            <summary>
+            Gets or sets the amount of time to wait for a transient fault to recover gracefully. Default value is specified by <see cref="P:Cuemon.TransientFaultUtility.DefaultRecoveryWaitTime"/>.
+            </summary>
+            <value>The amount of time to wait for a transient failure to recover gracefully.</value>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="value"/> is zero.
+            </exception>
+        </member>
+        <member name="P:Cuemon.Data.DataManager.ConnectionStringSettings">
+            <summary>
+            Gets the connection string data for the current application's default configuration.
+            </summary>
+            <value>Returns a <see cref="T:Cuemon.Collections.Generic.IReadOnlyDictionary`2"/> object that contains the name and connection string for the current application's default configuration.</value>
+            <remarks>
+            The following table shows the key/value combination of the <see cref="T:Cuemon.Collections.Generic.IReadOnlyDictionary`2"/>.
+            <list type="table">
+                <listheader>
+                    <term>Key</term>
+                    <description>Value</description>
+                </listheader>
+                <item>
+                    <term>The name of the connection string.</term>
+                    <description>The actual connection string.</description>
+                </item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:Cuemon.Data.DataParameterEqualityComparer">
+            <summary>
+            Provides an equality comparison for <see cref="T:System.Data.IDataParameter"/> objects.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataParameterEqualityComparer.Equals(System.Data.IDataParameter,System.Data.IDataParameter)">
+            <summary>
+            When overridden in a derived class, determines whether two objects of type T are equal.
+            </summary>
+            <param name="x">The first object to compare.</param>
+            <param name="y">The second object to compare.</param>
+            <returns>
+            true if the specified objects are equal; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.DataParameterEqualityComparer.GetHashCode(System.Data.IDataParameter)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The type of obj is a reference type and obj is null.</exception>
+        </member>
+        <member name="P:Cuemon.Data.DataParameterEqualityComparer.Default">
+            <summary>
+            Returns a default equality comparer for <see cref="T:System.Data.IDataParameter"/>.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.DbColumn">
+            <summary>
+            Represents a database column.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DbColumn.#ctor(System.Data.DbType,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DbColumn"/> class.
+            </summary>
+            <param name="columnDbType">The <see cref="T:System.Data.DbType"/> of the database column.</param>
+            <param name="columnValue">The value of the database column.</param>
+        </member>
+        <member name="P:Cuemon.Data.DbColumn.ColumnDbType">
+            <summary>
+            Gets the <see cref="T:System.Data.DbType"/> of the database column.
+            </summary>
+            <value>
+            The <see cref="T:System.Data.DbType"/> of the database column.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.DbColumn.ColumnType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the database column.
+            </summary>
+            <value>
+            The <see cref="T:System.Type"/> of the database column.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.DbColumn.ColumnValue">
+            <summary>
+            Gets the database column value.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.DataWatcher">
+            <summary>
+            A <see cref="T:Cuemon.Watcher"/> implementation, that can monitor and signal changes of one or more data locations by raising the <see cref="E:Cuemon.Watcher.Changed"/> event.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.DataWatcher.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataWatcher"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="parameters">An optional sequence of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+            <remarks>Monitors the provided <paramref name="command"/> for changes in an interval of two minutes using a MD5 hash check on the query result. The signaling is default delayed 15 seconds before first invoke.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataWatcher.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.TimeSpan,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataWatcher"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="period">The time interval between periodic signaling for changes of the provided <paramref name="command"/>.</param>
+            <param name="parameters">An optional array of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+            <remarks>Monitors the provided <paramref name="command"/> for changes in an interval specified by <paramref name="period"/> using a MD5 hash check on the query result. The signaling is default delayed 15 seconds before first invoke.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataWatcher.#ctor(Cuemon.Data.DataManager,Cuemon.Data.IDataCommand,System.TimeSpan,System.TimeSpan,System.TimeSpan,System.Data.IDataParameter[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.DataWatcher"/> class.
+            </summary>
+            <param name="manager">The <see cref="T:Cuemon.Data.DataManager"/> to be used for the underlying data operations.</param>
+            <param name="command">The <see cref="T:Cuemon.Data.IDataCommand"/> to execute and monitor for changes.</param>
+            <param name="dueTime">The amount of time to delay before the associated <see cref="T:Cuemon.Watcher"/> starts signaling. Specify negative one (-1) milliseconds to prevent the signaling from starting. Specify zero (0) to start the signaling immediately.</param>
+            <param name="period">The time interval between periodic signaling for changes of the provided <paramref name="command"/>.</param>
+            <param name="dueTimeOnChanged">The amount of time to postpone a <see cref="E:Cuemon.Watcher.Changed"/> event. Specify zero (0) to disable postponing.</param>
+            <param name="parameters">An optional array of <see cref="T:System.Data.IDataParameter"/> to use with the associated <paramref name="command"/>.</param>
+            <remarks>Monitors the provided <paramref name="command"/> for changes in an interval specified by <paramref name="period"/> using a MD5 hash check on the query result.</remarks>
+        </member>
+        <member name="M:Cuemon.Data.DataWatcher.HandleSignaling">
+            <summary>
+            Handles the signaling of this <see cref="T:Cuemon.Data.DataWatcher"/>.
+            </summary>
+        </member>
+        <member name="P:Cuemon.Data.DataWatcher.Command">
+            <summary>
+            Gets the associated <see cref="T:Cuemon.Data.IDataCommand"/> of this <see cref="T:Cuemon.Data.DataWatcher"/>.
+            </summary>
+            <value>The associated <see cref="T:Cuemon.Data.IDataCommand"/> of this <see cref="T:Cuemon.Data.DataWatcher"/>.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataWatcher.Parameters">
+            <summary>
+            Gets the associated array of <see cref="T:System.Data.IDataParameter"/> of this <see cref="T:Cuemon.Data.DataWatcher"/>.
+            </summary>
+            <value>The associated array of <see cref="T:System.Data.IDataParameter"/> of this <see cref="T:Cuemon.Data.DataWatcher"/>.</value>
+        </member>
+        <member name="P:Cuemon.Data.DataWatcher.Manager">
+            <summary>
+            Gets the associated <see cref="T:Cuemon.Data.DataManager"/> of this <see cref="T:Cuemon.Data.DataWatcher"/>.
+            </summary>
+            <value>The associated <see cref="T:Cuemon.Data.DataManager"/> of this <see cref="T:Cuemon.Data.DataWatcher"/>.</value>
+        </member>
+        <member name="T:Cuemon.Data.QueryUtility">
+            <summary>
+            This utility class is designed to make query related operations easier to work with.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Converts a sequence of <see cref="T:System.Int32"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.Int32},System.Boolean)">
+            <summary>
+            Converts sequence of <see cref="T:System.Int32"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Int32[])">
+            <summary>
+            Converts an array of <see cref="T:System.Int32"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Int32[],System.Boolean)">
+            <summary>
+            Converts an array of <see cref="T:System.Int32"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Converts a sequence of <see cref="T:System.Int64"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.Int64},System.Boolean)">
+            <summary>
+            Converts sequence of <see cref="T:System.Int64"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Int64[])">
+            <summary>
+            Converts an array of <see cref="T:System.Int64"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Int64[],System.Boolean)">
+            <summary>
+            Converts an array of <see cref="T:System.Int64"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Converts a sequence of <see cref="T:System.Object"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            Converts sequence of <see cref="T:System.Object"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Object[])">
+            <summary>
+            Converts an array of <see cref="T:System.Object"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Object[],System.Boolean)">
+            <summary>
+            Converts an array of <see cref="T:System.Object"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Converts a sequence of <see cref="T:System.String"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Converts sequence of <see cref="T:System.String"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.String[])">
+            <summary>
+            Converts an array of <see cref="T:System.String"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryUtility.GetQueryFragment(Cuemon.Data.QueryFormat,System.String[],System.Boolean)">
+            <summary>
+            Converts an array of <see cref="T:System.String"/> values to the desired query fragment format.
+            </summary>
+            <param name="format">The format to use for the query fragment.</param>
+            <param name="values">The values to be generated in the specified format for the query fragment.</param>
+            <param name="distinct">if set to <c>true</c>, <paramref name="values"/> will be filtered for doublets.</param>
+            <returns>A query fragment in the desired format.</returns>
+        </member>
+        <member name="T:Cuemon.Data.QueryBuilder">
+            <summary>
+            An abstract class for building T-SQL statements from table and columns definitions.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.QueryBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.QueryBuilder"/> class.
+            </summary>
+            <param name="tableName">The name of the table or view.</param>
+            <param name="keyColumns">The key columns to be used in this <see cref="T:Cuemon.Data.QueryBuilder"/> instance.</param>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.QueryBuilder"/> class.
+            </summary>
+            <param name="tableName">The name of the table or view.</param>
+            <param name="keyColumns">The key columns to be used in this <see cref="T:Cuemon.Data.QueryBuilder"/> instance.</param>
+            <param name="columns">The none-key columns to be used in this <see cref="T:Cuemon.Data.QueryBuilder"/> instance.</param>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.GetQuery(Cuemon.Data.QueryType)">
+            <summary>
+            Create and returns the builded query from the specified <see cref="T:Cuemon.Data.QueryType"/>.
+            </summary>
+            <param name="queryType">Type of the query to create.</param>
+            <returns>The builded T-SQL query.</returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.GetQuery(Cuemon.Data.QueryType,System.String)">
+            <summary>
+            Create and returns the builded query from the specified <see cref="T:Cuemon.Data.QueryType"/>.
+            </summary>
+            <param name="queryType">Type of the query to create.</param>
+            <param name="tableName">The name of the table or view. Overrides the class wide tableName.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.Append(System.String)">
+            <summary>
+            Appends the specified query fragment to the end of this instance.
+            </summary>
+            <param name="queryFragment">The query fragment to append.</param>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.Append(System.String,System.Object[])">
+            <summary>
+            Appends a formatted query fragment, which contains zero or more format specifications, to the end of this instance.
+            Each format specification is replaced by the string representation of a corresponding object argument.
+            </summary>
+            <param name="queryFragment">The query fragment to append.</param>
+            <param name="args">An array of objects to format.</param>
+        </member>
+        <member name="M:Cuemon.Data.QueryBuilder.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.ReadLimit">
+            <summary>
+            Gets or sets a value limiting the maximum amount of records that can be retreived from a repository. Default is 1000.
+            </summary>
+            <value>
+            The maximum amount of records that can be retreived from a repository.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.EnableReadLimit">
+            <summary>
+            Gets or sets a value indicating whether a query is restricted in how many records (<see cref="P:Cuemon.Data.QueryBuilder.ReadLimit"/>) can be retreived from a repository. Default is false.
+            </summary>
+            <value>
+              <c>true</c> if a query is restricted in how many records (<see cref="P:Cuemon.Data.QueryBuilder.ReadLimit"/>) can be retreived from a repository; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.EnableTableAndColumnEncapsulation">
+            <summary>
+            Gets or sets a value indicating whether an encapsulation should be commited automatically on table and column names.
+            </summary>
+            <value>
+            	<c>true</c> if an encapsulation should be commited automatically on table and column names; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.EnableDirtyReads">
+            <summary>
+            Gets or sets a value indicating whether the datasource should try to prevent locking from readonly queries.
+            </summary>
+            <value><c>true</c> if the datasource should try to prevent locking from readonly queries; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.TableName">
+            <summary>
+            Gets or sets the name of the table or view.
+            </summary>
+            <value>The name of the table or view.</value>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.Columns">
+            <summary>
+            Gets the none-key columns to be used in the <see cref="T:Cuemon.Data.QueryBuilder"/> instance.
+            </summary>
+            <value>The none-key columns to be used in the <see cref="T:Cuemon.Data.QueryBuilder"/> instance.</value>
+        </member>
+        <member name="P:Cuemon.Data.QueryBuilder.KeyColumns">
+            <summary>
+            Gets the key columns to be used in the <see cref="T:Cuemon.Data.QueryBuilder"/> instance.
+            </summary>
+            <value>The key columns to be used in the <see cref="T:Cuemon.Data.QueryBuilder"/> instance.</value>
+        </member>
+        <member name="T:Cuemon.Data.QueryFormat">
+            <summary>
+            Identifies the format for a query fragment.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryFormat.Delimited">
+            <summary>
+            Indicates that the query fragment should be in the format; value, value, value.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryFormat.DelimitedString">
+            <summary>
+            Indicates that the query fragment should be in the format; 'value', 'value', 'value'.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryFormat.DelimitedSquareBracket">
+            <summary>
+            Indicates that the query fragment should be in the format; [value], [value], [value].
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.QueryInsertAction">
+            <summary>
+            Defines the available insert actions for the <see cref="T:Cuemon.Data.DataAdapter"/> class.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryInsertAction.Void">
+            <summary>
+            Indicates that no value will be returned by the insert query.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryInsertAction.IdentityInt32">
+            <summary>
+            Indicates that a <see cref="T:System.Int32"/> value will be returned by the insert query.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryInsertAction.IdentityInt64">
+            <summary>
+            Indicates that a <see cref="T:System.Int64"/> value will be returned by the insert query.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryInsertAction.IdentityDecimal">
+            <summary>
+            Indicates that a <see cref="T:System.Decimal"/> value will be returned by the insert query.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryInsertAction.AffectedRows">
+            <summary>
+            Indicates that a <see cref="T:System.Int32"/> value will be returned with the amount of affected by the insert query.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.QueryType">
+            <summary>
+            Identifies the type of data operation performed by a query against a data source.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryType.Select">
+            <summary>
+            Indicates that a query is used for a data operation that retrieves data.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryType.Update">
+            <summary>
+            Indicates that a query is used for a data operation that updates data.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryType.Insert">
+            <summary>
+            Indicates that a query is used for a data operation that inserts data.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryType.Delete">
+            <summary>
+            Indicates that a query is used for a data operation that deletes data.
+            </summary>
+        </member>
+        <member name="F:Cuemon.Data.QueryType.CheckExists">
+            <summary>
+            Indicates that a query is specifically used for a lookup on whether a data record exists.
+            </summary>
+        </member>
+        <member name="T:Cuemon.Data.SqlClient.SqlDataManager">
+            <summary>
+            The SqlDataManager is the primary class of the <see cref="N:Cuemon.Data.SqlClient"/> namespace that can be used to execute commands of different database providers.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.SqlClient.SqlDataManager"/> class.
+            Will resolve the default data connection element from the calling application, using the ConfigurationManager to get a CuemonDataSection.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.SqlClient.SqlDataManager"/> class.
+            </summary>
+            <param name="connectionString">The connection string used to establish the connection.</param>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.#ctor(Cuemon.Configuration.IDataConnectionElement)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.SqlClient.SqlDataManager"/> class.
+            </summary>
+            <param name="configurationElement">The cuemon data configuration element.</param>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.ExecuteIdentityInt32(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an identity value as int.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns><see cref="T:System.Int32"/></returns>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.ExecuteIdentityInt64(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an identity value as long.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns><see cref="T:System.Int64"/></returns>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.ExecuteIdentityDecimal(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Executes the command statement and returns an identity value as decimal.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns><see cref="T:System.Decimal"/></returns>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.ExecuteBulk(System.Data.IDataReader,System.Collections.Generic.IEnumerable{System.Data.SqlClient.SqlBulkCopyColumnMapping},System.String)">
+            <summary>
+            Efficiently bulk load a SQL server table with data from a <paramref name="source"/> object implementing the <see cref="T:System.Data.IDataReader"/> interface.
+            </summary>
+            <param name="source">An object implementing the <see cref="T:System.Data.IDataReader"/> interface, whose rows will be copied to the <paramref name="destinationTable"/>.</param>
+            <param name="mappings">A sequence of <see cref="T:System.Data.SqlClient.SqlBulkCopyColumnMapping"/> elements.</param>
+            <param name="destinationTable">The name of the destination table on the SQL server.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="source"/> is null -or- <paramref name="mappings"/> is null -or- <paramref name="destinationTable"/> is null.
+            </exception>
+            <exception cref="T:Cuemon.ArgumentEmptyException">
+            <paramref name="destinationTable"/> is empty.
+            </exception>
+            <remarks>
+            The following table shows the default parameter values for a ExecuteBulk operation.
+            <list type="table">
+                <listheader>
+                    <term>Parameter</term>
+                    <description>Default Value</description>
+                </listheader>
+                <item>
+                    <term><c>options</c></term>
+                    <description><see cref="F:System.Data.SqlClient.SqlBulkCopyOptions.TableLock"/> | <see cref="F:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction"/></description>
+                </item>
+                <item>
+                    <term><c>timeout</c></term>
+                    <description><see cref="P:Cuemon.Data.DataCommand.DefaultTimeout"/></description>
+                </item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.ExecuteBulk(System.Data.IDataReader,System.Collections.Generic.IEnumerable{System.Data.SqlClient.SqlBulkCopyColumnMapping},System.String,System.Data.SqlClient.SqlBulkCopyOptions)">
+            <summary>
+            Efficiently bulk load a SQL server table with data from a <paramref name="source"/> object implementing the <see cref="T:System.Data.IDataReader"/> interface.
+            </summary>
+            <param name="source">An object implementing the <see cref="T:System.Data.IDataReader"/> interface, whose rows will be copied to the <paramref name="destinationTable"/>.</param>
+            <param name="mappings">A sequence of <see cref="T:System.Data.SqlClient.SqlBulkCopyColumnMapping"/> elements.</param>
+            <param name="destinationTable">The name of the destination table on the SQL server.</param>
+            <param name="options">A combination of values from the <see cref="T:System.Data.SqlClient.SqlBulkCopyOptions"/> enumeration that determines which data <paramref name="source"/> rows are copied to the destination table.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="source"/> is null -or- <paramref name="mappings"/> is null -or- <paramref name="destinationTable"/> is null.
+            </exception>
+            <exception cref="T:Cuemon.ArgumentEmptyException">
+            <paramref name="destinationTable"/> is empty.
+            </exception>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.ExecuteBulk(System.Data.IDataReader,System.Collections.Generic.IEnumerable{System.Data.SqlClient.SqlBulkCopyColumnMapping},System.String,System.Data.SqlClient.SqlBulkCopyOptions,System.TimeSpan)">
+            <summary>
+            Efficiently bulk load a SQL server table with data from a <paramref name="source"/> object implementing the <see cref="T:System.Data.IDataReader"/> interface.
+            </summary>
+            <param name="source">An object implementing the <see cref="T:System.Data.IDataReader"/> interface, whose rows will be copied to the <paramref name="destinationTable"/>.</param>
+            <param name="mappings">A sequence of <see cref="T:System.Data.SqlClient.SqlBulkCopyColumnMapping"/> elements.</param>
+            <param name="destinationTable">The name of the destination table on the SQL server.</param>
+            <param name="options">A combination of values from the <see cref="T:System.Data.SqlClient.SqlBulkCopyOptions"/> enumeration that determines which data <paramref name="source"/> rows are copied to the destination table.</param>
+            <param name="timeout">A <see cref="T:System.TimeSpan"/> specifying the time of the operation to complete before it times out.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="source"/> is null -or- <paramref name="mappings"/> is null -or- <paramref name="destinationTable"/> is null -or- <paramref name="timeout"/> is null.
+            </exception>
+            <exception cref="T:Cuemon.ArgumentEmptyException">
+            <paramref name="destinationTable"/> is empty.
+            </exception>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.GetCommandCore(Cuemon.Data.IDataCommand,System.Data.IDataParameter[])">
+            <summary>
+            Gets the command object used by all execute related methods.
+            </summary>
+            <param name="dataCommand">The data command to execute.</param>
+            <param name="parameters">The parameters to use in the command.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlDataManager.IsTransientFault(System.Exception)">
+            <summary>
+            Determines whether the specified <paramref name="exception"/> contains clues that would suggest a transient failure.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> to parse for clues that would suggest a transient failure that should be retried.</param>
+            <returns><c>true</c> if the specified <paramref name="exception"/> contains clues that would suggest a transient failure; otherwise, <c>false</c>.</returns>
+            <remarks>
+            This implementation is compatible with transient related faults on Microsoft SQL Azure including the latest addition of error code 10928 and 10929.<br/>
+            Microsoft SQL Server is supported as well.</remarks>
+        </member>
+        <member name="P:Cuemon.Data.SqlClient.SqlDataManager.ConnectionString">
+            <summary>
+            Gets the string used to open a SQL Server database.
+            </summary>
+            <value>The connection string that includes the source database name, and other parameters needed to establish the initial connection.</value>
+        </member>
+        <member name="T:Cuemon.Data.SqlClient.SqlQueryBuilder">
+            <summary>
+            A Microsoft SQL implementation of the <see cref="T:Cuemon.Data.QueryBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlQueryBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.SqlClient.SqlQueryBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlQueryBuilder.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.SqlClient.SqlQueryBuilder"/> class.
+            </summary>
+            <param name="tableName">The name of the table or view.</param>
+            <param name="keyColumns">The key columns to be used in this <see cref="T:Cuemon.Data.SqlClient.SqlQueryBuilder"/> instance.</param>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlQueryBuilder.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.SqlClient.SqlQueryBuilder"/> class.
+            </summary>
+            <param name="tableName">The name of the table or view.</param>
+            <param name="keyColumns">The key columns to be used in this <see cref="T:Cuemon.Data.SqlClient.SqlQueryBuilder"/> instance.</param>
+            <param name="columns">The none-key columns to be used in this <see cref="T:Cuemon.Data.SqlClient.SqlQueryBuilder"/> instance.</param>
+        </member>
+        <member name="M:Cuemon.Data.SqlClient.SqlQueryBuilder.GetQuery(Cuemon.Data.QueryType,System.String)">
+            <summary>
+            Create and returns the builded query from the specified <see cref="T:Cuemon.Data.QueryType"/>.
+            </summary>
+            <param name="queryType">Type of the query to create.</param>
+            <param name="tableName">The name of the table or view. Overrides the class wide tableName.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Cuemon.Data.UniqueIndexViolationException">
+            <summary>
+            The exception that is thrown when a unique index violation occurs from a data source.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.UniqueIndexViolationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.UniqueIndexViolationException"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.UniqueIndexViolationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.UniqueIndexViolationException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Cuemon.Data.UniqueIndexViolationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.ParseException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="M:Cuemon.Data.UniqueIndexViolationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.UniqueIndexViolationException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="info"/> parameter is null. </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). </exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cuemon.Data.Entity.SqlCeClient</name>
+    </assembly>
+    <members>
+        <member name="T:Cuemon.Data.Entity.SqlCeClient.SqlCeBusinessEntityDataAdapter">
+            <summary>
+            A Microsoft SQL CE implementation of the <see cref="T:Cuemon.Data.Entity.BusinessEntityDataAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlCeClient.SqlCeBusinessEntityDataAdapter.#ctor(Cuemon.Data.Entity.IBusinessEntityRepository,Cuemon.Data.DataManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cuemon.Data.Entity.SqlCeClient.SqlCeBusinessEntityDataAdapter"/> class.
+            </summary>
+            <param name="entity">The calling business entity.</param>
+            <param name="manager">The data manager to be used for the underlying operations.</param>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlCeClient.SqlCeBusinessEntityDataAdapter.GetDataParameter(Cuemon.Data.Entity.Mapping.ColumnAttribute,System.Object)">
+            <summary>
+            The core method for returning an <see cref="T:System.Data.IDataParameter"/> compatible object to use against the data source.
+            </summary>
+            <param name="column">An instance of the <see cref="T:Cuemon.Data.Entity.Mapping.ColumnAttribute"/> object.</param>
+            <param name="value">The value to assign the <see cref="T:System.Data.IDataParameter"/> compatible object.</param>
+            <returns>An <see cref="T:System.Data.IDataParameter"/> compatible object.</returns>
+        </member>
+        <member name="M:Cuemon.Data.Entity.SqlCeClient.SqlCeBusinessEntityDataAdapter.GetDataMappedQuery(Cuemon.Data.QueryType,Cuemon.Data.Entity.Mapping.DataSourceAttribute,Cuemon.Data.Entity.Mapping.TableAttribute,Cuemon.Data.Entity.Mapping.ColumnAttribute[],System.Type)">
+            <summary>
+            The core method for building a data mapped query.
+            </summary>
+            <param name="queryType">The query type to use in datasource.</param>
+            <param name="dataSource">The datasource to execute the query towards.</param>
+            <param name="table">The database table to get data from.</param>
+            <param name="columns">The columns to include in the query.</param>
+            <param name="entityType">The type of the business entity to query from.</param>
+            <returns>
+            A <see cref="T:System.String"/> object containing the resolved query from databinding.
+            </returns>
+        </member>
+    </members>
+</doc>

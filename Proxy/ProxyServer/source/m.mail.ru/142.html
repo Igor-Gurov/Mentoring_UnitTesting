@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN"
+"http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	
+	<meta name="description" content="Почта Mail.Ru (мобильная версия)" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<title>Вход — Почта Mail.Ru</title>
+	<link rel="shortcut icon" href="//img.imgsmail.ru/r/wap_img/favicon.ico" />
+	<link rel="apple-touch-icon" href="//img.imgsmail.ru/r/ru/ios/icon_114.png"/>
+	<link rel="alternate" media="handheld" href="http://tel.mail.ru/cgi-bin/splash"/>
+	<script>
+  try { top.location.toString(); } catch (e) { top.location = location; }
+</script>
+	<style type="text/css">
+body{font-family:Arial,sans-serif;margin:0;padding:0;color:#000;background:#fff}
+*{font-size:100%;line-height:1.4em;margin:0}
+h1,h2,h3{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+th,td{padding:0;text-align:left;vertical-align:top;border-collapse:collapse;border-spacing:0}
+p{font-size:.875em;padding-bottom:5px}
+input,textarea,select{font:normal 100% Arial,sans-serif;vertical-align:middle}
+a{color:#06c;text-decoration:underline}
+img{border:0;vertical-align:middle}
+
+/*html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust: none}*/
+
+/* header & footer */
+.head{background:url('//img.imgsmail.ru/r/m_img/head_bg.221.png') left top repeat-x #00468c;border-bottom:1px solid #14467A;color:#fff;line-height:1;padding:5px 7px 4px 7px;}
+.head-active{background:url('//img.imgsmail.ru/r/m_img/head_bg_active.221.png') left top repeat-x #00468c;border-bottom:1px solid #011d3a;color:#fff;line-height:1;padding:5px 7px 4px 7px;}
+.head-a{color:#fff;line-height:1;text-decoration:none}
+.logo{margin:0px;border:none;}
+.logo_hd{display:none;margin:0px;border:none;}
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	.logo{display:none;}
+	.logo_hd{display:inline;}
+}
+.footer{background:#f2f2f2 url(//img.imgsmail.ru/r/m_img/g.gif) 0 0 repeat-x;border-top:1px solid #999;padding:9px 10px 5px}
+
+/* common */
+input[type="checkbox"]{margin:0;padding:0;vertical-align:middle}
+label{vertical-align:middle}
+i{color:#666;font-style:normal}
+.a{text-decoration:none}
+.t{text-decoration:underline}
+.i{height:16px;width:16px}
+.clear{clear:both;display:block}
+.counter{left:-100px;position:absolute;top:-100px}
+.r{text-align:right}
+/* styles */
+.bg{background:#f2f3f7}
+.bg2{background:#e6e8ed}
+.bgred{background:red}
+.bb{border-bottom:1px solid #e6e8ed}
+.bbdot{border-bottom:1px dotted #06c}
+.bt{border-top:1px solid #e6e8ed}
+.btw{border-top:1px solid #fff}
+.cb{color:#000}
+.cg{color:#999}
+.cg2{color:#666}
+.cgr{color:#990}
+.cr{color:#f00}
+.cw{color:#fff}
+.co{color:#f96}
+.fs7{font-size:.7em}
+.fs75{font-size:.75em}
+.fs8{font-size:.8em}
+.fs1{font-size:1em}
+.fs10{font-size:10px}
+.fs12{font-size:1.2em}
+.fwb{font-weight:bold}
+.mb{margin-bottom:5px}
+.mr{margin-right:5px}
+.mb10{margin-bottom:10px}
+.mt10{margin-top:10px}
+.mt{margin-top:5px}
+.nw{white-space:nowrap}
+.p{padding:5px 10px}
+.pb{padding-bottom:5px}
+.pb10{padding-bottom:10px}
+.pl{padding-left:10px}
+.pr{padding-right:10px}
+.pt{padding-top:5px}
+.tdn{text-decoration:none}
+.tac{text-align:center}
+.vam{vertical-align:middle}
+.w100p{width:100%}
+.w80p{width:80%}
+.w50p{width:50%}
+.w20p{width:20%}
+.w1p{width:1%}
+
+/* custom */
+.ad{background:#f2f3f7;padding:0 0 1px;text-align:center}
+h1{font-size:1em;font-weight:bold;line-height:20px;padding:5px 0}
+.alert{background:#ff9;font-size:.75em;margin:0 0 5px;padding:5px 10px}
+.error{background:#f00;color:#fff;font-weight:bold;margin:0 0 5px;padding:5px 10px}
+.clip{height:11px;vertical-align:middle;width:7px}
+.rbut{margin-left:1.5em}
+.search{padding:0 5px 0 0;vertical-align:middle;width:100%}
+.search-i{margin:0;padding-left:0;padding-right:0;vertical-align:middle;width:100%}
+
+.tabs{background:#d6e3ef url(//img.imgsmail.ru/r/m_img/gboard.gif) 0 0 repeat-x;width:100%;}
+.tab{border-bottom:1px solid #c1d1df;border-top:1px solid #c1d1df;color:#000;display:block;font-weight:bold;padding:5px 10px;text-decoration:none;white-space:nowrap}
+span.tab{color:#999}
+.tabs__l{width:33%}
+.tabs__c{border-left:1px solid #c1d1df;border-right:1px solid #c1d1df;text-align:center;width:34%}
+.tabs__r{text-align:center;width:33%}
+.tabs__folders .tabs__l .tab,
+.tabs__new .tabs__c .tab,
+.tabs__search .tabs__r .tab{background:#fff;border-bottom-color:#fff}
+.tabs__f .tabs__l{background:#fff}
+.tabs * {-moz-user-select:none;-webkit-user-select:none;user-select:none;outline:0}
+
+.headlink{color:#000;display:block;line-height:20px;padding:5px 10px;position:relative;text-decoration:none}
+.check{color:#06c;font-size:14px;font-weight:normal;line-height:20px;position:absolute;right:10px}
+.check .i{line-height:20px}
+
+.list{margin:0 0 1px}
+table.list{border-collapse:separate;width:100%}
+.box{border-bottom:1px solid #e6e8ed;border-top:1px solid #fff;font-size:.875em}
+.link{display:block;padding:5px 0;text-decoration:none}
+.box__l,
+.box__r{width:50px}
+.box__l .link{padding:5px 10px 0;text-align:center}
+.box__r .link{padding:5px 10px 0;text-align:right}
+
+div.box .link{padding:5px 10px}
+.icon{height:12px;width:12px}
+.folder,
+.count,
+.author,
+.theme,
+.date,
+.link-clear__link{line-height:140%;vertical-align:middle}
+.folder{color:#000;display:block;padding:5px 0;float:left}
+.count{color:#000;display:block;float:right;font-weight:bold;padding:5px 0}
+.author{color:#000}
+.theme{color:#666;display:block;margin:3px 0 0}
+.date{color:#999;display:block;margin:1px 0 2px;white-space:nowrap}
+span.date__cur{color:#000}
+.flag{height:14px;width:13px;margin:5px auto 1px;display:block;background:url(//img.imgsmail.ru/r/m_img/flag0.gif) 0 0 no-repeat;}
+.flag_on {background-image:url(//img.imgsmail.ru/r/m_img/flag.gif)}
+.clip{height:11px;width:7px}
+.new{background:#f2f3f7}
+.new .box__l{border-left:3px solid #fa0}
+.new .box__l .link{padding-left:7px}
+.new .folder,
+.new .author,
+.new .theme{color:#000;font-weight:bold}
+.box.trash .link {padding-bottom:0;}
+.link-clear {color:#000;float: right;font-weight: bold;padding: 5px 10px 5px 0;text-decoration: none;}
+.link-clear__link {display:inline-block;padding:5px 0;color:#666;font-weight:normal;text-decoration:underline;}
+.slj {display:none}
+
+.unread-num {display:inline-block;padding:0 4px;width:20px;line-height: 1.4em;text-align:center;-moz-border-radius:3px;-webkit-border-radius:3px;	border-radius:3px;text-shadow:none;}
+.box .unread-num {padding:5px 4px;}
+
+
+.announcements_warning {background:#FEFBD6;color:#666;font-size:0.875em;margin:0 0 5px;padding:5px 10px}
+.announcements_warning a {}
+
+.infobar {font-size: 0.875em;padding:10px;background:#fefbd6;color:#666;border-top:1px solid #d6d3b2;border-bottom:1px solid #d6d3b2;}
+wbr {display: inline-block;}
+.licence_agreement{color:#666666;font-size:0.8em;}
+</style>
+
+	
+	<script language="javascript" type="text/javascript">
+	function selectTab(cid) {
+		var mtab = document.getElementById('tmenu');
+		var sbox = document.getElementById('search_box');
+		mtab.className = 'tabs tabs__'+cid;
+		sbox.style.display = (cid == 'search') ? 'block' : 'none';
+	}
+	
+		document.write('<style type="text/css">.sbm, .slnj {display:none} .slj {display:inline}</style>');
+	
+	</script>
+	
+	
+</head>
+<body>
+<!-- 1212 -->
+
+	
+	
+	
+	
+
+
+<div style="position:absolute;margin-left:-100px;"><img src="http://rs.mail.ru/d331579.gif?rnd=638105387&ts=1384179058" style="width:0;height:0;position:absolute;" alt=""/>
+<img src="http://c.waplog.net/ru/38018.cnt" width="1" height="1" alt="waplog" />
+<img src="//top-fwz1.mail.ru/counter?id=2104775;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" /><img src="//top-fwz1.mail.ru/counter?id=110605;js=na;r=" height="1" width="1" alt="" border="0" /><img src="//www.tns-counter.ru/V13a****mail_ru/ru/CP1251/tmsec=mail_win-mobile/" width="1" height="1" alt="" style="position:absolute;"  />
+<img src="//rs.mail.ru/d368066.gif" width="1" height="1" border="0" alt="" style="position:absolute;" />
+<img src="//counter.yadro.ru/hit;win-mail?r;uhttp%3A%2F%2Fm.mail.ru%2Fcgi-bin%2Fmsglist;" height="1" width="1" alt="" border="0" />
+<img src="//mobtop.com/64193.gif" width="1" height="1" border="0" alt="" style="position:absolute;" />
+</div>
+<div class="head">
+	<p style="padding-bottom:0;"><a href="/cgi-bin/folders" style="line-height: 20px;"><img class="logo" alt="Mail.Ru" src="//img.imgsmail.ru/r/m_img/logo_splash_active.x1.6682.png" width="101" height="21" /><img class="logo_hd" alt="Mail.Ru" src="//img.imgsmail.ru/r/m_img/logo_splash_active.x2.6682.png" width="101" height="21" /></a></p>
+</div>
+
+  
+  
+  
+ 
+
+
+
+
+
+					<tr></tr>
+
+
+
+	
+		<form id="authform" action="https://auth.mail.ru/cgi-bin/auth?rand=208957512" method="post" class="p">
+	
+
+		<input type="hidden" name="post" value="" />
+		
+		<input type="hidden" name="mhost" value="m.mail.ru" />
+		<input type="hidden" name="login_from" value="" />
+
+		<p class="fwb">Введите свои имя и&nbsp;пароль.</p>
+		<p>Имя</p>
+		<p><input type="text" name="Login" value="" class="w80p" /></p>
+		<p>@
+			<select name="Domain">
+				<option value="mail.ru"  SELECTED>mail.ru</option><option value="inbox.ru" >inbox.ru</option><option value="list.ru" >list.ru</option><option value="bk.ru" >bk.ru</option>
+			</select>
+		</p>
+		<p class="mt">Пароль</p>
+		<p><input type="password" name="Password" class="w80p" maxlength="40" /></p>
+		<p><input type="checkbox" name="level" id="id_level" value="1" />&nbsp;&mdash; <label for="id_level">не&nbsp;запоминать</label></p>
+			
+		<p class="mb mt"><input type="submit" value="Войти" /></p>
+		<p><a href="//r.mail.ru/clb1401342/m.mail.ru/cgi-bin/passremind">Восстановить&nbsp;пароль</a></p>
+		<p><a href="/cgi-bin/signup">Регистрация&nbsp;нового&nbsp;пользователя</a></p>
+	</form>
+
+
+<div style="position:absolute; left:-100px; top:-100px;"><img src="//rs.mail.ru/d1624332.gif" alt="" width="1" height="1" /></div>
+
+
+	<div class="footer">
+
+	<p><a href="http://m.mail.ru/">Главная</a>&nbsp;| <a href="/cgi-bin/folders" class="cb fwb">Почта</a>&nbsp;| <a href="/cgi-bin/splash?all=1">Все проекты</a></p>
+
+	<p><a href="//r.mail.ru/clo7884/m.mail.ru/?mainredir=0">Полная версия</a>&nbsp;| Для смартфонов.</p>
+	<p>Язык: <a href="/cgi-bin/settings/lang">русский</a></p>
+	<p><a href="//r.mail.ru/n102788475">Помощь</a></p>
+	<p class="cg">&copy;&nbsp;Mail.Ru, 1999&ndash;2013</p>
+	
+</div>
+
+
+<img src="//r3.mail.ru/k?81e4121baf7286eca0b199916eff4bfd" style="width:0;height:0;position:absolute;" alt="" />
+</body>
+</html>
+
+

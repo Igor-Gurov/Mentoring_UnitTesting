@@ -1,0 +1,597 @@
+
+
+	
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN""http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<script>
+  try { top.location.toString(); } catch (e) { top.location = location; }
+</script>
+<script>
+function createRadar(name, iZ, log){
+	var data	= {};
+	var radar	= function (s, x, time)
+	{
+		if( s == 'clear' ){ data = {}; }
+		else if( typeof s == 'string' ){
+			if( x == 1 && data[s] && !data[s][1] ){
+				if (typeof time === 'number'){
+					data[s][1] = time;
+				} else {
+					data[s][1] = +new Date;
+				}
+			}
+			else if( x != 1 && !data[s] ){
+				if (typeof time === 'number'){
+					data[s] = [time, 0]
+				} else {
+					data[s] = [+new Date, 0];
+				}
+			}
+		} else {
+			var i = [], a, v, k, dt;
+			for( k in data ) if( data.hasOwnProperty(k) )
+			{
+				v = data[k];
+				dt = v[1] - v[0];
+				if( dt < 0 )
+				{
+					data = {};
+					return;
+				}
+				else if( iZ && !dt ) continue;
+				i.push(k +':'+ dt);
+				if( k == 'all' ) a = dt;
+			}
+			if( i.length && a ) {
+				(new Image).src = 'http://msplash.radar.imgsmail.ru/update?p=msplash&t='+ name +'&v='+ a +'&i='+ i.join(',') +'&rnd='+ Math.random() + (document.referrer ? '&r='+ escape(document.referrer) : '');
+			}
+			data = {};
+		}
+		return	radar;
+	};
+	radar.clear	= function (){ data = {}; return radar; };
+	return	radar;
+}
+
+var splashRadar = createRadar('page');
+</script>
+<script>try{ splashRadar('all'); }catch(ex){};</script>
+<script>try{ splashRadar('head'); }catch(ex){};</script>
+<script>try{ splashRadar('inline_style'); }catch(ex){};</script>
+<style type="text/css">
+body{font-family:Arial,sans-serif;margin:0;padding:0;color:#000;background:#fff}
+*{font-size:100%;margin:0}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+th,td{padding:0;text-align:left;vertical-align:top;border-collapse:collapse;border-spacing:0}
+p{font-size:0.875em;padding-bottom:5px}
+input,textarea,select{font:normal 100% Arial,sans-serif;vertical-align: middle}
+a{color:#06c;text-decoration:underline}
+img{border:0;vertical-align: middle}
+
+
+/* header & footer */
+.head{background:url('//img.imgsmail.ru/r/m_img/head_bg_active.221.png') left top repeat-x #00468c;border-bottom:1px solid #14467A;color:#fff;line-height:1;padding:5px 7px 4px 7px;}
+.head-active{background:url('//img.imgsmail.ru/r/m_img/head_bg_active.221.png') left top repeat-x #00468c;border-bottom:1px solid #011d3a;color:#fff;line-height:1;padding:5px 7px 4px 7px;}
+.head-a{color:#fff;line-height:1;text-decoration:none}
+.mail_ru{margin:0px;border:none;}
+.mail_ru_retina{display:none;margin:0px;border:none;}
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	.mail_ru{display:none;}
+	.mail_ru_retina{display:inline;}
+}
+.footer{background:#f2f2f2 url('//img.imgsmail.ru/r/m_img/g.gif') 0 0 repeat-x;border-top:1px solid #999;padding:9px 10px 5px}
+
+/* common */
+input[type="checkbox"]{margin:0;padding:0;vertical-align:middle}
+label{vertical-align:middle}
+i{color:#666;font-style:normal}
+.a{line-height:16px;text-decoration:none;vertical-align:middle}
+.t{line-height:16px;text-decoration:underline;vertical-align:middle}
+.i{height:16px;width:16px}
+.clear{clear:both;display:block}
+.counter{left:-100px;position:absolute;top:-100px}
+.r{text-align:right}
+/* styles */
+.dn{display:none;}
+.db{display:block;}
+.bt{border-top:1px solid #e6e8ed}
+.cb{color:#000}
+.cg{color:#999}
+.cgr{color:#990}
+.cr{color:#f00}
+.cw{color:#fff}
+.fwb{font-weight:bold}
+.fwn{font-weight:normal}
+.fr{float:right}
+.fs10{font-size:10px}
+.fs13{font-size:13px}
+.fs15{font-size:1.5em}
+.lh18{line-height:18px}
+.mb{margin-bottom:5px}
+.ml{margin-left:5px}
+.mr{margin-right:5px}
+.mr8{margin-right:8px}
+.mt{margin-top:5px}
+.mt10{margin-top:10px}
+.plr{padding-left:10px;padding-right:10px}
+.p{padding:5px 10px}
+.p10{padding:10px}
+.pt{padding-top:5px}
+.tdn{text-decoration:none}
+.tdu{text-decoration:underline}
+.vam{vertical-align:middle}
+.w80p{width:80%}
+.w100p{width:100%}
+
+/* custom */
+.ad{text-align:center}
+.board{background:#d6e4f0 url('//img.imgsmail.ru/r/m_img/gboard.gif') 0 0 repeat-x;border-bottom:1px solid #a0b7cd}
+.board-link{color:#000;font-size:1em;font-weight:bold;line-height:16px;margin:0 5px 0 0;text-decoration:none;white-space:nowrap}
+.board table{width:100%}
+.board td{padding:4px 0 6px 10px;vertical-align:middle}
+.board td.r{padding:5px 10px 5px 0}
+
+.button{background:url(//img.imgsmail.ru/r/m_img/button.png) 0 0 no-repeat;color:#fff;display:block;font-size:.8em;padding-left:12px;text-decoration:none}
+.button-i{background:url(//img.imgsmail.ru/r/m_img/button.png) 100% 0 no-repeat;display:block;padding-right:12px}
+.button-t{background:#006cd7 url(//img.imgsmail.ru/r/m_img/button.png) 0 -24px repeat-x;display:block;height:24px;line-height:24px;padding:0;vertical-align:middle}
+
+.login_link{float:right}
+.login_form{background:#f2f2f2 url(//img.imgsmail.ru/r/m_img/g.gif) 0 0 repeat-x;border-top:1px solid #a0b7cd;padding:10px 10px 5px}
+
+.h{background:#edf7ff;border-top:1px solid #c1d1df;color:#000;font-size:1em;font-weight:bold;margin:10px 0 8px;padding:5px 10px}
+.pic{padding:0 5px 5px 0}
+.stars{height:11px;vertical-align:middle;width:63px}
+.search{padding:0 5px 0 0;vertical-align:middle;width:100%}
+.search-i{margin:0;padding-left:0;padding-right:0;vertical-align:middle;width:100%}
+.vlinks p{margin:0 0 3px;}
+.vlinks a:visited{color:#039}
+.vlinks a.cb:visited{color:#000}
+.vlinks a.cg:visited{color:#999}
+.weather{margin:0 0 5px}
+.w-l{background:#edf7ff;padding:10px 15px;text-align:center;vertical-align:middle}
+.w-c{padding:0 5px;text-align:center;vertical-align:middle;width:80px}
+.w-r{color:#333;padding:0 0 0 5px;vertical-align:middle;white-space:nowrap}
+.cols{margin:0 0 5px}
+.cols td{padding:0 0 0 10px}
+.error{background:#f00;color:#fff;font-weight:bold;margin:0 0 5px;padding:5px 10px}
+
+/* user info */
+.avatar{float:right;height:45px;margin:0 0 5px 5px;width:45px}
+.cns{color:#000;margin:0px 0 0px}
+.cnt,.cnr,.cnb,.cnl,.cn{background-color:#fff}
+.cnt,.cnr,.cnb,.cnl{background-repeat:no-repeat;height:4px}
+.cnt{background-image:url('//img.imgsmail.ru/r/m_img/cnt.6682.png');background-position:top left;padding:0 0 0 4px}
+.cnr{background-image:url('//img.imgsmail.ru/r/m_img/cnr.6682.png');background-position:top right}
+.cn{padding:1px 5px 0 8px}
+.cnb{background-image:url('//img.imgsmail.ru/r/m_img/cnb.6682.png');background-position:bottom right;padding:0 4px 0 0}
+.cnl{background-image:url('//img.imgsmail.ru/r/m_img/cnl.6682.png');background-position:bottom left}
+
+.search-form {padding-top:3px;}
+/* suggest */
+.go-suggests{display:none;margin-top:-6px;border-top:1px solid #b8b8b8;border-bottom:1px solid #b8b8b8;width:100%;background:#f6f6f6;-webkit-box-shadow:0 1px 1px 0 #d9d9d9;-moz-box-shadow:0 1px 1px 0 #d9d9d9;-o-box-shadow:0 1px 1px 0 #d9d9d9;box-shadow:0 1px 1px 0 #d9d9d9;font:13px arial,sans-serif}.go-suggests__open{display:block}.go-suggests__list{font-size:130%}.go-suggests__suggest{border-bottom:1px solid #e0e0e0}.go-suggests__suggest__hover{background:#e1e1e1}.go-suggests__suggest_link{display:block;padding:6px 11px;color:#000;line-height:1.2;text-decoration:none}.go-suggests__suggest_link:hover,.go-suggests__suggest_link:visited{color:#000;text-decoration:none}.go-suggests__suggest__nav .go-suggests__suggest_link,.go-suggests__suggest__nav .go-suggests__suggest_link:hover,.go-suggests__suggest__nav .go-suggests__suggest_link:visited{color:#00468c}.go-suggests__suggest__favicon{float:left;margin:2px 5px 0 0;width:16px;height:16px;background:0 0 no-repeat}
+</style>
+
+<script>try{ splashRadar('inline_style',1); }catch(ex){};</script>
+<meta name="keywords" content="почта, мобильная почта, мобильный Mail.Ru, создать почту, почтовый ящик, почта для телефона, новости, поиск в интернете, авто, спорт, игры, знакомства, погода" />
+<meta name="description" content="Мобильная версия Mail.Ru" />
+<meta name="viewport" content="width=device-width" />
+<meta name="MobileOptimized" content="176" />
+<meta name="PalmComputingPlatform" content="true" />
+<link rel="shortcut icon" href="//img.mail.ru/r/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="//img.imgsmail.ru/r/ru/ios/icon_114.png"/>
+<link rel="alternate" media="handheld" href="http://tel.mail.ru/cgi-bin/splash"/>
+<title>Mail.Ru</title>
+<script>try{ splashRadar('head_script'); }catch(ex){};</script>
+<script type="text/javascript">
+function show(id) {
+	var elem = document.getElementById(id);
+	var visible = elem.style.display == '';
+	elem.style.display = visible ? 'none' : '';
+	if (id == 'login_form') {
+		document.getElementById('login_link').innerHTML = visible ? 'Вход' : 'Закрыть';
+		if (!visible) {
+			new Image().src = '//rs.mail.ru/sn9799.gif?' + Math.random();
+		}
+	}
+}
+</script>
+<script type="text/javascript" src="/js/sg.js?2"></script>
+<script>try{ splashRadar('head_script',1); }catch(ex){};</script>
+<!-- - MAIL-14266 -->
+ <!-- Touch 656 -->
+<!-- - MAIL-14266 -->
+<script>try{ splashRadar('head', 1); }catch(ex){};</script>
+</head>
+<body>
+<script>try{ splashRadar('body'); }catch(ex){};</script>
+
+<div style="position:absolute;margin-left:-100px;"><img src="http://rs.mail.ru/d349329.gif?sz=&amp;rnd=163388334&ts=1384179121" style="width:0;height:0;position:absolute;" alt=""/>
+
+
+
+
+</div>
+
+<script>try{ splashRadar('header'); }catch(ex){};</script>
+<div class="head">
+	
+	<p style="padding-bottom:0;">
+		<a style="line-height: 20px;"><img class="mail_ru" alt="Mail.Ru" src="//img.imgsmail.ru/r/m_img/logo_splash_active.x1.6682.png" width="101" height="21" /><img class="mail_ru_retina" alt="Mail.Ru" src="//img.imgsmail.ru/r/m_img/logo_splash_active.x2.6682.png" width="101" height="21" /></a>
+	</p>
+</div>
+<script>try{ splashRadar('header',1); }catch(ex){};</script>
+<script>try{ splashRadar('board'); }catch(ex){};</script>
+<div class="board">
+	<table>
+	<tbody><tr>
+		<td>
+			<a class="board-link" href="http://r.mail.ru/n98428112"><img src="//img.imgsmail.ru/r/m_img/at.png" alt="" class="i" />&nbsp;<span class="t">Почта</span></a>
+			<a class="board-link" href="http://r.mail.ru/n98429003"><img src="//img.imgsmail.ru/r/m_img/my.png" alt="" class="i" />&nbsp;<span class="t">Мой Мир</span></a>
+			<!--a href="http://r.mail.ru/clb205059/m.agent.mail.ru/cgi-bin/getagent_splash35" class="a cb"><img src="//img.imgsmail.ru/r/m_img/agent.gif" alt="" class="i" />&nbsp;<span class="t">Агент</span></a-->
+		</td>
+		<td class="r"><a href="http://r.mail.ru/n98429035" class="button login_link"><span class="button-i"><span class="button-t" id="login_link">Регистрация</span></span></a></td>
+	</tr>
+	</tbody></table>
+ 
+</div>
+<script>try{ splashRadar('board',1); }catch(ex){};</script>
+
+<script>try{ splashRadar('search'); }catch(ex){};</script>
+<div class="mt p">
+	<p><a class="cb" href="http://r.mail.ru/n98429420">Поиск в&nbsp;интернете</a></p>
+	<form id="search-form" class="search-form" action="http://go.mail.ru/msearch">
+	<input type="hidden" name="fr" value="mo3" />
+	<table>
+	<tbody><tr>
+		<td class="search"><input type="text" class="search-i" name="q" /></td>
+		<td><input type="submit" value="Найти" /></td>
+	</tr>
+	</tbody></table>
+	</form>
+</div>
+<img src="http://rs.mail.ru/d863452.gif?sz=10&amp;rnd=205666518&ts=1384179121" style="width:0;height:0;position:absolute;" alt=""/>
+
+<div id="go-suggests" class="go-suggests">
+	<div class="go-suggests__list"></div>
+</div>
+<script>try{ splashRadar('search',1); }catch(ex){};</script>
+<script>try{ splashRadar('ad'); }catch(ex){};</script>
+<div class="ad">
+<img src="http://rs.mail.ru/a2456049.gif?sz=10&amp;rnd=449156261&ts=1384179121&sz=10" style="width:0;height:0;position:absolute;" alt=""/>
+
+
+
+
+
+
+
+
+
+<a href="http://r.mail.ru/n118795400?sz=10" target="_blank"><img src="http://rs.mail.ru/b23949798.gif" width="220" height="50" border="0" alt="" title="" /></a>
+
+
+</div><!-- Реклама слот 4997 -->
+<script>try{ splashRadar('ad',1); }catch(ex){};</script>
+
+<div style="border-top:1px solid #c1d1df; padding:10px 10px 0; margin:5px 0px 0px 0px;">
+	
+		<script>try{ splashRadar('geo_que'); }catch(ex){};</script>
+		<p><strong><img src="http://rs.mail.ru/d1596997.gif?rnd=185808721&ts=1384179121" style="width:0;height:0;position:absolute;" alt=""/>
+Рязань</strong> <a href="/cgi-bin/ajax_weather_city?mobile=1&act=select_other" class="cg" style="font-size:10px;">изменить</a> </p>
+		
+		<script>try{ splashRadar('geo_que', 1); }catch(ex){};</script>
+	
+</div>
+
+<script>try{ splashRadar('news'); }catch(ex){};</script>
+
+<div class="h"><a href="http://r.mail.ru/n53456476?" class="cb">Главные новости</a></div>
+
+
+
+<div id="news_main">
+	
+		<div class="plr vlinks">
+			
+				<table><tr>
+					<td class="pic"><a href="http://r.mail.ru/n118796133?" class="tdn"><img src="http://rs.mail.ru/b23950987.jpg" width="50" height="50" alt="" /></a></td>
+					<td class="vam"><p><a href="http://r.mail.ru/n118796133?">До 2 тысяч россиян могли оказаться в&nbsp;зоне бедствия в&nbsp;Азии</a></p></td>
+				</tr></table>
+			
+		</div>
+	
+		<div class="plr vlinks">
+			
+				<p><a href="http://r.mail.ru/n118791666?">Полонский заявил, что в&nbsp;него стреляли при&nbsp;задержании</a></p>
+			
+		</div>
+	
+		<div class="plr vlinks">
+			
+				<p><a href="http://r.mail.ru/n118800317?">Украина отказалась от&nbsp;российского газа</a></p>
+			
+		</div>
+	
+		<div class="plr vlinks">
+			
+				<p><a href="http://r.mail.ru/n118807731?">Сайты, торгующие алкоголем, могут попасть в&nbsp;реестр запрещенных</a></p>
+			
+		</div>
+	
+		<div class="plr vlinks">
+			
+				<p><a href="http://r.mail.ru/n118804228?">Число погибших при&nbsp;взрыве газа в&nbsp;Подмосковье выросло до&nbsp;пяти</a></p>
+			
+		</div>
+	
+</div>
+
+ <!-- Новости -->
+<p class="plr vlinks"><a href="http://r.mail.ru/n54842868?" class="cb fwb mr">Авто</a> <a href="http://r.mail.ru/n118805472?">Россияне продолжают скупать кроссоверы</a></p>
+ <!-- Авто -->
+<p class="plr vlinks"><a href="http://r.mail.ru/n54703609?" class="cb fwb mr">Hi-tech</a> <a href="http://r.mail.ru/n118764043?">Новый Apple iPad Air сгорел прямо в магазине</a></p> <!-- Хай-тек -->
+	
+		<p class="plr vlinks"><a href="http://r.mail.ru/n110185139?" class="cb fwb mr">Леди</a> <a href="http://r.mail.ru/n118777875?">До и после: успешные пластические операции звезд</a></p>
+	
+ <!-- Леди  -->
+<script>try{ splashRadar('news',1); }catch(ex){};</script>
+<script>try{ splashRadar('weather'); }catch(ex){};</script>
+<p class="h"><a class="cb" href="http://r.mail.ru/n89742443?">Погода. Рязань</a> <a class="mr vam fs13" href="http://r.mail.ru/n89742444?">на&nbsp;10&nbsp;дней</a></p>
+<div class="plr">
+	<div class="weather">
+		<table>
+			<tr>
+				<td class="w-l"><a class="cb tdn" href="http://r.mail.ru/n89742443?"><span class="fs15 vam">+7&deg;&nbsp;</span><img width="57" height="71" class="i" alt="" src="http://rs.mail.ru/b15480237.gif"><br>пасмурно</a></td>
+				<td class="w-r">
+					<p class="pt">Вечером +5&deg;... +6&deg;</p>
+					<p>Ночью +6&deg;... +7&deg;</p>
+					<p><a href="http://r.mail.ru/n118764882?">Завтра +3&deg;... +6&deg;</a></p>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div> <!-- Погода - слот 2182  -->
+<script>try{ splashRadar('weather',1); }catch(ex){};</script>
+<script>try{ splashRadar('exchange'); }catch(ex){};</script>
+<div class="h"><span class="fr fwn fs13"><!-- Спецразмещение - слот 1770  --></span><a href="http://r.mail.ru/n54829715" class="cb">Курсы валют</a></div>
+
+<table class="cols"><tbody><tr><td><p>Сегодня, <span style="white-space:nowrap;">11 ноя</span></p></td><td><p class="dn db db ">Завтра</p></td></tr><tr><td><p><span class="fwb mr">$</span>&nbsp;
+								
+								32.5479&nbsp;<span class="cgr fs10">+0.1676</span></p></td><td><p>
+								
+								32.6622&nbsp;<span class="cgr fs10">+0.1143</span></p></td></tr><tr><td><p><span class="fwb mr">&euro;</span>&nbsp;
+								
+								43.6305&nbsp;<span class="cr fs10">&minus;0.1574</span></p></td><td><p>
+								
+								43.6563&nbsp;<span class="cgr fs10">+0.0258</span></p></td></tr></tbody></table><!-- Курсы валют - слот 1055  -->
+<script>try{ splashRadar('exchange',1); }catch(ex){};</script>
+<script>try{ splashRadar('sport'); }catch(ex){};</script>
+
+	<div class="h"><a href="http://r.mail.ru/n110511535?" class="cb">Спорт</a></div>
+
+	<div class="plr vlinks">
+		<table><tr>
+			<td class="pic"><a href="http://r.mail.ru/n118801843?" class="tdn"><img src="http://rs.mail.ru/b23955323.jpg" width="50" height="50" alt="" /></a></td>
+			<td class="vam"><p><a href="http://r.mail.ru/n118801843?">Тур игроков сборной: от&nbsp;чудо-гола Глушакова до&nbsp;удаления Тарасова</a></p></td>
+		</tr></table>
+	</div>
+	<div class="plr vlinks">
+		<p><a href="http://r.mail.ru/n118806861?">Месси выбыл на&nbsp;длительный срок из-за травмы</a></p>
+	</div>
+	<div class="plr vlinks news_instead_matches">
+		<p><a href="http://r.mail.ru/n118801370?">ЦСКА, &laquo;Зенит&raquo;, &laquo;Шахтер&raquo; и &laquo;Металлист&raquo; разыграют 1 млн евро</a></p>
+	</div>
+	<div class="plr vlinks news_instead_matches">
+		<p><a href="http://r.mail.ru/n118799280?">В услугах вратаря &laquo;Зенита&raquo; заинтересован клуб испанской Ла Лиги</a></p>
+	</div>
+	<div class="plr vlinks news_instead_matches">
+		<p><a href="http://r.mail.ru/n118802210?">Неймар и&nbsp;Ибрагимович поспорят за&nbsp;титул автора лучшего гола</a></p>
+	</div>
+
+<!-- Спорт - слот 2314  -->
+<!-- Евро-2012 - слот 806  -->
+<script>try{ splashRadar('sport',1); }catch(ex){};</script>
+<script>try{ splashRadar('poster'); }catch(ex){};</script>
+
+
+    <div class="h"><a href="http://r.mail.ru/n105149674?" class="cb">Афиша</a></div>
+    <div class="plr vlinks">
+    
+			<p><a href="http://r.mail.ru/n118565216?"  class="tdn"><span class="tdu">Тор 2: Царство тьмы</span></a></p>
+    
+			<p><a href="http://r.mail.ru/n118094458?"  class="tdn"><span class="tdu">Горько!</span></a></p>
+    
+			<p><a href="http://r.mail.ru/n117789312?"  class="tdn"><span class="tdu">Облачно... 2: Месть ГМО</span></a></p>
+    
+        <p><a href="http://r.mail.ru/n105149674?" class="cg mr">Кино</a> <a href="http://r.mail.ru/n105149678?" class="cg mr">Рестораны</a> <a href="http://r.mail.ru/n105149679?" class="cg mr">Концерты</a> <a href="http://r.mail.ru/n105149680?" class="cg mr">Театры</a></p>
+    </div>
+
+
+
+
+
+
+ <!-- Афиша - слот 2184  -->
+<script>try{ splashRadar('poster',1); }catch(ex){};</script>
+<script>try{ splashRadar('games'); }catch(ex){};</script>
+
+
+
+
+
+
+
+<div class="h"><a href="http://r.mail.ru/n115866212?" class="cb">Игры</a></div>
+<div class="plr vlinks">
+
+	<table><tr>
+		<td class="pic"><a href="http://r.mail.ru/n115866213?" class="tdn"><img src="http://rs.mail.ru/b21685428.jpg" width="50" height="50" alt="" /></a></td>
+		<td class="vam"><p><a href="http://r.mail.ru/n115866213?">Удивительный колхоз // Фермы, битвы между колхозами и бои на овощной арене!</a></p></td>
+	</tr></table>
+
+	<table><tr>
+		<td class="pic"><a href="http://r.mail.ru/n115866214?" class="tdn"><img src="http://rs.mail.ru/b21685429.png" width="50" height="50" alt="" /></a></td>
+		<td class="vam"><p><a href="http://r.mail.ru/n115866214?">Битва Титанов // Прикоснись к легенде, сразись с титанами!</a></p></td>
+	</tr></table>
+
+</div><!-- Игры - слот 4688  -->
+<script>try{ splashRadar('games',1); }catch(ex){};</script>
+
+<!-- скачать  -->
+<script>try{ splashRadar('soft'); }catch(ex){};</script>
+<div class="h"><span class="cb">Программы для&nbsp;телефона</span></div>
+<div class="plr">
+	
+
+
+
+<p><a class="a" href="http://r.mail.ru/n102061236?"><img class="i" width="16" height="16" alt="" src="http://rs.mail.ru/b16937968.png">&nbsp;<span class="t">Почта</span></a></p><p><a class="a" href="http://r.mail.ru/n101806404?"><img class="i" width="16" height="16" alt="" src="http://rs.mail.ru/b16948843.png">&nbsp;<span class="t">Агент</span></a></p><p><a class="a" href="http://r.mail.ru/n102061237?"><img class="i" width="16" height="16" alt="" src="http://rs.mail.ru/b16949158.png">&nbsp;<span class="t">Игры</span></a></p><p><a class="a" href="http://r.mail.ru/n107291905?"><img class="i" width="16" height="16" alt="" src="http://rs.mail.ru/b17405152.png">&nbsp;<span class="t">Новости</span></a></p><p><a class="a" href="http://r.mail.ru/n102790566?"><img class="i" width="16" height="16" alt="" src="http://rs.mail.ru/b16948846.png">&nbsp;<span class="t">ICQ</span></a></p>
+	
+</div>
+<script>try{ splashRadar('soft',1); }catch(ex){};</script>
+<!-- /скачать -->
+
+<script>try{ splashRadar('proj'); }catch(ex){};</script>
+<p class="h"><a href="http://r.mail.ru/n98436132?" class="cb">Все проекты</a></p>
+<table class="cols mb">
+	<tr>
+		<td>
+			<p><a href="http://r.mail.ru/n98428121?" class="a"><img src="//img.imgsmail.ru/r/m_img/love.gif" alt="" class="i" />&nbsp;<span class="t">Знакомства</span></a></p>
+			<p><a href="http://r.mail.ru/n98428122?" class="a"><img src="//img.imgsmail.ru/r/m_img/torg.gif" alt="" class="i" />&nbsp;<span class="t">Товары</span></a></p>
+			<p><a href="http://r.mail.ru/n118130069?"  class="a"><img src="//img.imgsmail.ru/r/m_img/horo.gif" alt="" class="i" />&nbsp;<span class="t">Гороскопы</span></a></p>
+			<p><a href="http://r.mail.ru/n118130070?" class="a"><img src="http://rs.mail.ru/b16970242.png" alt=""  width="16" height="16" class="i" />&nbsp;<span class="t">Авто</span></a></p>
+			<p><a href="http://r.mail.ru/n118130071?" class="a"><img src="//img.imgsmail.ru/r/m_img/health.gif" alt="" class="i" />&nbsp;<span class="t">Здоровье</span></a></p>
+		</td>
+		<td>
+			<p><a href="http://r.mail.ru/n98428127?" class="a"><img src="//img.imgsmail.ru/r/m_img/money.gif" alt="" class="i" />&nbsp;<span class="t">Деньги</span></a></p>
+			<p><a href="http://r.mail.ru/n104277152?" class="a"><img src="//img.imgsmail.ru/r/m_img/map.gif" alt="" class="i" />&nbsp;<span class="t">Карты</span></a></p>
+			<p><a href="http://r.mail.ru/n118130072?" class="a"><img src="//img.imgsmail.ru/r/m_img/tv.gif" alt="" class="i" />&nbsp;<span class="t">ТВ программа</span></a></p>
+			<p><a href="http://r.mail.ru/n98428131?" class="a"><img src="//img.imgsmail.ru/r/m_img/answers.gif" alt="" class="i" />&nbsp;<span class="t">Ответы</span></a></p>
+			<p><a href="http://r.mail.ru/n98428132?" class="a"><img src="//img.imgsmail.ru/r/m_img/search.gif" alt="" class="i" />&nbsp;<span class="t">Поиск</span></a></p>
+		</td>
+	</tr>
+</table>	<!-- Все проекты -->
+<script>try{ splashRadar('proj',1); }catch(ex){};</script>
+
+
+<div style="position:absolute;margin-left:-100px;"><img src="http://rs.mail.ru/d957301.gif?rnd=141651521&ts=1384179121" style="width:0;height:0;position:absolute;" alt=""/>
+<img src="http://c.waplog.net/ru/16453.cnt" width="1" height="1" alt="waplog" />
+<img src="//top-fwz1.mail.ru/counter?id=2104775;js=na;r=" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+<img src="//rs.mail.ru/d368066.gif" width="1" height="1" border="0" alt="" style="position:absolute;" />
+<img src="//www.tns-counter.ru/V13a****mail_ru/ru/CP1251/tmsec=mail_main-mobile/" width="1" height="1" alt="" style="position:absolute;"  />
+
+<img src="//top-fwz1.mail.ru/counter?id=110605;js=na;r=;u=http%3A%2F%2Fmail.ru%2Fm" height="1" width="1" alt="" border="0" /> 
+<img src="//counter.yadro.ru/hit;mail-splash/m?r;uhttp%3A%2F%2Fm.mail.ru%2f;" height="1" width="1" alt="" border="0" />
+
+
+<img src="http://bs.mail.ru/count/U_4amYGH3by40X00gP800OwtQLST1MnPYBhJ0H04agcEPWEcG8e1gW6bbHmwaRpGIMG6auKDGQxswDfur72lu0In0RlhwnEnLdlHL7W8?141651521" style="width:0;height:0;position:absolute;" alt="" />
+
+
+
+<img src="//r3.mail.ru/k?81e4121baf7286eca0b199916eff4bfd" style="width:0;height:0;position:absolute;" alt="" /></div>
+<script>try{ splashRadar('footer'); }catch(ex){};</script>
+<div class="footer">
+	
+	<p><a href="/cgi-bin/login?splashlogin=1">Войти</a></p>
+	
+	
+	<p><span class="cb fwb">Главная</span>&nbsp;| <a href="http://r.mail.ru/n98429344">Почта</a>&nbsp;| <a href="http://r.mail.ru/n98429388">Мой Мир</a></p>
+	
+	<p><a href="http://r.mail.ru/n98429392">Полная версия</a>&nbsp;| Для смартфонов</p>
+	<p><a href="//r.mail.ru/n102788475">Помощь</a></p>
+	<p class="cg">&copy;&nbsp;Mail.Ru, 1999&ndash;2013</p>
+	
+</div>
+<script>try{ splashRadar('footer',1); }catch(ex){};</script>
+<!-- /new -->
+<script>try{ splashRadar('footer_script'); }catch(ex){};</script>
+<script type="text/javascript" src="/js/sg_init.min.js?2"></script>
+<script>try{ splashRadar('footer_script',1); }catch(ex){};</script>
+
+
+<img src="//r3.mail.ru/k?81e4121baf7286eca0b199916eff4bfd" style="width:0;height:0;position:absolute;" alt="" />
+<script>
+try{
+splashRadar('body', 1);
+splashRadar('all', 1);
+splashRadar(true);
+}catch(ex){};
+</script>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function(w, d) {
+        if (w.rb_counter) return;
+        function h() {
+                var n, a = arguments;
+                for(var i=a.length;i--;){
+                        n = a[i].split(',');
+                        for(var j=n.length;j--;){
+                                c(n[j]);
+                        }
+                }
+        }
+        function c(n) {
+                var m, r = parseInt(Math.random()*1E9), s;
+                if (!(m = n.match(/^(?:cl([bn])|([adgin]))(\d+)(?:sz(\d+))?/))) return;
+                if (m[1]) {
+                        s = "s" + m[1];
+                }
+                else if(m[2] == "n") {
+                        s = "nc";
+                }
+                else if(m[2]=="i") {
+                        r = null;
+                        s = m[2];
+                }
+                else {
+                        s = m[2];
+                }
+                s += m[3] + ".gif?";
+                if (m[4]) s += "sz=" + m[4];
+                if (r) s += "&rnd=" + r;
+                (new Image).src = "//rs.mail.ru/" + s;
+        }
+        (function(o, e, fn) {
+                if (o.addEventListener) o.addEventListener(e, fn, false);
+                else if (o.attachEvent) o.attachEvent('on' + e, fn);
+                else o['on' + e] = fn;
+        })(d, 'mousedown', function(e) {
+                var n;
+                e = e || w.event;
+                e = e.target || e.srcElement;
+                while (e.parentNode){
+                        if ((n = e.getAttribute('name')) && (n = n.toString())){
+                                h(n);
+                        }
+                        e = e.parentNode;
+                }
+        });
+        w.rb_counter = h;
+})(window, document);
+//]]>
+</script>
+
+
+
+
