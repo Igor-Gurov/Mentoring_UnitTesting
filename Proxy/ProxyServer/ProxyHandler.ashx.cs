@@ -25,11 +25,8 @@ namespace ProxyServer
 				url = url.Substring(0, url.IndexOf("?"));
 
 			UrlSite = ReturnUrlSite(url);
-
 			string responseFromServer = this.GetResponseString(url);
-			string cachedResponse;
-
-			cachedResponse = MakeProxyResponse(responseFromServer);
+			string cachedResponse = MakeProxyResponse(responseFromServer);
 
 			context.Response.Write(cachedResponse);
 		}
@@ -41,9 +38,11 @@ namespace ProxyServer
 			Stream dataStream = response.GetResponseStream();
 			StreamReader reader = new StreamReader(dataStream);
 			string responseFromServer = reader.ReadToEnd();
+			
 			reader.Close();
 			dataStream.Close();
 			response.Close();
+
 			return responseFromServer;
 		}
 
@@ -51,8 +50,8 @@ namespace ProxyServer
 		{
 			HtmlAgilityPack.HtmlDocument doc = new HtmlDocument();
 			doc.LoadHtml(response);
-
 			SaveReferences(ref response, "a", "href", doc);
+
 			return response;
 		}
 
@@ -61,6 +60,7 @@ namespace ProxyServer
 			var references = doc.DocumentNode.SelectNodes("//" + SearchedTag + "[@" + SearchedAttribute + "]");
 			if (references == null)
 				return;
+
 			foreach (var reference in references)
 			{
 				string refUrl = reference.Attributes[SearchedAttribute].Value;
@@ -77,14 +77,14 @@ namespace ProxyServer
 					refUrl = UrlSite + refUrl;
 
 				string refUrlWithHandler =@"http://localhost:53047/ProxyHandler.ashx?url=";
-
 				cachedResponse = cachedResponse.Replace(SearchedAttribute + "=\"" + originalUrl, SearchedAttribute + "=\"" + refUrlWithHandler + refUrl);				
 			}
 		}
 
 		private string ReturnUrlSite(string url)
 		{
-			Regex reg = new Regex(@"\b(http://)[a-zA-Z.]*");
+			Regex reg = new Regex(@"\b(https?://)[a-zA-Z.]*");
+
 			return reg.Match(url, 0).Value;
 		}
 
