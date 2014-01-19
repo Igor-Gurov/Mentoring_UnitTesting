@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	<script type="text/javascript">	
+		function funTask1()
+		{
+			var regNumber = /\b\d+(\.\d*)*/g;
+			var regSym = /\B[\+\-\*\/\–]/g;
+			var arrayNumbers = inputTask1.value.match(regNumber);
+			var arraySymbols = inputTask1.value.match(regSym);
+			var resultStr = arrayNumbers[0];
+			for (var i = 1; i < arrayNumbers.length; i++) {
+				calcNumber(arrayNumbers[i], arraySymbols[i - 1]);
+			}
+			function calcNumber(number, symbol)
+			{
+				switch (symbol) {
+					case "+":
+						resultStr = parseFloat(resultStr) + parseFloat(number);
+						break;
+					case "-":
+					case "–":
+						resultStr = resultStr - number;
+						break;
+					case "*":
+						resultStr = resultStr * number;
+						break;
+					case "/":
+						resultStr = resultStr / number;
+						break;
+					default:
+				}
+			}
+
+			alert(resultStr);
+		}
+
+		function funTask2()
+		{
+			var defaultStr = inputTask2.value;
+			var arrayStr = defaultStr.split(/[\.\?\,\;\:\!\ ]+\ */g);
+			var symbolsForReplace='';
+			var count=1;
+			next:
+			while (true)
+			{
+				for (var i = 1; i < arrayStr.length-1; i++) {
+					if (arrayStr[i].length-count==0) {
+						break next;
+					}
+					if (arrayStr[0].toLowerCase().charAt(arrayStr[0].length - count) != arrayStr[i].toLowerCase().charAt(arrayStr[i].length - count)) {
+						break next;
+					}
+				}
+				symbolsForReplace = arrayStr[0].toLowerCase().charAt(arrayStr[0].length - count) + symbolsForReplace;
+				count += 1;
+				if (arrayStr[0].length-count==0) {
+					break next;
+				}
+			}
+			alert(symbolsForReplace);
+			symbolsForReplace = new RegExp(symbolsForReplace, 'ig');
+			alert(defaultStr.replace(symbolsForReplace,''));
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<label>Task1: </label>
+		<input type="text" id="inputTask1" /><input id="btnTask1" type="button" value="Go" onclick="funTask1();" />
+	</div>
+	<div>
+		<label>Task2: </label>
+		<input type="text" id="inputTask2" /><input id="btnTask2" type="button" value="Go" onclick="funTask2();" />
+	</div>
+</body>
+</html>
